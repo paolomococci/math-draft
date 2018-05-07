@@ -178,8 +178,8 @@ public class RealTests {
             throws Exception {
         Real r = new Real();
         r.setValue(2.0);
-        BigDecimal bd = r.square();
-        assertEquals(0, bd.compareTo(new BigDecimal("4.0")));
+        r = r.square();
+        assertEquals(0, r.getValue().compareTo(new BigDecimal("4.0")));
     }
 }
 
