@@ -46,6 +46,11 @@ public class Real
         super();
         this.value = BigDecimal.valueOf(0.0D);
     }
+
+    public Real(BigDecimal real) {
+        super();
+        this.value = real;
+    }
     
     /*
      * Getters and setters 
@@ -96,6 +101,11 @@ public class Real
     public void product(Real r1, Real r2) {
         this.value = r1.getValue().multiply(r2.getValue(), HALF_EVEN32);
     }
+
+    public void product(Imag i1, Imag i2) {
+        this.value = i1.getValue().multiply(i2.getValue(), CEILING32);
+        this.value = this.value.multiply(Imag.I_SQUARE, CEILING32);
+    }
     
     public void quotient(Real r1, Real r2) {
         this.value = r1.getValue().divide(r2.getValue(), CEILING32);
@@ -112,9 +122,7 @@ public class Real
      * because this class implement java.io.Serializable interface
      */
     public BigDecimal square() {
-        BigDecimal temp;
-        temp = this.value.multiply(this.value, HALF_EVEN32);
-        return temp;
+        return new Real(this.value.multiply(this.value, HALF_EVEN32));
     }
     
     /*
