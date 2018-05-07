@@ -47,9 +47,9 @@ public class Real
         this.value = BigDecimal.valueOf(0.0D);
     }
 
-    public Real(BigDecimal real) {
+    public Real(BigDecimal value) {
         super();
-        this.value = real;
+        this.value = value;
     }
     
     /*
