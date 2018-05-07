@@ -47,6 +47,15 @@ public class RealTests {
         assertEquals(0.0, r.getValue().doubleValue());
     }
     
+    @Test
+    public void testConstructorWithValue() 
+            throws Exception {
+        Real r1 = new Real();
+        r1.setValue(3.0D);
+        Real r2 = new Real(r1.getValue());
+        assertEquals(3.0, r2.getValue().doubleValue());
+    }
+    
     /*
     * Setters
     */
