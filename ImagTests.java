@@ -112,7 +112,8 @@ public class ImagTests {
         i1.setValue(1.0);
         i2.setValue(0.00000000000000000000000000000001);
         result.sub(i1, i2);
-        assertTrue(result.getValue().compareTo(new BigDecimal("0.99999999999999999999999999999999")) == 0);
+        assertTrue(result.getValue()
+                 .compareTo(new BigDecimal("0.99999999999999999999999999999999")) == 0);
     }
     
     @Test
@@ -148,7 +149,8 @@ public class ImagTests {
         i.setValue(1.0);
         r.setValue(3.0);
         result.quotient(i, r);
-        assertEquals(0, result.getValue().compareTo(new BigDecimal("0.33333333333333333333333333333334")));
+        assertEquals(0, result.getValue()
+                .compareTo(new BigDecimal("0.33333333333333333333333333333334")));
     }
     
     @Test
@@ -162,7 +164,8 @@ public class ImagTests {
         result.quotient(i, r);
         int scale = result.scale();
         result.setScale(scale-1);
-        assertEquals(0, result.getValue().compareTo(new BigDecimal("0.3333333333333333333333333333333")));
+        assertEquals(0, result.getValue()
+                .compareTo(new BigDecimal("0.3333333333333333333333333333333")));
     }
     
     @Test
@@ -183,5 +186,16 @@ public class ImagTests {
         Real r;
         r = i.squareOfImaginaryCoefficient();
         assertEquals(0, r.getValue().compareTo(new BigDecimal("9.0")));
+    }
+    
+    @Test
+    public void testNegate() 
+            throws Exception {
+        Imag i1, i2;
+        i1 = new Imag();
+        i1.setValue(1.0);
+        i2 = i1.negate();
+        assertEquals(1.0, i1.getValue().doubleValue());
+        assertEquals(-1.0, i2.getValue().doubleValue());
     }
 }
