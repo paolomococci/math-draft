@@ -64,7 +64,7 @@ public class Imag
     }
 
     public void setScale(int scale) {
-        this.value = this.value.setScale(scale, RoundingMode.HALF_EVEN);
+        this.value = this.value.setScale(scale, RoundingMode.DOWN);
     }
 
     /**
@@ -105,6 +105,12 @@ public class Imag
     
     public Real squareOfImaginaryCoefficient() {
         return new Real(this.value.multiply(this.value, Real.HALF_EVEN32));
+    }
+
+    Imag negate() {
+        Imag temp = new Imag();
+        temp.value = this.value.multiply(I_SQUARE, Real.HALF_EVEN32);
+        return temp;
     }
     
     /*
