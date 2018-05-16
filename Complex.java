@@ -1,0 +1,114 @@
+/**
+ * 
+ * Copyright 2018 paolo mococci
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ * 	   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ */
+
+package local.example.draft.number;
+
+import java.io.Serializable;
+import java.math.BigDecimal;
+
+/**
+ *
+ * @author paolo mococci
+ */
+
+public class Complex 
+        implements Serializable {
+    
+    private static final long serialVersionUID = 296851441553469442L;
+    
+    private final Real real;
+    private final Imag imag;
+
+    public Complex() {
+        super();
+        this.real = new Real(BigDecimal.ZERO);
+        this.imag = new Imag(BigDecimal.ZERO);
+    }
+
+    Complex(double real, double imag) {
+        super();
+        this.real = new Real(BigDecimal.valueOf(real));
+        this.imag = new Imag(BigDecimal.valueOf(imag));
+    }
+
+    Complex(Real real, Imag imag) {
+        super();
+        this.real = real;
+        this.imag = imag;
+    }
+
+    Complex(Complex z) {
+        super();
+        this.real = z.getReal();
+        this.imag = z.getImag();
+    }
+
+    public Real getReal() {
+        return this.real;
+    }
+
+    public Imag getImag() {
+        return this.imag;
+    }
+
+    void setRealValue(double value) {
+        this.real.setValue(BigDecimal.valueOf(value));
+    }
+
+    void setImagValue(double value) {
+        this.imag.setValue(BigDecimal.valueOf(value));
+    }
+
+    void sum(Complex z1, Complex z2) {
+        this.real.sum(z1.getReal(), z2.getReal());
+        this.imag.sum(z1.getImag(), z2.getImag());
+    }
+
+    void sub(Complex z1, Complex z2) {
+        this.real.sub(z1.getReal(), z2.getReal());
+        this.imag.sub(z1.getImag(), z2.getImag());
+    }
+
+    void product(Complex z1, Complex z2) {
+        Real temp1;
+        Imag temp2;
+        temp1 = new Real();
+        temp2 = new Imag();
+        this.real.product(z1.getReal(), z2.getReal());
+        temp1.product(z1.getImag(), z2.getImag());
+        this.real.sum(this.real, temp1);
+        this.imag.product(z2.getImag(), z1.getReal());
+        temp2.product(z1.getImag(), z2.getReal());
+        this.imag.sum(this.imag, temp2);
+    }
+
+    Complex conjugate() {
+        return new Complex(this.real, this.imag.negate());
+    }
+
+    void quotient(Complex z1, Complex z2) {
+        Complex temp;
+        temp = new Complex(z2.conjugate());
+        Real divisor;
+        divisor = new Real();
+        divisor.sum(z2.getReal().square(), z2.getImag().squareOfImaginaryCoefficient());
+        this.product(z1, temp);
+        this.real.quotient(this.real, divisor);
+        this.imag.quotient(this.imag, divisor);
+    }
+}
