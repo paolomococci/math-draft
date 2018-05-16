@@ -73,7 +73,7 @@ public class Real
     }
 
     public void setScale(int scale) {
-        this.value = this.value.setScale(scale, RoundingMode.HALF_EVEN);
+        this.value = this.value.setScale(scale, RoundingMode.DOWN);
     }
 
     /**
