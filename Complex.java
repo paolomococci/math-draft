@@ -101,12 +101,18 @@ public class Complex
         return new Complex(this.real, this.imag.negate());
     }
 
+    Real sumOfSquares() {
+        Real temp;
+        temp = this.real.square();
+        temp.sum(temp, this.imag.squareOfImaginaryCoefficient());
+        return temp;
+    }
+
     void quotient(Complex z1, Complex z2) {
         Complex temp;
         temp = new Complex(z2.conjugate());
         Real divisor;
-        divisor = new Real();
-        divisor.sum(z2.getReal().square(), z2.getImag().squareOfImaginaryCoefficient());
+        divisor = temp.sumOfSquares();
         this.product(z1, temp);
         this.real.quotient(this.real, divisor);
         this.imag.quotient(this.imag, divisor);
