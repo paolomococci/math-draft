@@ -163,4 +163,13 @@ public class ComplexTests {
         assertTrue(result.getImag().getValue()
                 .compareTo(new BigDecimal("-0.8461538461538461538461538461538")) == 0);
     }
+    
+    @Test
+    public void testSumOfSquares() 
+            throws Exception {
+        Complex z = new Complex(2.0, -3.0);
+        Real r;
+        r = z.sumOfSquares();
+        assertEquals(13.0, r.getValue().doubleValue());
+    }
 }
