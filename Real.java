@@ -35,6 +35,7 @@ public class Real
     
     public static final MathContext HALF_EVEN32 = new MathContext(32, RoundingMode.HALF_EVEN);
     public static final MathContext CEILING32 = new MathContext(32, RoundingMode.CEILING);
+    public static final BigDecimal PI_GREEK32 = new BigDecimal("3.14159265358979323846264338327950");
     private static final BigDecimal EPSILON32 = new BigDecimal("0.00000000000000000000000000000001");
     
     private BigDecimal value;
