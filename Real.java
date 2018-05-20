@@ -113,6 +113,10 @@ public class Real
         this.value = this.value.multiply(Imag.I_SQUARE, CEILING32);
     }
     
+    public boolean itCannotBeDivisor() {
+        return true;
+    }
+    
     public void quotient(Real r1, Real r2) {
         this.value = r1.getValue().divide(r2.getValue(), CEILING32);
     }
@@ -121,7 +125,7 @@ public class Real
         this.product(r, r);
     }
 
-    void setSquareRoot() {
+    public void setSquareRoot() {
         /*
          * Implements the Newton method
          */
