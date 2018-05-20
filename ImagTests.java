@@ -160,7 +160,7 @@ public class ImagTests {
     }
     
     @Test
-    public void testZeroQuotient() 
+    public void testDivideByZero() 
             throws Exception {
         Imag i = new Imag();
         Real r = new Real();
