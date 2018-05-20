@@ -120,6 +120,25 @@ public class Real
     public void setSquare(Real r) {
         this.product(r, r);
     }
+
+    void setSquareRoot() {
+        /*
+         * Implements the Newton method
+         */
+        boolean loop = true;
+        Real temp = new Real(this.getValue());
+        while (loop) {
+            Real q = new Real();
+            q.quotient(this, temp);
+            temp.sum(q, temp);
+            temp.quotient(temp, (new Real(2.0D)));
+            loop = Math.abs(
+                    temp.getValue().doubleValue() - 
+                            this.getValue().doubleValue()/temp.getValue().doubleValue()
+            ) > EPSILON32.doubleValue() * temp.getValue().doubleValue();
+        }
+        this.setValue(temp.getValue());
+    }
     
     /**
      *
