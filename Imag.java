@@ -47,6 +47,11 @@ public class Imag
         this.value = value;
     }
 
+    public Imag(double value) {
+        super();
+        this.value = BigDecimal.valueOf(value);
+    }
+
     public BigDecimal getValue() {
         return value;
     }
@@ -87,6 +92,18 @@ public class Imag
 
     public void product(Imag i, Real r) {
         this.value = i.getValue().multiply(r.getValue(), Real.HALF_EVEN32);
+    }
+    
+    public boolean itCannotBeDivisor() {
+        try {
+            double temp = 1.0/this.getValue().doubleValue();
+            if (Double.isInfinite(temp) || Double.isNaN(temp)) {
+                return true;
+            }
+        } catch (ArithmeticException ae) {
+            ae.getMessage();
+        }
+        return false;
     }
 
     public void quotient(Imag i, Real r) {
