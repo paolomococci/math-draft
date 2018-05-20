@@ -151,6 +151,18 @@ public class RealTests {
     }
     
     @Test
+    public void testDivideByZero() 
+            throws Exception {
+        Real r1 = new Real();
+        Real r2 = new Real();
+        Real result = new Real();
+        r1.setValue(1.0);
+        r2.setValue(0.0);
+        result.quotient(r1, r2);
+        assertEquals(null, result.getValue());
+    }
+    
+    @Test
     public void testQuotientScaled() 
             throws Exception {
         Real r1 = new Real();
