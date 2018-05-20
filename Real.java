@@ -35,6 +35,7 @@ public class Real
     
     public static final MathContext HALF_EVEN32 = new MathContext(32, RoundingMode.HALF_EVEN);
     public static final MathContext CEILING32 = new MathContext(32, RoundingMode.CEILING);
+    private static final BigDecimal EPSILON32 = new BigDecimal("0.00000000000000000000000000000001");
     
     private BigDecimal value;
     
@@ -50,6 +51,11 @@ public class Real
     public Real(BigDecimal value) {
         super();
         this.value = value;
+    }
+
+    public Real(double value) {
+        super();
+        this.value = BigDecimal.valueOf(value);
     }
     
     /*
