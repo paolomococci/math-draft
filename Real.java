@@ -114,7 +114,15 @@ public class Real
     }
     
     public boolean itCannotBeDivisor() {
-        return true;
+        try {
+            double temp = 1.0/this.getValue().doubleValue();
+            if (Double.isInfinite(temp) || Double.isNaN(temp)) {
+                return true;
+            }
+        } catch (ArithmeticException ae) {
+            ae.getMessage();
+        }
+        return false;
     }
     
     public void quotient(Real r1, Real r2) {
