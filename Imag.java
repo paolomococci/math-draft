@@ -39,7 +39,7 @@ public class Imag
 
     public Imag() {
         super();
-        this.value = BigDecimal.valueOf(0.0D);
+        this.value = BigDecimal.ZERO;
     }
 
     public Imag(BigDecimal value) {
