@@ -45,7 +45,7 @@ public class Real
 
     public Real() {
         super();
-        this.value = BigDecimal.valueOf(0.0D);
+        this.value = BigDecimal.ZERO;
     }
 
     public Real(BigDecimal value) {
