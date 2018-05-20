@@ -160,6 +160,18 @@ public class ImagTests {
     }
     
     @Test
+    public void testZeroQuotient() 
+            throws Exception {
+        Imag i = new Imag();
+        Real r = new Real();
+        Imag result = new Imag();
+        i.setValue(1.0);
+        r.setValue(0.0);
+        result.quotient(i, r);
+        assertEquals(null, result.getValue());
+    }
+    
+    @Test
     public void testQuotientScaled() 
             throws Exception {
         Imag i = new Imag();
