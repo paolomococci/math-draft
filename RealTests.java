@@ -134,7 +134,7 @@ public class RealTests {
     @Test
     public void testItCannotBeDivisor() 
             throws Exception {
-        Real r = new Real(0.0D);
+        Real r = new Real(1.0D);
         assertFalse(r.itCannotBeDivisor());
     }
     
