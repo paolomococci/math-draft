@@ -48,15 +48,6 @@ public class RealTests {
     }
     
     @Test
-    public void testConstructorWithValue() 
-            throws Exception {
-        Real r1 = new Real();
-        r1.setValue(3.0D);
-        Real r2 = new Real(r1.getValue());
-        assertEquals(3.0, r2.getValue().doubleValue());
-    }
-    
-    @Test
     public void testConstructorWithDoubleValue() 
             throws Exception {
         Real r = new Real(2.0D);
