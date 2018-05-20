@@ -26,6 +26,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 /**
  *
@@ -128,6 +129,13 @@ public class RealTests {
         r2.setValue(0.0000000000001);
         result.product(r1, r2);
         assertTrue(result.getValue().compareTo(new BigDecimal("0.00000000000009999999999999")) == 0);
+    }
+    
+    @Test
+    public void testItCannotBeDivisor() 
+            throws Exception {
+        Real r = new Real(0.0D);
+        assertFalse(r.itCannotBeDivisor());
     }
     
     @Test
