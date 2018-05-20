@@ -107,7 +107,12 @@ public class Imag
     }
 
     public void quotient(Imag i, Real r) {
-        this.value = i.getValue().divide(r.getValue(), Real.CEILING32);
+        if (r.itCannotBeDivisor()) {
+            this.value = null;
+            //throw new ArithmeticException("Must not be divisor!");
+        } else {
+            this.value = i.getValue().divide(r.getValue(), Real.CEILING32);
+        }
     }
     
     /**
