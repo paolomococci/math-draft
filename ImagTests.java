@@ -26,6 +26,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 /**
  *
@@ -43,12 +44,10 @@ public class ImagTests {
     }
     
     @Test
-    public void testConstructorWithValue() 
+    public void testConstructorWithDoubleValue() 
             throws Exception {
-        Imag i1 = new Imag();
-        i1.setValue(2.0D);
-        Imag i2 = new Imag(i1.getValue());
-        assertEquals(2.0, i2.getValue().doubleValue());
+        Imag i = new Imag(2.0D);
+        assertEquals(2.0, i.getValue().doubleValue());
     }
     
     /*
@@ -138,6 +137,13 @@ public class ImagTests {
         r.setValue(5.0);
         result.product(i, r);
         assertTrue(result.getValue().compareTo(new BigDecimal("15.0")) == 0);
+    }
+    
+    @Test
+    public void testItCannotBeDivisor() 
+            throws Exception {
+        Imag i = new Imag(1.0D);
+        assertFalse(i.itCannotBeDivisor());
     }
     
     @Test
