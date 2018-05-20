@@ -188,5 +188,13 @@ public class RealTests {
         r = r.square();
         assertEquals(0, r.getValue().compareTo(new BigDecimal("4.0")));
     }
+    
+    @Test
+    public void testSetSquareRoot() 
+            throws Exception {
+        Real r = new Real(BigDecimal.valueOf(144L));
+        r.setSquareRoot();
+        assertEquals(12.0, r.getValue().doubleValue());
+    }
 }
 
