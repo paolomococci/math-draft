@@ -109,12 +109,16 @@ public class Complex
     }
 
     void quotient(Complex z1, Complex z2) {
-        Complex temp;
-        temp = new Complex(z2.conjugate());
-        Real divisor;
-        divisor = temp.sumOfSquares();
-        this.product(z1, temp);
-        this.real.quotient(this.real, divisor);
-        this.imag.quotient(this.imag, divisor);
+        if (z2.getReal().itCannotBeDivisor() && z2.getImag().itCannotBeDivisor()) {
+            throw new ArithmeticException("It cannot be divisor!");
+        } else {
+            Complex temp;
+            temp = new Complex(z2.conjugate());
+            Real divisor;
+            divisor = temp.sumOfSquares();
+            this.product(z1, temp);
+            this.real.quotient(this.real, divisor);
+            this.imag.quotient(this.imag, divisor);
+        }
     }
 }
