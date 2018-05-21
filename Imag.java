@@ -108,8 +108,8 @@ public class Imag
 
     public void quotient(Imag i, Real r) {
         if (r.itCannotBeDivisor()) {
-            this.value = null;
-            //throw new ArithmeticException("Must not be divisor!");
+            //this.value = null;
+            throw new ArithmeticException("It cannot be divisor!");
         } else {
             this.value = i.getValue().divide(r.getValue(), Real.CEILING32);
         }
