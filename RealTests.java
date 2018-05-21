@@ -150,7 +150,7 @@ public class RealTests {
         assertEquals(0, result.getValue().compareTo(new BigDecimal("0.33333333333333333333333333333334")));
     }
     
-    @Test
+    /*@Test
     public void testDivideByZero() 
             throws Exception {
         Real r1 = new Real();
@@ -160,7 +160,7 @@ public class RealTests {
         r2.setValue(0.0);
         result.quotient(r1, r2);
         assertEquals(null, result.getValue());
-    }
+    }*/
     
     @Test
     public void testQuotientScaled() 
