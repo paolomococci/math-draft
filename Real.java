@@ -128,8 +128,8 @@ public class Real
     
     public void quotient(Real r1, Real r2) {
         if (r2.itCannotBeDivisor()) {
-            this.value = null;
-            //throw new ArithmeticException("Must not be divisor!");
+            //this.value = null;
+            throw new ArithmeticException("It cannot be divisor!");
         } else {
             this.value = r1.getValue().divide(r2.getValue(), CEILING32);
         }
