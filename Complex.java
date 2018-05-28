@@ -66,6 +66,15 @@ public class Complex
         return this.imag;
     }
 
+    public Real getRho() {
+        Real temp;
+        temp = this.getReal().square();
+        temp.sum(temp, this.getImag().squareOfImaginaryCoefficient());
+        temp.setSquareRoot();
+        temp.setScale(11);
+        return temp;
+    }
+
     void setRealValue(double value) {
         this.real.setValue(BigDecimal.valueOf(value));
     }
