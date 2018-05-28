@@ -143,19 +143,30 @@ public class Real
         /*
          * Implements the Newton method
          */
-        boolean loop = true;
-        Real temp = new Real(this.getValue());
-        while (loop) {
-            Real q = new Real();
-            q.quotient(this, temp);
-            temp.sum(q, temp);
-            temp.quotient(temp, (new Real(2.0D)));
-            loop = Math.abs(
-                    temp.getValue().doubleValue() - 
-                            this.getValue().doubleValue()/temp.getValue().doubleValue()
-            ) > EPSILON32.doubleValue() * temp.getValue().doubleValue();
+        if (this.itCannotBeDivisor() || this.getValue().compareTo(BigDecimal.ONE) == 0) {
+            
+        } else if (this.getValue().compareTo(BigDecimal.ZERO) < 0) {
+            throw new ArithmeticException("With this square root obtain an imaginary number.");
+        } else {
+            boolean loop = true;
+            double delta2;
+            delta2 = Double.POSITIVE_INFINITY;
+            Real temp = new Real(this.getValue());
+            while (loop) {
+                double delta1;
+                Real q = new Real();
+                q.quotient(this, temp);
+                temp.sum(q, temp);
+                temp.quotient(temp, (new Real(2.0D)));
+                delta1 = Math.abs(temp.getValue()
+                        .doubleValue() - this.getValue()
+                                .doubleValue()/temp.getValue().doubleValue());
+                loop = (delta1 > EPSILON32.doubleValue() * temp.getValue()
+                        .doubleValue()) && (delta1 < delta2);
+                delta2 = delta1;
+            }
+            this.setValue(temp.getValue());
         }
-        this.setValue(temp.getValue());
     }
     
     /**
