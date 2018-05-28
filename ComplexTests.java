@@ -172,4 +172,32 @@ public class ComplexTests {
         r = z.sumOfSquares();
         assertEquals(13.0, r.getValue().doubleValue());
     }
+    
+    @Test
+    public void testGetRho1() 
+            throws Exception {
+        Complex z = new Complex(3.0, -4.0);
+        Real r;
+        r = z.getRho();
+        assertEquals(5.0, r.getValue().doubleValue());
+    }
+    
+    @Test
+    public void testGetRho2()
+            throws Exception {
+        Complex z = new Complex(1.0, -1.0);
+        Real r;
+        r = z.getRho();
+        assertEquals(1.41421356237, r.getValue().doubleValue());
+    }
+    
+    @Test
+    public void testGetRho3()
+            throws Exception {
+        Complex z = new Complex(2.0, -3.0);
+        Real r;
+        r = z.getRho();
+        assertTrue(r.getValue()
+                .compareTo(new BigDecimal("3.60555127546")) == 0);
+    }
 }
