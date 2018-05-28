@@ -210,7 +210,23 @@ public class RealTests {
     }
     
     @Test
-    public void testSetSquareRoot() 
+    public void testSetSquareRoot1() 
+            throws Exception {
+        Real r = new Real(BigDecimal.valueOf(0.0));
+        r.setSquareRoot();
+        assertEquals(0.0, r.getValue().doubleValue());
+    }
+    
+    @Test
+    public void testSetSquareRoot2() 
+            throws Exception {
+        Real r = new Real(BigDecimal.valueOf(1.0));
+        r.setSquareRoot();
+        assertEquals(1.0, r.getValue().doubleValue());
+    }
+    
+    @Test
+    public void testSetSquareRoot3() 
             throws Exception {
         Real r = new Real(BigDecimal.valueOf(144L));
         r.setSquareRoot();
