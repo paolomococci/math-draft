@@ -232,5 +232,77 @@ public class RealTests {
         r.setSquareRoot();
         assertEquals(12.0, r.getValue().doubleValue());
     }
+    
+    @Test
+    public void testThetaService1() 
+            throws Exception {
+        Real r = new Real();
+        r.thetaService((new Real(1.0)), (new Imag(1.0)));
+        assertEquals(0.7853981633974483, r.getValue().doubleValue());
+    }
+    
+    @Test
+    public void testThetaService2() 
+            throws Exception {
+        Real r = new Real();
+        r.thetaService((new Real(1.0)), (new Imag(0.0)));
+        assertEquals(0.0, r.getValue().doubleValue());
+    }
+    
+    @Test
+    public void testThetaService3() 
+            throws Exception {
+        Real r = new Real();
+        r.thetaService((new Real(1.0)), (new Imag(-1.0)));
+        assertEquals(-0.7853981633974483, r.getValue().doubleValue());
+    }
+    
+    @Test
+    public void testThetaService4() 
+            throws Exception {
+        Real r = new Real();
+        r.thetaService((new Real(0.0)), (new Imag(1.0)));
+        assertEquals(0.0, r.getValue().doubleValue());
+    }
+    
+    @Test
+    public void testThetaService5() 
+            throws Exception {
+        Real r = new Real();
+        r.thetaService((new Real(0.0)), (new Imag(0.0)));
+        assertEquals(0.0, r.getValue().doubleValue());
+    }
+    
+    @Test
+    public void testThetaService6() 
+            throws Exception {
+        Real r = new Real();
+        r.thetaService((new Real(0.0)), (new Imag(-1.0)));
+        assertEquals(0.0, r.getValue().doubleValue());
+    }
+    
+    @Test
+    public void testThetaService7() 
+            throws Exception {
+        Real r = new Real();
+        r.thetaService((new Real(-1.0)), (new Imag(1.0)));
+        assertEquals(-0.7853981633974483, r.getValue().doubleValue());
+    }
+    
+    @Test
+    public void testThetaService8() 
+            throws Exception {
+        Real r = new Real();
+        r.thetaService((new Real(-1.0)), (new Imag(0.0)));
+        assertEquals(0.0, r.getValue().doubleValue());
+    }
+    
+    @Test
+    public void testThetaService9() 
+            throws Exception {
+        Real r = new Real();
+        r.thetaService((new Real(-1.0)), (new Imag(-1.0)));
+        assertEquals(0.7853981633974483, r.getValue().doubleValue());
+    }
 }
 
