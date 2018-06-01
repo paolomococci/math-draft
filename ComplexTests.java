@@ -200,4 +200,58 @@ public class ComplexTests {
         assertTrue(r.getValue()
                 .compareTo(new BigDecimal("3.60555127546")) == 0);
     }
+    
+    @Test
+    public void testGetTheta1() 
+            throws Exception {
+        Complex z = new Complex(0.0, 1.0);
+        Real r;
+        r = z.getTheta();
+        assertEquals(1.5707963267948966, r.getValue().doubleValue());
+    }
+    
+    @Test
+    public void testGetTheta2() 
+            throws Exception {
+        Complex z = new Complex(0.0, -1.0);
+        Real r;
+        r = z.getTheta();
+        assertEquals(-1.5707963267948966, r.getValue().doubleValue());
+    }
+    
+    @Test
+    public void testGetTheta3() 
+            throws Exception {
+        Complex z = new Complex(1.0, 1.0);
+        Real r;
+        r = z.getTheta();
+        assertEquals(0.7853981633974483, r.getValue().doubleValue());
+    }
+    
+    @Test
+    public void testGetTheta4() 
+            throws Exception {
+        Complex z = new Complex(-1.0, 0.0);
+        Real r;
+        r = z.getTheta();
+        assertEquals(3.141592653589793, r.getValue().doubleValue());
+    }
+    
+    @Test
+    public void testGetTheta5() 
+            throws Exception {
+        Complex z = new Complex(-1.0, 1.0);
+        Real r;
+        r = z.getTheta();
+        assertEquals(2.356194490192345, r.getValue().doubleValue());
+    }
+    
+    @Test
+    public void testGetTheta6() 
+            throws Exception {
+        Complex z = new Complex(-1.0, -1.0);
+        Real r;
+        r = z.getTheta();
+        assertEquals(-2.356194490192345, r.getValue().doubleValue());
+    }
 }
