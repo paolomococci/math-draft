@@ -168,6 +168,17 @@ public class Real
             this.setValue(temp.getValue());
         }
     }
+
+    protected void thetaService(Real r, Imag i) {
+        if (r.itCannotBeDivisor()) {
+            this.setValue(BigDecimal.ZERO);
+        } else {
+            Real temp = new Real();
+            i.quotient(i, r);
+            temp.setValue(Math.atan(i.getValue().doubleValue()));
+            this.value = temp.getValue();
+        }
+    }
     
     /**
      *
