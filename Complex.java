@@ -75,6 +75,39 @@ public class Complex
         return temp;
     }
 
+    public Real getTheta() {
+        if (this.getReal().itCannotBeDivisor()) {
+            if (this.getImag().itCannotBeDivisor()) {
+                throw new ArithmeticException("Theta not defined.");
+            } else if (this.getImag().getValue().compareTo(BigDecimal.ZERO) > 0) {
+                Real temp = new Real(Real.PI_GREEK32);
+                temp.quotient(temp, (new Real(2.0)));
+                return temp;
+            } else {
+                Real temp = new Real(Real.PI_GREEK32);
+                temp.quotient(temp, (new Real(2.0)));
+                temp.setValue(temp.getValue().negate());
+                return temp;
+            }
+        } else if (this.getReal().getValue().compareTo(BigDecimal.ZERO) > 0) {
+            Real temp = new Real();
+            temp.thetaService(real, imag);
+            return temp;
+        } else {
+            if (this.getImag().getValue().compareTo(BigDecimal.ZERO) >= 0) {
+                Real temp = new Real();
+                temp.thetaService(real, imag);
+                temp.sum(temp, (new Real(Real.PI_GREEK32)));
+                return temp;
+            } else {
+                Real temp = new Real();
+                temp.thetaService(real, imag);
+                temp.sub(temp, (new Real(Real.PI_GREEK32)));
+                return temp;
+            }
+        }
+    }
+
     void setRealValue(double value) {
         this.real.setValue(BigDecimal.valueOf(value));
     }
