@@ -40,19 +40,19 @@ public class Complex
         this.imag = new Imag(BigDecimal.ZERO);
     }
 
-    Complex(double real, double imag) {
+    public Complex(double real, double imag) {
         super();
         this.real = new Real(BigDecimal.valueOf(real));
         this.imag = new Imag(BigDecimal.valueOf(imag));
     }
 
-    Complex(Real real, Imag imag) {
+    public Complex(Real real, Imag imag) {
         super();
         this.real = real;
         this.imag = imag;
     }
 
-    Complex(Complex z) {
+    public Complex(Complex z) {
         super();
         this.real = z.getReal();
         this.imag = z.getImag();
