@@ -129,7 +129,7 @@ public class Imag
         return new Real(this.value.multiply(this.value, Real.HALF_EVEN32));
     }
 
-    Imag negate() {
+    public Imag negate() {
         Imag temp = new Imag();
         temp.value = this.value.multiply(I_SQUARE, Real.HALF_EVEN32);
         return temp;
