@@ -186,7 +186,7 @@ public class Real
      * Do not must be call getSquare(),
      * because this class implement java.io.Serializable interface
      */
-    public BigDecimal square() {
+    public Real square() {
         return new Real(this.value.multiply(this.value, HALF_EVEN32));
     }
     
@@ -200,4 +200,3 @@ public class Real
     }
     
 }
-
