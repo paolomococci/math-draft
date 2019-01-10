@@ -108,25 +108,25 @@ public class Complex
         }
     }
 
-    void setRealValue(double value) {
+    public void setRealValue(double value) {
         this.real.setValue(BigDecimal.valueOf(value));
     }
 
-    void setImagValue(double value) {
+    public void setImagValue(double value) {
         this.imag.setValue(BigDecimal.valueOf(value));
     }
 
-    void sum(Complex z1, Complex z2) {
+    public void sum(Complex z1, Complex z2) {
         this.real.sum(z1.getReal(), z2.getReal());
         this.imag.sum(z1.getImag(), z2.getImag());
     }
 
-    void sub(Complex z1, Complex z2) {
+    public void sub(Complex z1, Complex z2) {
         this.real.sub(z1.getReal(), z2.getReal());
         this.imag.sub(z1.getImag(), z2.getImag());
     }
 
-    void product(Complex z1, Complex z2) {
+    public void product(Complex z1, Complex z2) {
         Real temp1;
         Imag temp2;
         temp1 = new Real();
@@ -139,18 +139,18 @@ public class Complex
         this.imag.sum(this.imag, temp2);
     }
 
-    Complex conjugate() {
+    public Complex conjugate() {
         return new Complex(this.real, this.imag.negate());
     }
 
-    Real sumOfSquares() {
+    public Real sumOfSquares() {
         Real temp;
         temp = this.real.square();
         temp.sum(temp, this.imag.squareOfImaginaryCoefficient());
         return temp;
     }
 
-    void quotient(Complex z1, Complex z2) {
+    public void quotient(Complex z1, Complex z2) {
         if (z2.getReal().itCannotBeDivisor() && z2.getImag().itCannotBeDivisor()) {
             throw new ArithmeticException("It cannot be divisor!");
         } else {
