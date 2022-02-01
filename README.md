@@ -1,3 +1,3 @@
 # complex-tdd-draft
 
-This is test-driven development for a complex number draft.
+This repository houses some drafts of mathematical functions developed as REST resources.
