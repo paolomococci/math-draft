@@ -1,5 +1,7 @@
 # template
 
+REST application template developed thanks to Quarkus.
+
 ## scaffolding
 
 ```shell
