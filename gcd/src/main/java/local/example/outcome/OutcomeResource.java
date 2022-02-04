@@ -1,16 +1,26 @@
 package local.example.outcome;
 
-import javax.ws.rs.GET;
+import io.quarkus.vertx.web.Route;
+
 import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-@Path("/outcome")
+@Path(value = "/outcome")
 public class OutcomeResource {
 
-    @GET
-    @Produces(MediaType.TEXT_PLAIN)
+    @Route(
+            methods = Route.HttpMethod.GET,
+            produces = MediaType.TEXT_PLAIN
+    )
     public String outcome() {
         return "-- outcome feedback --";
+    }
+
+    @Route(
+            path = "/gcd",
+            methods = Route.HttpMethod.POST
+    )
+    public Gcd gcd() {
+        return new Gcd();
     }
 }
