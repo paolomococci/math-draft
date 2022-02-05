@@ -2,6 +2,7 @@ package local.example.outcome;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import java.util.Collections;
 import java.util.LinkedHashMap;
@@ -10,15 +11,16 @@ import java.util.Set;
 @Path(value = "/outcome")
 public class OutcomeResource {
 
-    private final Set<Gcd> gcdSet = Collections.newSetFromMap(
+    private final Set<Gcd> gcds = Collections.newSetFromMap(
             Collections.synchronizedMap(
                     new LinkedHashMap<>()
             )
     );
 
     @GET
-    public String feedback() {
-        return "-- outcome feedback --";
+    @Produces(value = MediaType.APPLICATION_JSON)
+    public Response read() {
+        return Response.ok(gcds).build();
     }
 
     @POST
@@ -26,7 +28,7 @@ public class OutcomeResource {
     @Consumes(value = MediaType.APPLICATION_JSON)
     public Set<Gcd> compute(Gcd gcd) {
         gcd.setGcd();
-        gcdSet.add(gcd);
-        return gcdSet;
+        gcds.add(gcd);
+        return gcds;
     }
 }
