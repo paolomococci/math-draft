@@ -10,7 +10,7 @@ import static io.restassured.RestAssured.given;
 public class OutcomeResourceTest {
 
     @Test
-    public void testHelloEndpoint() {
+    public void readEndpointTest() {
         given()
           .when().get("/outcome")
           .then()
