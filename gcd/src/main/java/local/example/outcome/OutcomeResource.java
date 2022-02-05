@@ -10,7 +10,7 @@ import java.util.Set;
 @Path(value = "/outcome")
 public class OutcomeResource {
 
-    private Set<Gcd> gcdSet = Collections.newSetFromMap(
+    private final Set<Gcd> gcdSet = Collections.newSetFromMap(
             Collections.synchronizedMap(
                     new LinkedHashMap<>()
             )
