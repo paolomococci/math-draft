@@ -10,8 +10,8 @@ public class Gcd {
     }
 
     public Gcd(int a, int b) {
-        this.a = a;
-        this.b = b;
+        this.a = Math.abs(a);
+        this.b = Math.abs(b);
     }
 
     public void setGcd() {
