@@ -1,5 +1,8 @@
 package local.example.outcome;
 
+import io.smallrye.mutiny.Uni;
+import local.example.outcome.model.Sieve;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -9,8 +12,8 @@ import javax.ws.rs.core.MediaType;
 public class OutcomeResource {
 
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String feedback() {
-        return "-- sieve feedback --";
+    @Produces(MediaType.APPLICATION_JSON)
+    public Uni<Sieve> read() {
+        return null;
     }
 }
