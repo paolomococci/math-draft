@@ -17,7 +17,7 @@ public class OutcomeResource {
     );
 
     @GET
-    public String outcome() {
+    public String feedback() {
         return "-- outcome feedback --";
     }
 
