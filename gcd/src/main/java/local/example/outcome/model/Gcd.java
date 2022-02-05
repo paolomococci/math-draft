@@ -1,4 +1,4 @@
-package local.example.outcome;
+package local.example.outcome.model;
 
 public class Gcd {
 
