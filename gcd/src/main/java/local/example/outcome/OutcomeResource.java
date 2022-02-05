@@ -22,6 +22,9 @@ public class OutcomeResource {
     @GET
     @Produces(value = MediaType.APPLICATION_JSON)
     public Response read() {
+        if (gcds.isEmpty()) {
+            return Response.ok().build();
+        }
         return Response.ok(gcds).build();
     }
 
