@@ -21,6 +21,9 @@ public class OutcomeResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response read() {
+        if (lcms.isEmpty()) {
+            return Response.ok().build();
+        }
         return Response.ok(this.lcms).build();
     }
 
