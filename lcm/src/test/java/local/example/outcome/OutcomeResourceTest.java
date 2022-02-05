@@ -10,11 +10,10 @@ import static org.hamcrest.CoreMatchers.is;
 public class OutcomeResourceTest {
 
     @Test
-    public void feedbackEndpointTest() {
+    public void readEndpointTest() {
         given()
           .when().get("/outcome")
           .then()
-             .statusCode(200)
-             .body(is("-- outcome feedback --"));
+             .statusCode(200);
     }
 }
