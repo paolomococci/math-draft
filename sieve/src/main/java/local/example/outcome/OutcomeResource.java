@@ -31,7 +31,7 @@ public class OutcomeResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Set<Sieve> compute(Sieve sieve) {
-        sieve.setPrimeNumberList();
+        sieve.setPrimes();
         sieves.add(sieve);
         return sieves;
     }
