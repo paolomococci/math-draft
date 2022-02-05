@@ -1,5 +1,7 @@
 package local.example.outcome;
 
+import local.example.outcome.model.Gcd;
+
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
