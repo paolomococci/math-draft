@@ -1,32 +1,32 @@
 package local.example.outcome;
 
-import io.quarkus.vertx.web.Route;
-
-import javax.inject.Inject;
-import javax.ws.rs.Path;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.Set;
 
 @Path(value = "/outcome")
 public class OutcomeResource {
 
-    @Inject
-    Gcd gcd;
+    private Set<Gcd> gcdSet = Collections.newSetFromMap(
+            Collections.synchronizedMap(
+                    new LinkedHashMap<>()
+            )
+    );
 
-    @Route(
-            methods = Route.HttpMethod.GET,
-            produces = MediaType.TEXT_PLAIN
-    )
+    @GET
     public String outcome() {
         return "-- outcome feedback --";
     }
 
-    @Route(
-            path = "/gcd",
-            methods = Route.HttpMethod.POST,
-            consumes = MediaType.APPLICATION_JSON,
-            produces = MediaType.APPLICATION_JSON
-    )
-    public Gcd gcd() {
-        return new Gcd();
+    @POST
+    @Produces(value = MediaType.APPLICATION_JSON)
+    @Consumes(value = MediaType.APPLICATION_JSON)
+    public Set<Gcd> compute(Gcd gcd) {
+        gcd.setGcd();
+        gcdSet.add(gcd);
+        return gcdSet;
     }
 }
