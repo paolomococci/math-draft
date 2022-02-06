@@ -38,6 +38,10 @@ curl -i -X POST -H "Content-Type: application/json" -d '{"a":20,"b":125}' http:/
 response:
 
 ```text
+HTTP/1.1 200 OK
+Content-Type: application/json
+content-length: 26
+
 [{"a":20,"b":125,"gcd":5}]
 ```
 
@@ -50,6 +54,10 @@ curl -i -X POST -H "Content-Type: application/json" -d '{"a":34,"b":4040}' http:
 response:
 
 ```text
+HTTP/1.1 200 OK
+Content-Type: application/json
+content-length: 52
+
 [{"a":20,"b":125,"gcd":5},{"a":34,"b":4040,"gcd":2}]
 ```
 
@@ -62,5 +70,9 @@ curl -i http://127.0.0.1:8080/outcome
 response:
 
 ```text
+HTTP/1.1 200 OK
+Content-Type: application/json
+content-length: 52
+
 [{"a":20,"b":125,"gcd":5},{"a":34,"b":4040,"gcd":2}]
 ```
