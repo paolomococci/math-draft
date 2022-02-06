@@ -1,4 +1,4 @@
-# gcd (GreatestCommonDivisor)
+# gcd (Greatest Common Divisor)
 
 REST application template developed thanks to Quarkus.
 
@@ -12,4 +12,55 @@ mvn io.quarkus.platform:quarkus-maven-plugin:2.7.0.Final:create -DprojectGroupId
 
 ```shell
 ./gradlew quarkusDev
+```
+
+## examples of use with curl
+
+we start with the GET method when the computation list is still empty
+
+```shell
+curl -i http://127.0.0.1:8080/outcome
+```
+
+response:
+
+```text
+HTTP/1.1 200 OK
+content-length: 0
+```
+
+let's continue with the first request made with the POST method
+
+```shell
+curl -i -X POST -H "Content-Type: application/json" -d '{"a":20,"b":125}' http://127.0.0.1:8080/outcome
+```
+
+response:
+
+```text
+[{"a":20,"b":125,"gcd":5}]
+```
+
+again, a request made with the POST method
+
+```shell
+curl -i -X POST -H "Content-Type: application/json" -d '{"a":34,"b":4040}' http://127.0.0.1:8080/outcome
+```
+
+response:
+
+```text
+[{"a":20,"b":125,"gcd":5},{"a":34,"b":4040,"gcd":2}]
+```
+
+one more request with the GET method, now the computation list contains two objects
+
+```shell
+curl -i http://127.0.0.1:8080/outcome
+```
+
+response:
+
+```text
+[{"a":20,"b":125,"gcd":5},{"a":34,"b":4040,"gcd":2}]
 ```
