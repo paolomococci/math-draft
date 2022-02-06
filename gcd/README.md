@@ -14,7 +14,7 @@ mvn io.quarkus.platform:quarkus-maven-plugin:2.7.0.Final:create -DprojectGroupId
 ./gradlew quarkusDev
 ```
 
-## examples of use with curl
+## examples of using this API with curl
 
 we start with the GET method when the computation list is still empty
 
