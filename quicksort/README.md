@@ -1,0 +1,15 @@
+# sample
+
+REST application which implements the quicksort algorithm, developed thanks to Quarkus.
+
+## scaffolding
+
+```shell
+mvn io.quarkus.platform:quarkus-maven-plugin:2.7.0.Final:create -DprojectGroupId=local.example -DprojectArtifactId=quicksort -DclassName="local.example.outcome.OutcomeResource" -Dpath="/outcome" -Dextensions="resteasy-jackson"
+```
+
+## run application in development mode
+
+```shell
+./mvnw quarkus:dev
+```
