@@ -21,9 +21,9 @@ public class OutcomeResourceTest {
     }
 
     @Test
-    public void getSortedEndpointTest() {
+    public void readEndpointTest() {
         given()
-                .when().get("/sorted")
+                .when().get("/outcome/sorted")
                 .then()
                 .statusCode(200);
     }
