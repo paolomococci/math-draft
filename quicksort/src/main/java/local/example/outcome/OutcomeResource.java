@@ -27,6 +27,8 @@ public class OutcomeResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response compute() {
-        return Response.ok().status(HttpResponseStatus.NOT_IMPLEMENTED.code()).build();
+        return Response.ok().status(
+                HttpResponseStatus.NOT_IMPLEMENTED.code()
+        ).build();
     }
 }
