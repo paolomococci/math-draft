@@ -1,8 +1,8 @@
 package local.example.outcome;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import io.netty.handler.codec.http.HttpResponseStatus;
+
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -20,5 +20,13 @@ public class OutcomeResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response read() {
         return Response.ok().build();
+    }
+
+    @POST
+    @Path("/sorted")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response compute() {
+        return Response.ok().status(HttpResponseStatus.NOT_IMPLEMENTED.code()).build();
     }
 }
