@@ -15,8 +15,6 @@ import static org.hamcrest.CoreMatchers.is;
 @QuarkusTest
 public class OutcomeResourceTest {
 
-    private final String json = "{\"sample\":\"example\"}";
-
     @Test
     public void feedbackEndpointTest() {
         given()
@@ -36,6 +34,7 @@ public class OutcomeResourceTest {
 
     @Test
     public void computeEndpointTest() {
+        String json = "{\"sample\":\"example\"}";
         Response response = given()
                 .contentType(ContentType.JSON)
                 .body(json)
