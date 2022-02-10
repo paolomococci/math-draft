@@ -1,13 +1,23 @@
 package local.example.outcome;
 
 import io.netty.handler.codec.http.HttpResponseStatus;
+import local.example.outcome.model.Item;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.Set;
 
 @Path("/outcome")
 public class OutcomeResource {
+
+    private final Set<Item> items = Collections.newSetFromMap(
+            Collections.synchronizedMap(
+                    new LinkedHashMap<>()
+            )
+    );
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
