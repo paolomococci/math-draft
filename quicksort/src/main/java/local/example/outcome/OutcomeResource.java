@@ -29,7 +29,10 @@ public class OutcomeResource {
     @Path("/collections")
     @Produces(MediaType.APPLICATION_JSON)
     public Response read() {
-        return Response.ok().build();
+        if (items.isEmpty()) {
+            return Response.ok().build();
+        }
+        return Response.ok(items).build();
     }
 
     @POST
