@@ -6,7 +6,7 @@ public class Quicksort {
 
     }
 
-    private static long partition(long keys[], int begin, int ending) {
+    private static int partition(long keys[], int begin, int ending) {
 
         long pivot = keys[ending];
         int index = begin-1;
@@ -20,6 +20,10 @@ public class Quicksort {
             }
         }
 
-        return 0L;
+        long swap = keys[index+1];
+        keys[index+1] = keys[ending];
+        keys[ending] = swap;
+
+        return index+1;
     }
 }
