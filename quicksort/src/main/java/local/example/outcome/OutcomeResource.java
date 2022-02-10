@@ -39,9 +39,7 @@ public class OutcomeResource {
     @Path("/collections")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response compute() {
-        return Response.ok().status(
-                HttpResponseStatus.NOT_IMPLEMENTED.code()
-        ).build();
+    public Set<Item> compute() {
+        return null;
     }
 }
