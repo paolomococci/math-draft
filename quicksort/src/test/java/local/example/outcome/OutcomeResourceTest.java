@@ -27,7 +27,7 @@ public class OutcomeResourceTest {
     @Test
     public void readEndpointTest() {
         given()
-                .when().get("/outcome/collections")
+                .when().get("/outcome/items")
                 .then()
                 .statusCode(200);
     }
@@ -38,7 +38,7 @@ public class OutcomeResourceTest {
         Response response = given()
                 .contentType(ContentType.JSON)
                 .body(json)
-                .when().post("/outcome/collections")
+                .when().post("/outcome/sorting")
                 .then().extract().response();
         Assertions.assertEquals(
                 HttpResponseStatus.NOT_IMPLEMENTED.code(),
