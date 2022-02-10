@@ -26,7 +26,7 @@ public class OutcomeResource {
     }
 
     @GET
-    @Path("/collections")
+    @Path("/items")
     @Produces(MediaType.APPLICATION_JSON)
     public Response read() {
         if (items.isEmpty()) {
@@ -36,7 +36,7 @@ public class OutcomeResource {
     }
 
     @POST
-    @Path("/collections")
+    @Path("/sorting")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Set<Item> compute() {
