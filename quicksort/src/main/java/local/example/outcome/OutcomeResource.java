@@ -26,14 +26,14 @@ public class OutcomeResource {
     }
 
     @GET
-    @Path("/sorted")
+    @Path("/collections")
     @Produces(MediaType.APPLICATION_JSON)
     public Response read() {
         return Response.ok().build();
     }
 
     @POST
-    @Path("/sorted")
+    @Path("/collections")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response compute() {
