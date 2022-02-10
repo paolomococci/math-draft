@@ -1,6 +1,14 @@
 package local.example.outcome.algorithm;
 
+import local.example.outcome.model.Item;
+
+import java.util.List;
+
 public class Quicksort {
+
+    public static void quickSort(List<Item> items) {
+        // TODO
+    }
 
     public static void quickSort(long[] keys, int begin, int ending) {
         if (begin< ending) {
