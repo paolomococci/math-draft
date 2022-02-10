@@ -1,19 +1,17 @@
 package local.example.outcome;
 
-import io.netty.handler.codec.http.HttpResponseStatus;
+import local.example.outcome.algorithm.Quicksort;
 import local.example.outcome.model.Item;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.Collections;
-import java.util.LinkedHashMap;
-import java.util.Set;
+import java.util.*;
 
 @Path("/outcome")
 public class OutcomeResource {
 
-    private final Set<Item> items = Collections.newSetFromMap(
+    private final Set<List<Item>> itemsSet = Collections.newSetFromMap(
             Collections.synchronizedMap(
                     new LinkedHashMap<>()
             )
@@ -29,17 +27,19 @@ public class OutcomeResource {
     @Path("/items")
     @Produces(MediaType.APPLICATION_JSON)
     public Response read() {
-        if (items.isEmpty()) {
+        if (itemsSet.isEmpty()) {
             return Response.ok().build();
         }
-        return Response.ok(items).build();
+        return Response.ok(itemsSet).build();
     }
 
     @POST
     @Path("/sorting")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Set<Item> compute() {
-        return null;
+    public Set<List<Item>> sorting(List<Item> items) {
+        Quicksort.quickSort(items);
+        itemsSet.add(items);
+        return itemsSet;
     }
 }
