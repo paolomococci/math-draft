@@ -34,7 +34,7 @@ public class OutcomeResourceTest {
 
     @Test
     public void computeEndpointTest() {
-        String json = "{\"sample\":\"example\"}";
+        String json = "{\"key\":1,\"name\":\"example\"}";
         Response response = given()
                 .contentType(ContentType.JSON)
                 .body(json)
