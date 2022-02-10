@@ -2,7 +2,7 @@ package local.example.outcome.algorithm;
 
 public class Quicksort {
 
-    public static void quickSort(long keys[], int begin, int ending) {
+    public static void quickSort(long[] keys, int begin, int ending) {
         if (begin< ending) {
             int partitioningIndex = partition(keys, begin, ending);
             quickSort(keys, begin, partitioningIndex-1);
@@ -10,7 +10,7 @@ public class Quicksort {
         }
     }
 
-    private static int partition(long keys[], int begin, int ending) {
+    private static int partition(long[] keys, int begin, int ending) {
 
         long pivot = keys[ending];
         int index = begin-1;
