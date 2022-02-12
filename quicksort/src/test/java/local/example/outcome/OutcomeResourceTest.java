@@ -43,8 +43,7 @@ public class OutcomeResourceTest {
                 {"key":5,"name":"five"},
                 {"key":6,"name":"six"},
                 {"key":7,"name":"seven"},
-                ]
-                }
+                ]}
                 """;
         Response response = given()
                 .contentType(ContentType.JSON)
