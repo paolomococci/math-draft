@@ -34,6 +34,7 @@ public class OutcomeResourceTest {
 
     @Test
     public void computeEndpointTest() {
+        /*
         String json = """
                 {"items":[
                 {"key":1,"name":"one"},
@@ -45,13 +46,15 @@ public class OutcomeResourceTest {
                 {"key":7,"name":"seven"},
                 ]}
                 """;
+                */
+        String json = "{\"items\":[{\"key\":1,\"name\":\"one\"},{\"key\":2,\"name\":\"two\"},{\"key\":3,\"name\":\"three\"}]}";
         Response response = given()
                 .contentType(ContentType.JSON)
                 .body(json)
                 .when().post("/outcome/sorting")
                 .then().extract().response();
         Assertions.assertEquals(
-                HttpResponseStatus.NOT_IMPLEMENTED.code(),
+                HttpResponseStatus.CREATED.code(),
                 response.statusCode()
         );
     }
