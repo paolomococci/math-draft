@@ -11,7 +11,7 @@ public class Quicksort {
     }
 
     public static void quickSort(long[] keys, int begin, int ending) {
-        if (begin< ending) {
+        if (begin < ending) {
             int partitioningIndex = partition(keys, begin, ending);
             quickSort(keys, begin, partitioningIndex-1);
             quickSort(keys,partitioningIndex+1, ending);
@@ -23,7 +23,7 @@ public class Quicksort {
         long pivot = keys[ending];
         int index = begin-1;
 
-        for (int i = 0; i < ending; i++) {
+        for (int i = begin; i < ending; i++) {
             if (keys[i] <= pivot) {
                 index++;
                 long swap = keys[index];
