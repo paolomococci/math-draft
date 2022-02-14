@@ -1,12 +1,10 @@
 package local.example.outcome.algorithm;
 
-import local.example.outcome.model.Item;
-
-import java.util.List;
+import local.example.outcome.model.Assortment;
 
 public class Quicksort {
 
-    public static void quickSort(List<Item> items) {
+    public static void quickSort(Assortment assortment) {
         // TODO
     }
 
