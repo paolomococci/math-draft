@@ -34,7 +34,7 @@ public class OutcomeResourceTest {
 
     @Test
     public void computeEndpointTest() {
-        String json = "{\"items\":[{\"key\":1,\"name\":\"one\"},{\"key\":2,\"name\":\"two\"},{\"key\":3,\"name\":\"three\"}]}";
+        String json = "{\"items\":[{\"key\":7,\"name\":\"seven\"},{\"key\":2,\"name\":\"two\"},{\"key\":4,\"name\":\"four\"},{\"key\":1,\"name\":\"one\"},{\"key\":5,\"name\":\"five\"},{\"key\":3,\"name\":\"three\"}]}";
         Response response = given()
                 .contentType(ContentType.JSON)
                 .body(json)
