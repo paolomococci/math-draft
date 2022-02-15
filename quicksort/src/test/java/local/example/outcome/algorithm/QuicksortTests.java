@@ -4,6 +4,7 @@ import io.quarkus.test.junit.QuarkusTest;
 
 import local.example.outcome.model.Assortment;
 import local.example.outcome.model.Item;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -37,6 +38,7 @@ public class QuicksortTests {
         tidy.add(three);
         tidy.add(four);
         tidy.add(five);
+        //Quicksort.quickSort(messy);
         // TODO
     }
 }
