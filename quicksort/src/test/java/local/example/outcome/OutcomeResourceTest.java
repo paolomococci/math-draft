@@ -5,6 +5,7 @@ import io.quarkus.test.junit.QuarkusTest;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -44,5 +45,15 @@ public class OutcomeResourceTest {
                 HttpResponseStatus.OK.code(),
                 response.statusCode()
         );
+    }
+
+    @Test
+    public void sortingEndpointTest() {
+        String json = "{\"items\":[{\"key\":7,\"name\":\"seven\"},{\"key\":2,\"name\":\"two\"},{\"key\":4,\"name\":\"four\"},{\"key\":1,\"name\":\"one\"},{\"key\":5,\"name\":\"five\"},{\"key\":3,\"name\":\"three\"}]}";
+        given()
+                .contentType(ContentType.JSON)
+                .body(json)
+                .when().post("/outcome/sorting")
+                .then().contentType(ContentType.JSON);
     }
 }
