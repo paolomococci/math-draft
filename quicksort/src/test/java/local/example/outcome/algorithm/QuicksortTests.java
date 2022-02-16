@@ -32,13 +32,12 @@ public class QuicksortTests {
         messy.add(three);
         messy.add(five);
         messy.add(four);
-        Assortment tidy = new Assortment();
-        tidy.add(one);
-        tidy.add(two);
-        tidy.add(three);
-        tidy.add(four);
-        tidy.add(five);
-        //Quicksort.quickSort(messy);
-        // TODO
+        messy.fromArray(Quicksort.quickSort(messy));
+        int[] tidy = {1, 2, 3, 4, 5};
+        int[] orderedArrayOfKeys = new int[messy.items.size()];
+        for (int i = 0; i < messy.items.size(); i++) {
+            orderedArrayOfKeys[i] = messy.items.get(i).key;
+        }
+        Assertions.assertArrayEquals(tidy, orderedArrayOfKeys);
     }
 }
