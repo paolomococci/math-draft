@@ -40,6 +40,6 @@ public class OutcomeResourceTest {
                 .contentType(ContentType.JSON)
                 .body(json)
                 .when().post("/outcome/sorting")
-                .then().contentType(ContentType.JSON);
+                .then().statusCode(HttpResponseStatus.OK.code());
     }
 }
