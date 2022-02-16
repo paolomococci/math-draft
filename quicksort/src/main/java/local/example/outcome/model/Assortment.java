@@ -1,6 +1,7 @@
 package local.example.outcome.model;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Assortment {
     
@@ -20,5 +21,16 @@ public class Assortment {
 
     public List<Item> toList() {
         return this.items.stream().toList();
+    }
+
+    public Item[] toArray() {
+        Item[] arrayOfItem = new Item[this.items.size()];
+        arrayOfItem = this.items.toArray(arrayOfItem);
+        return arrayOfItem;
+    }
+
+    public void fromArray(Item[] arrayOfItem) {
+        this.items.clear();
+        this.items.addAll(List.of(arrayOfItem));
     }
 }
