@@ -40,8 +40,7 @@ public class OutcomeResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Set<Assortment> sorting(Assortment assortment) {
-        // TODO
-        Quicksort.quickSort(assortment);
+        assortment.fromArray(Quicksort.quickSort(assortment));
         assortments.add(assortment);
         return assortments;
     }
