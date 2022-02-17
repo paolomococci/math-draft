@@ -38,6 +38,9 @@ public class OutcomeResourceTest {
                 .body(messy)
                 .when().post("/outcome/sorting")
                 .then().statusCode(HttpResponseStatus.OK.code())
-                .body("items.key[0][0]", equalTo(1));
+                .body("items.key[0][0]", equalTo(1))
+                .body("items.name[0][0]", equalTo("one"))
+                .body("items.key[0][5]", equalTo(7))
+                .body("items.name[0][5]", equalTo("seven"));
     }
 }
