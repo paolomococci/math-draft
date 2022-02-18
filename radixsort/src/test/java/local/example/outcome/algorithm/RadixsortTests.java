@@ -10,8 +10,8 @@ public class RadixsortTests {
 
     @Test
     public void intTest() {
-        int[] messy = {9, 7, 1, 0, 8, 2, 3, 4, 5, 6, 6};
-        int[] tidy = {0, 1, 2, 3, 4, 5, 6, 6, 7, 8, 9};
+        int[] messy = {457, 344, 320, 128, 652, 236, 543, 783, 239, 546, 215};
+        int[] tidy = {128, 215, 236, 239, 320, 344, 457, 543, 546, 652, 783};
         // TODO
         Assertions.assertArrayEquals(tidy, messy);
     }
