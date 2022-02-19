@@ -1,5 +1,7 @@
 package local.example.outcome.algorithm;
 
+import java.util.stream.IntStream;
+
 public class Radixsort {
 
     public static void radixsort(int[] messy) {
@@ -21,9 +23,7 @@ public class Radixsort {
             frequency[digit]++;
         }
 
-        for (int i = 1; i < radix; i++) {
-            frequency[i] += frequency[i-1];
-        }
+        IntStream.range(1, radix).forEach(i -> frequency[i] += frequency[i - 1]);
 
         for (int i = (messy.length-1); i >= 0; i--) {
             int digit = (messy[i]/position)%radix;
