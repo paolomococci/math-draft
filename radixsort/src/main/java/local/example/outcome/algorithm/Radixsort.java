@@ -16,8 +16,8 @@ public class Radixsort {
         int[] frequency = new int[radix];
         int[] tidy = new int[messy.length];
 
-        for (int i = 0; i < messy.length; i++) {
-            int digit = (messy[i]/position)%radix;
+        for (int j : messy) {
+            int digit = (j / position) % radix;
             frequency[digit]++;
         }
 
