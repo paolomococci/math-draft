@@ -11,6 +11,9 @@ import static org.hamcrest.CoreMatchers.is;
 @QuarkusTest
 public class OutcomeResourceTest {
 
+    private static final String
+            MESSY = "{\"items\":[{\"key\":7,\"name\":\"seven\"},{\"key\":2,\"name\":\"two\"},{\"key\":4,\"name\":\"four\"},{\"key\":1,\"name\":\"one\"},{\"key\":5,\"name\":\"five\"},{\"key\":3,\"name\":\"three\"}]}";
+
     @Test
     public void feedbackEndpointTest() {
         given()
@@ -26,5 +29,10 @@ public class OutcomeResourceTest {
                 .when().get("/outcome/items")
                 .then()
                 .statusCode(200);
+    }
+
+    @Test
+    public void sortingEndpointTest() {
+        // TODO
     }
 }
