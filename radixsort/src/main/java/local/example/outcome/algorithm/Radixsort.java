@@ -37,11 +37,9 @@ public class Radixsort {
 
     private static int findMaxIntFromArray(int[] messy) {
         int max = messy[0];
-        for (int i = 1; i < messy.length; i++) {
-            if (messy[i] > max) {
+        for (int i = 1; i < messy.length; i++)
+            if (messy[i] > max)
                 max = messy[i];
-            }
-        }
         return max;
     }
 }
