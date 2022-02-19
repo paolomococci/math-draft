@@ -19,4 +19,12 @@ public class OutcomeResourceTest {
              .statusCode(200)
              .body(is("--- sample feedback ---"));
     }
+
+    @Test
+    public void readEndpointTest() {
+        given()
+                .when().get("/outcome/items")
+                .then()
+                .statusCode(200);
+    }
 }
