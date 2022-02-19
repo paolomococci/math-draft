@@ -1,4 +1,8 @@
 package local.example.outcome.algorithm;
 
-public class NativeQuicksortIT {
+import io.quarkus.test.junit.NativeImageTest;
+
+@NativeImageTest
+public class NativeQuicksortIT
+        extends QuicksortTests {
 }
