@@ -1,4 +1,8 @@
 package local.example.outcome.algorithm;
 
-public class NativeRadixsortIT {
+import io.quarkus.test.junit.NativeImageTest;
+
+@NativeImageTest
+public class NativeRadixsortIT
+        extends RadixsortTests {
 }
