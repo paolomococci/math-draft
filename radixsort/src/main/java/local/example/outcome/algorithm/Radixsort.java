@@ -4,7 +4,7 @@ import java.util.stream.IntStream;
 
 public class Radixsort {
 
-    private static int RADIX = 10;
+    private static final int RADIX = 10;
 
     public static void radixsort(int[] messy) {
 
