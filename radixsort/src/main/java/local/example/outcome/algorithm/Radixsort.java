@@ -1,10 +1,18 @@
 package local.example.outcome.algorithm;
 
+import local.example.outcome.model.Assortment;
+import local.example.outcome.model.Item;
+
 import java.util.stream.IntStream;
 
 public class Radixsort {
 
     private static final int RADIX = 10;
+
+    public static Item[] radixSort(Assortment assortment) {
+        // TODO
+        return new Item[0];
+    }
 
     public static void radixsort(int[] messy) {
 
