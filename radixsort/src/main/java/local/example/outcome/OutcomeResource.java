@@ -1,10 +1,9 @@
 package local.example.outcome;
 
+import local.example.outcome.algorithm.Radixsort;
 import local.example.outcome.model.Assortment;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.Collections;
@@ -34,5 +33,15 @@ public class OutcomeResource {
             return Response.ok().build();
         }
         return Response.ok(assortments).build();
+    }
+
+    @POST
+    @Path("/sorting")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Set<Assortment> sorting(Assortment assortment) {
+        assortment.fromArray(Radixsort.radixSort(assortment));
+        assortments.add(assortment);
+        return assortments;
     }
 }
