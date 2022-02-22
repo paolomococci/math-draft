@@ -1,11 +1,14 @@
 package local.example.outcome;
 
+import io.netty.handler.codec.http.HttpResponseStatus;
 import io.quarkus.test.junit.QuarkusTest;
 
+import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 
+import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 
 @QuarkusTest
@@ -33,6 +36,14 @@ public class OutcomeResourceTest {
 
     @Test
     public void sortingEndpointTest() {
-        // TODO
+        given()
+            .contentType(ContentType.JSON)
+            .body(MESSY)
+            .when().post("/outcome/sorting")
+            .then().statusCode(HttpResponseStatus.OK.code())
+            .body("items.key[0][0]", equalTo(1))
+            .body("items.name[0][0]", equalTo("one"))
+            .body("items.key[0][5]", equalTo(7))
+            .body("items.name[0][5]", equalTo("seven"));
     }
 }
