@@ -18,6 +18,11 @@ public class Radixsort {
         // TODO
     }
 
+    private static int findMaxValueOfKeyArray(int[] keys) {
+        // TODO
+        return 0;
+    }
+
     public static void radixsort(int[] messy) {
 
         int maxKey = findMaxIntFromArray(messy);
