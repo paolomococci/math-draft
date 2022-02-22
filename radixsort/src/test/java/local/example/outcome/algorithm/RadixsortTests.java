@@ -2,6 +2,8 @@ package local.example.outcome.algorithm;
 
 import io.quarkus.test.junit.QuarkusTest;
 
+import local.example.outcome.model.Assortment;
+import local.example.outcome.model.Item;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -18,6 +20,23 @@ public class RadixsortTests {
 
     @Test
     public void assortmentTest() {
-        // TODO
+        Item one = new Item(1, "one");
+        Item two = new Item(2, "two");
+        Item three = new Item(3, "three");
+        Item four = new Item(4, "four");
+        Item five = new Item(5, "five");
+        Assortment messy = new Assortment();
+        messy.add(two);
+        messy.add(one);
+        messy.add(three);
+        messy.add(five);
+        messy.add(four);
+        messy.fromArray(Radixsort.radixSort(messy));
+        int[] tidy = {1, 2, 3, 4, 5};
+        int[] orderedArrayOfItemKeys = new int[messy.items.size()];
+        for (int i = 0; i < messy.items.size(); i++) {
+            orderedArrayOfItemKeys[i] = messy.items.get(i).key;
+        }
+        Assertions.assertArrayEquals(tidy, orderedArrayOfItemKeys);
     }
 }
