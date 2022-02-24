@@ -18,23 +18,23 @@ public class Quicksort {
         return items;
     }
 
-    private static int partition(Item[] keys, int begin, int ending) {
+    private static int partition(Item[] items, int begin, int ending) {
 
-        int pivot = keys[ending].key;
+        int pivot = items[ending].key;
         int index = begin-1;
 
         for (int i = begin; i < ending; i++) {
-            if (keys[i].key <= pivot) {
+            if (items[i].key <= pivot) {
                 index++;
-                Item swap = keys[index];
-                keys[index] = keys[i];
-                keys[i] = swap;
+                Item swap = items[index];
+                items[index] = items[i];
+                items[i] = swap;
             }
         }
 
-        Item swap = keys[index+1];
-        keys[index+1] = keys[ending];
-        keys[ending] = swap;
+        Item swap = items[index+1];
+        items[index+1] = items[ending];
+        items[ending] = swap;
 
         return index+1;
     }
