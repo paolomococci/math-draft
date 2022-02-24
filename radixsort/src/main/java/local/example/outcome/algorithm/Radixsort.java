@@ -10,15 +10,22 @@ public class Radixsort {
     private static final int RADIX = 10;
 
     public static Item[] radixSort(Assortment assortment) {
-        // TODO
+
+        int maxKey = findMaxValueOfKeyArray(assortment.toArray());
         return new Item[0];
     }
 
-    private static void sortOn(Item[] messy, int position) {
+    private static void sortOn(Item[] items, int position) {
+        int[] frequency = new int[RADIX];
         // TODO
     }
 
-    private static int findMaxValueOfKeyArray(int[] keys) {
+    private static int findMaxValueOfKeyArray(Item[] items) {
+
+        int[] keys = new int[items.length];
+
+        for (int i = 0; i < keys.length; i++) keys[i] = items[i].key;
+
         int max = keys[0];
         for (int i = 1; i < keys.length; i++)
             if (keys[i] > max)
