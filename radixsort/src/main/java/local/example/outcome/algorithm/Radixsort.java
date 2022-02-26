@@ -17,10 +17,14 @@ public class Radixsort {
 
     private static void sortOn(Item[] items, int position) {
         int[] frequency = new int[RADIX];
-        // TODO
+        int[] tidy = new int[items.length];
+
+
+
+        System.arraycopy(tidy, 0, items, 0, items.length);
     }
 
-    private static int findMaxValueOfKeyArray(Item[] items) {
+    protected static int findMaxValueOfKeyArray(Item[] items) {
 
         int[] keys = new int[items.length];
 
