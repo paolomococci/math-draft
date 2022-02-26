@@ -40,7 +40,7 @@ public class OutcomeResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Set<Assortment> sorting(Assortment assortment) {
-        assortment.fromArray(Radixsort.radixSort(assortment));
+        Radixsort.radixSort(assortment);
         assortments.add(assortment);
         return assortments;
     }
