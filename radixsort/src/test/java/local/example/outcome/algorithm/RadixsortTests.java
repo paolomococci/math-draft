@@ -19,6 +19,23 @@ public class RadixsortTests {
     }
 
     @Test
+    public void findMaxValueOfKeyArrayTest() {
+        Item one = new Item(1, "one");
+        Item two = new Item(2, "two");
+        Item three = new Item(3, "three");
+        Item four = new Item(4, "four");
+        Item five = new Item(5, "five");
+        Assortment messy = new Assortment();
+        messy.add(two);
+        messy.add(one);
+        messy.add(three);
+        messy.add(five);
+        messy.add(four);
+        int max = Radixsort.findMaxValueOfKeyArray(messy.toArray());
+        Assertions.assertTrue(max == 5);
+    }
+
+    @Test
     public void assortmentTest() {
         Item one = new Item(1, "one");
         Item two = new Item(2, "two");
