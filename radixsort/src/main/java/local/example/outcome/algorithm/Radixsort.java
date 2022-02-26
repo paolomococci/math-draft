@@ -9,17 +9,33 @@ public class Radixsort {
 
     private static final int RADIX = 10;
 
-    public static Item[] radixSort(Assortment assortment) {
+    public static void radixSort(Assortment assortment) {
 
         int maxKey = findMaxValueOfKeyArray(assortment.toArray());
-        return new Item[0];
+
+        for (int position = 1; (maxKey/position) > 0; position *= RADIX) {
+            sortOn(assortment.toArray(), position);
+        }
     }
 
     private static void sortOn(Item[] items, int position) {
+        // TODO
         int[] frequency = new int[RADIX];
-        int[] tidy = new int[items.length];
+        Item[] tidy = new Item[items.length];
 
 
+        for (Item j : items) {
+            int digit = (j.key / position) % RADIX;
+            frequency[digit]++;
+        }
+
+        IntStream.range(1, RADIX).forEach(i -> frequency[i] += frequency[i - 1]);
+
+        for (int i = items.length -1; i >= 0; i--) {
+            int digit = (items[i].key / position) % RADIX;
+            tidy[frequency[digit]-1] = items[i];
+            frequency[digit]--;
+        }
 
         System.arraycopy(tidy, 0, items, 0, items.length);
     }
