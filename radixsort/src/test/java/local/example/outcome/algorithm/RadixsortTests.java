@@ -32,7 +32,7 @@ public class RadixsortTests {
         messy.add(five);
         messy.add(four);
         int max = Radixsort.findMaxValueOfKeyArray(messy.toArray());
-        Assertions.assertTrue(max == 5);
+        Assertions.assertEquals(5, max);
     }
 
     @Test
