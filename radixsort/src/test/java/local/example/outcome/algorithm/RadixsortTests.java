@@ -48,7 +48,7 @@ public class RadixsortTests {
         messy.add(three);
         messy.add(five);
         messy.add(four);
-        messy.fromArray(Radixsort.radixSort(messy));
+        Radixsort.radixSort(messy);
         int[] tidy = {1, 2, 3, 4, 5};
         int[] orderedArrayOfItemKeys = new int[messy.items.size()];
         for (int i = 0; i < messy.items.size(); i++) {
