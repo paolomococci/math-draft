@@ -15,7 +15,7 @@ import static org.hamcrest.CoreMatchers.is;
 public class OutcomeResourceTest {
 
     private static final String
-            MESSY = "{\"items\":[{\"key\":7,\"name\":\"seven\"},{\"key\":2,\"name\":\"two\"},{\"key\":4,\"name\":\"four\"},{\"key\":1,\"name\":\"one\"},{\"key\":5,\"name\":\"five\"},{\"key\":3,\"name\":\"three\"}]}";
+            MESSY = "{\"items\":[{\"key\":98,\"name\":\"ninety eight\"},{\"key\":783,\"name\":\"seven hundred eighty three\"},{\"key\":32,\"name\":\"thirty two\"},{\"key\":457,\"name\":\"four hundred and fifty-seven\"},{\"key\":344,\"name\":\"three hundred and forty-four\"},{\"key\":4,\"name\":\"four\"}]}";
 
     @Test
     public void feedbackEndpointTest() {
@@ -41,9 +41,9 @@ public class OutcomeResourceTest {
             .body(MESSY)
             .when().post("/outcome/sorting")
             .then().statusCode(HttpResponseStatus.OK.code())
-            .body("items.key[0][0]", equalTo(1))
-            .body("items.name[0][0]", equalTo("one"))
-            .body("items.key[0][5]", equalTo(7))
-            .body("items.name[0][5]", equalTo("seven"));
+            .body("items.key[0][0]", equalTo(4))
+            .body("items.name[0][0]", equalTo("four"))
+            .body("items.key[0][5]", equalTo(783))
+            .body("items.name[0][5]", equalTo("seven hundred eighty three"));
     }
 }
