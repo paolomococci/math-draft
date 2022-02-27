@@ -1,6 +1,5 @@
 package local.example.outcome.algorithm;
 
-import local.example.outcome.model.Assortment;
 import local.example.outcome.model.Item;
 
 import java.util.stream.IntStream;
@@ -9,17 +8,17 @@ public class Radixsort {
 
     private static final int RADIX = 10;
 
-    public static void radixSort(Assortment assortment) {
+    public static Item[] radixSort(Item[] items) {
 
-        int maxKey = findMaxValueOfKeyArray(assortment.toArray());
+        int maxKey = findMaxValueOfKeyArray(items);
 
         for (int position = 1; (maxKey/position) > 0; position *= RADIX) {
-            sortOn(assortment.toArray(), position);
+            sortOn(items, position);
         }
+        return items;
     }
 
     private static void sortOn(Item[] items, int position) {
-        // TODO
         int[] frequency = new int[RADIX];
         Item[] tidy = new Item[items.length];
 
@@ -31,8 +30,8 @@ public class Radixsort {
 
         IntStream.range(1, RADIX).forEach(i -> frequency[i] += frequency[i - 1]);
 
-        for (int i = items.length -1; i >= 0; i--) {
-            int digit = (items[i].key / position) % RADIX;
+        for (int i = (items.length-1); i >= 0; i--) {
+            int digit = (items[i].key/position) % RADIX;
             tidy[frequency[digit]-1] = items[i];
             frequency[digit]--;
         }
