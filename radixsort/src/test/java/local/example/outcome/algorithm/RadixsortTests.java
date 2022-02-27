@@ -20,19 +20,19 @@ public class RadixsortTests {
 
     @Test
     public void findMaxValueOfKeyArrayTest() {
-        Item one = new Item(1, "one");
-        Item two = new Item(2, "two");
-        Item three = new Item(3, "three");
-        Item four = new Item(4, "four");
-        Item five = new Item(5, "five");
+        Item _457 = new Item(457, "four hundred and fifty-seven");
+        Item _344 = new Item(344, "three hundred and forty-four");
+        Item _4 = new Item(4, "four");
+        Item _320 = new Item(320, "three hundred and twenty");
+        Item _128 = new Item(128, "one hundred twenty eight");
         Assortment messy = new Assortment();
-        messy.add(two);
-        messy.add(one);
-        messy.add(three);
-        messy.add(five);
-        messy.add(four);
+        messy.add(_344);
+        messy.add(_457);
+        messy.add(_4);
+        messy.add(_128);
+        messy.add(_320);
         int max = Radixsort.findMaxValueOfKeyArray(messy.toArray());
-        Assertions.assertEquals(5, max);
+        Assertions.assertEquals(457, max);
     }
 
     @Test
