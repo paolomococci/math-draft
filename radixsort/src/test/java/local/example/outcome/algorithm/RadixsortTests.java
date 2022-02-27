@@ -60,7 +60,7 @@ public class RadixsortTests {
         messy.add(_128);
         messy.add(_32);
         messy.add(_320);
-        Radixsort.radixSort(messy);
+        messy.fromArray(Radixsort.radixSort(messy.toArray()));
         int[] tidy = {4, 32, 98, 128, 320, 344, 457, 783};
         int[] orderedArrayOfItemKeys = new int[messy.items.size()];
         for (int i = 0; i < messy.items.size(); i++) {
