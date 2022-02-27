@@ -11,3 +11,17 @@ mvn io.quarkus.platform:quarkus-maven-plugin:2.7.2.Final:create -DprojectGroupId
 ```shell
 ./mvnw quarkus:dev
 ```
+
+## examples of use
+
+### POST http method
+
+```shell
+curl -i -X POST -H "Content-Type: application/json" -d '{"items":[{"key":18,"name":"eighteen"},{"key":7,"name":"seven"},{"key":7,"name":"seven"},{"key":12,"name":"twelve"},{"key":4,"name":"four"}]}' http://127.0.0.1:8080/outcome/sorting
+```
+
+### GET http method
+
+```shell
+curl -i http://127.0.0.1:8080/outcome/items
+```
