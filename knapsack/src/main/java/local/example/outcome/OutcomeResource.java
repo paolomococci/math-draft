@@ -125,4 +125,14 @@ public class OutcomeResource {
         }
         return Response.ok(racks).build();
     }
+
+    @GET
+    @Path("/knapsacks")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response knapsacks() {
+        if (knapsacks.isEmpty()) {
+            return Response.ok().build();
+        }
+        return Response.ok(knapsacks).build();
+    }
 }
