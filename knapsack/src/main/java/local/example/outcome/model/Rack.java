@@ -14,4 +14,8 @@ public class Rack {
     public void add(Item item) {
         this.items.add(item);
     }
+
+    public Item get(int index) {
+        return this.items.get(index);
+    }
 }
