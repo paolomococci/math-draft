@@ -6,4 +6,7 @@ public class Item {
     public Double weight;
     public Double value;
     public Integer availability;
+
+    public Item() {
+    }
 }
