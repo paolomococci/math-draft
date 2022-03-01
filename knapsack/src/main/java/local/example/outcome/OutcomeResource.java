@@ -14,7 +14,7 @@ import java.util.Set;
 @Path("/outcome")
 public class OutcomeResource {
 
-    private final Set<Rack> assortments = Collections.newSetFromMap(
+    private final Set<Rack> racks = Collections.newSetFromMap(
             Collections.synchronizedMap(
                     new LinkedHashMap<>()
             )
