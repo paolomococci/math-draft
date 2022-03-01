@@ -5,6 +5,8 @@ import java.util.List;
 
 public class Rack {
 
+
+    public String name;
     public final List<Item> items;
 
     public Rack() {
