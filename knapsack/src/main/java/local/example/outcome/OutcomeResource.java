@@ -1,6 +1,7 @@
 package local.example.outcome;
 
 import local.example.outcome.model.Item;
+import local.example.outcome.model.Knapsack;
 import local.example.outcome.model.Rack;
 
 import javax.ws.rs.GET;
@@ -16,6 +17,12 @@ import java.util.Set;
 public class OutcomeResource {
 
     private final Set<Rack> racks = Collections.newSetFromMap(
+            Collections.synchronizedMap(
+                    new LinkedHashMap<>()
+            )
+    );
+
+    private final Set<Knapsack> knapsacks = Collections.newSetFromMap(
             Collections.synchronizedMap(
                     new LinkedHashMap<>()
             )
