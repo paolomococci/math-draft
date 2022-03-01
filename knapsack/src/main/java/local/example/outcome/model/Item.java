@@ -14,9 +14,25 @@ public class Item {
         this.name = name;
     }
 
-    public Item(String name, Double weight, Double value) {
+    public Item(
+            String name,
+            Double weight,
+            Double value
+    ) {
         this.name = name;
         this.weight = weight;
         this.value = value;
+    }
+
+    public Item(
+            String name,
+            Double weight,
+            Double value,
+            Integer availability
+    ) {
+        this.name = name;
+        this.weight = weight;
+        this.value = value;
+        this.availability = availability;
     }
 }
