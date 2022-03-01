@@ -13,4 +13,10 @@ public class Item {
     public Item(String name) {
         this.name = name;
     }
+
+    public Item(String name, Double weight, Double value) {
+        this.name = name;
+        this.weight = weight;
+        this.value = value;
+    }
 }
