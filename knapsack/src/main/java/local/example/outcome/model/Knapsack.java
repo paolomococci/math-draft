@@ -2,6 +2,8 @@ package local.example.outcome.model;
 
 public class Knapsack {
 
+
+    public String name;
     public Rack rack;
 
     public Knapsack() {
