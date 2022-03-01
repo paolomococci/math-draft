@@ -28,4 +28,9 @@ public class Rack {
         arrayOfItem = this.items.toArray(arrayOfItem);
         return arrayOfItem;
     }
+
+    public void fromArray(Item[] arrayOfItem) {
+        this.items.clear();
+        this.items.addAll(List.of(arrayOfItem));
+    }
 }
