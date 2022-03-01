@@ -8,6 +8,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import java.util.Collections;
 import java.util.LinkedHashMap;
@@ -113,5 +114,15 @@ public class OutcomeResource {
                     }
                 }
                 """;
+    }
+
+    @GET
+    @Path("/racks")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response racks() {
+        if (racks.isEmpty()) {
+            return Response.ok().build();
+        }
+        return Response.ok(racks).build();
     }
 }
