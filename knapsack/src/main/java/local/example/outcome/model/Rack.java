@@ -22,4 +22,10 @@ public class Rack {
     public List<Item> toList() {
         return this.items.stream().toList();
     }
+
+    public Item[] toArray() {
+        Item[] arrayOfItem = new Item[this.items.size()];
+        arrayOfItem = this.items.toArray(arrayOfItem);
+        return arrayOfItem;
+    }
 }
