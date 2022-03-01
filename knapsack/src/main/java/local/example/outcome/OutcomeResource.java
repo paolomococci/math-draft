@@ -1,5 +1,6 @@
 package local.example.outcome;
 
+import local.example.outcome.model.Item;
 import local.example.outcome.model.Rack;
 
 import javax.ws.rs.GET;
@@ -24,5 +25,19 @@ public class OutcomeResource {
     @Produces(MediaType.TEXT_PLAIN)
     public String feedback() {
         return "--- feedback ---";
+    }
+
+    @GET
+    @Path("/schema/item")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String itemSchema() {
+        return """
+                item {
+                    string: name,
+                    double: weight,
+                    double: value,
+                    integer: availability
+                }
+                """;
     }
 }
