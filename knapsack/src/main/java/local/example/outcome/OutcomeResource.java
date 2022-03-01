@@ -72,4 +72,39 @@ public class OutcomeResource {
                 }
                 """;
     }
+
+    @GET
+    @Path("/schema/knapsack")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String knapsackSchema() {
+        return """
+                knapsack {
+                    string: name,
+                    rack {
+                        string: name,
+                        items:[
+                            item {
+                                string: name,
+                                double: weight,
+                                double: value,
+                                integer: availability
+                            },
+                            item {
+                                string: name,
+                                double: weight,
+                                double: value,
+                                integer: availability
+                            },
+                            item {
+                                string: name,
+                                double: weight,
+                                double: value,
+                                integer: availability
+                            },
+                            ...
+                        ]
+                    }
+                }
+                """;
+    }
 }
