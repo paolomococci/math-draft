@@ -40,4 +40,36 @@ public class OutcomeResource {
                 }
                 """;
     }
+
+    @GET
+    @Path("/schema/rack")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String rackSchema() {
+        return """
+                rack {
+                    string: name,
+                    items:[
+                        item {
+                            string: name,
+                            double: weight,
+                            double: value,
+                            integer: availability
+                        },
+                        item {
+                            string: name,
+                            double: weight,
+                            double: value,
+                            integer: availability
+                        },
+                        item {
+                            string: name,
+                            double: weight,
+                            double: value,
+                            integer: availability
+                        },
+                        ...
+                    ]
+                }
+                """;
+    }
 }
