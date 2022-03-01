@@ -6,4 +6,8 @@ public class Knapsack {
 
     public Knapsack() {
     }
+
+    public Knapsack(Rack rack) {
+        this.rack = rack;
+    }
 }
