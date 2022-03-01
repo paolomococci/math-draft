@@ -18,4 +18,8 @@ public class Rack {
     public Item get(int index) {
         return this.items.get(index);
     }
+
+    public List<Item> toList() {
+        return this.items.stream().toList();
+    }
 }
