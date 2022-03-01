@@ -10,4 +10,8 @@ public class Rack {
     public Rack() {
         items = new ArrayList<>();
     }
+
+    public void add(Item item) {
+        this.items.add(item);
+    }
 }
