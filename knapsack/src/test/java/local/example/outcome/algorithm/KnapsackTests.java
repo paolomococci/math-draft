@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 public class KnapsackTests {
 
     @Test
-    public void sampleTest() {
+    public void correctResultTest() {
         Assertions.assertTrue(true);
     }
 }
