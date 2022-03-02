@@ -19,7 +19,12 @@ public class KnapsackTests {
     }
 
     @Test
-    public void zeroItemsTest() {
+    public void recursiveZeroItemsTest() {
+        Assertions.assertTrue(true);
+    }
+
+    @Test
+    public void dynamicZeroItemsTest() {
         Assertions.assertTrue(true);
     }
 
