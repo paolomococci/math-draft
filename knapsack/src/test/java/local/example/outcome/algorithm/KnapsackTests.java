@@ -12,4 +12,9 @@ public class KnapsackTests {
     public void correctResultTest() {
         Assertions.assertTrue(true);
     }
+
+    @Test
+    public void zeroTest() {
+        Assertions.assertTrue(true);
+    }
 }
