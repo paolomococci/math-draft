@@ -54,7 +54,14 @@ public class KnapsackTests {
 
     @Test
     public void dynamicZeroItemsTest() {
-        Assertions.assertTrue(true);
+        final int[] weights = new int[] {};
+        final int[] values = new int[] {};
+        final int weightLimit = 11;
+
+        Assertions.assertEquals(
+                0,
+                Knapsack.recursive(weights, values, values.length, weightLimit)
+        );
     }
 
     @Test
