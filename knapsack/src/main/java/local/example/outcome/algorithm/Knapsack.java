@@ -7,7 +7,7 @@ public class Knapsack {
         return 0;
     }
 
-    public int dynamic() {
+    public int dynamic(int[] weights, int[] values, int multiplicity, int weightLimit) {
         // TODO
         return 0;
     }
