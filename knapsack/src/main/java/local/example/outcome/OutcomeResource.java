@@ -1,6 +1,6 @@
 package local.example.outcome;
 
-import local.example.outcome.model.Knapsack;
+import local.example.outcome.model.Backpack;
 import local.example.outcome.model.Rack;
 
 import javax.ws.rs.GET;
@@ -22,7 +22,7 @@ public class OutcomeResource {
             )
     );
 
-    private final Set<Knapsack> knapsacks = Collections.newSetFromMap(
+    private final Set<Backpack> backpacks = Collections.newSetFromMap(
             Collections.synchronizedMap(
                     new LinkedHashMap<>()
             )
@@ -81,9 +81,9 @@ public class OutcomeResource {
     }
 
     @GET
-    @Path("/schema/knapsack")
+    @Path("/schema/backpack")
     @Produces(MediaType.TEXT_PLAIN)
-    public String knapsackSchema() {
+    public String backpackSchema() {
         return """
                 knapsack {
                     string: name,
@@ -129,9 +129,9 @@ public class OutcomeResource {
     @Path("/knapsacks")
     @Produces(MediaType.APPLICATION_JSON)
     public Response knapsacks() {
-        if (knapsacks.isEmpty()) {
+        if (backpacks.isEmpty()) {
             return Response.ok().build();
         }
-        return Response.ok(knapsacks).build();
+        return Response.ok(backpacks).build();
     }
 }
