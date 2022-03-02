@@ -10,7 +10,18 @@ public class KnapsackTests {
 
     @Test
     public void recursiveCorrectResultTest() {
-        Assertions.assertTrue(true);
+        final int[] weights = new int[] {
+                1, 3, 5, 6, 7
+        };
+        final int[] values = new int[] {
+                1, 8, 18, 22, 28
+        };
+        final int weightLimit = 11;
+
+        Assertions.assertEquals(
+                40,
+                Knapsack.recursive(weights, values, values.length, weightLimit)
+        );
     }
 
     @Test
