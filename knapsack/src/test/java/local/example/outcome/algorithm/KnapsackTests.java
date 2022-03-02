@@ -60,7 +60,7 @@ public class KnapsackTests {
 
         Assertions.assertEquals(
                 0,
-                Knapsack.recursive(weights, values, values.length, weightLimit)
+                Knapsack.dynamic(weights, values, values.length, weightLimit)
         );
     }
 
@@ -76,7 +76,7 @@ public class KnapsackTests {
 
         Assertions.assertEquals(
                 0,
-                Knapsack.dynamic(weights, values, values.length, weightLimit)
+                Knapsack.recursive(weights, values, values.length, weightLimit)
         );
     }
 
