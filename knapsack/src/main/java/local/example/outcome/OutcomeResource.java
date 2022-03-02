@@ -1,6 +1,5 @@
 package local.example.outcome;
 
-import local.example.outcome.model.Item;
 import local.example.outcome.model.Knapsack;
 import local.example.outcome.model.Rack;
 
