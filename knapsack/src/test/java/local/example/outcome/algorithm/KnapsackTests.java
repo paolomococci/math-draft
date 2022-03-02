@@ -14,7 +14,12 @@ public class KnapsackTests {
     }
 
     @Test
-    public void zeroTest() {
+    public void zeroItemsTest() {
+        Assertions.assertTrue(true);
+    }
+
+    @Test
+    public void zeroWeightLimitTest() {
         Assertions.assertTrue(true);
     }
 }
