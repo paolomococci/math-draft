@@ -2,7 +2,7 @@ package local.example.outcome.algorithm;
 
 public class Knapsack {
 
-    public int recursive() {
+    public int recursive(int[] weights, int[] values, int multiplicity, int weightLimit) {
         // TODO
         return 0;
     }
