@@ -1,4 +1,8 @@
 package local.example.outcome.algorithm;
 
-public class NativeKnapsackIT {
+import io.quarkus.test.junit.NativeImageTest;
+
+@NativeImageTest
+public class NativeKnapsackIT
+        extends KnapsackTests {
 }
