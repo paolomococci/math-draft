@@ -1,15 +1,15 @@
 package local.example.outcome.model;
 
-public class Knapsack {
+public class Backpack {
 
 
     public String name;
     public Rack rack;
 
-    public Knapsack() {
+    public Backpack() {
     }
 
-    public Knapsack(Rack rack) {
+    public Backpack(Rack rack) {
         this.rack = rack;
     }
 }
