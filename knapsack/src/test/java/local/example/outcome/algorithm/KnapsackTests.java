@@ -29,7 +29,12 @@ public class KnapsackTests {
     }
 
     @Test
-    public void zeroWeightLimitTest() {
+    public void recursiveZeroWeightLimitTest() {
+        Assertions.assertTrue(true);
+    }
+
+    @Test
+    public void dynamicZeroWeightLimitTest() {
         Assertions.assertTrue(true);
     }
 }
