@@ -9,7 +9,12 @@ import org.junit.jupiter.api.Test;
 public class KnapsackTests {
 
     @Test
-    public void correctResultTest() {
+    public void recursiveCorrectResultTest() {
+        Assertions.assertTrue(true);
+    }
+
+    @Test
+    public void dynamicCorrectResultTest() {
         Assertions.assertTrue(true);
     }
 
