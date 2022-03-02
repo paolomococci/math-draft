@@ -85,7 +85,7 @@ public class OutcomeResource {
     @Produces(MediaType.TEXT_PLAIN)
     public String backpackSchema() {
         return """
-                knapsack {
+                backpack {
                     string: name,
                     rack {
                         string: name,
