@@ -12,11 +12,11 @@ import static org.hamcrest.CoreMatchers.is;
 public class OutcomeResourceTest {
 
     @Test
-    public void testHelloEndpoint() {
+    public void feedbackOutcomeTest() {
         given()
           .when().get("/outcome")
           .then()
              .statusCode(200)
-             .body(is("Hello RESTEasy"));
+             .body(is("---> outcome feedback <---"));
     }
 }
