@@ -42,4 +42,12 @@ public class Vertex {
     public void setLabel(String label) {
         this.label = label;
     }
+
+    public boolean isVisited() {
+        return visited;
+    }
+
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    }
 }
