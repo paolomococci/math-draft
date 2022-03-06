@@ -12,4 +12,12 @@ public class Edge {
         this.weight = weight;
         this.included = included;
     }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
 }
