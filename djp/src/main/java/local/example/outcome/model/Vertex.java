@@ -26,4 +26,8 @@ public class Vertex {
         this.edges = edges;
         this.visited = visited;
     }
+
+    public void add(Vertex vertex, Edge edge) {
+        this.edges.put(vertex, edge);
+    }
 }
