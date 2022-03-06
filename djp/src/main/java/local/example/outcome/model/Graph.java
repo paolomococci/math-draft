@@ -18,4 +18,8 @@ public class Graph {
     public List<Vertex> getVertices() {
         return vertices;
     }
+
+    public List<Vertex> toList() {
+        return this.vertices.stream().toList();
+    }
 }
