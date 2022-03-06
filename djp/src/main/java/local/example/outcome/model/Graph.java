@@ -33,4 +33,11 @@ public class Graph {
         this.vertices.clear();
         this.vertices.addAll(List.of(arrayOfVertices));
     }
+
+    @Override
+    public String toString() {
+        return "Graph{" +
+                "vertices=" + vertices +
+                '}';
+    }
 }
