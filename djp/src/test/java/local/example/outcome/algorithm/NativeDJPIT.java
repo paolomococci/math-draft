@@ -1,4 +1,8 @@
 package local.example.outcome.algorithm;
 
-public class NativeDJPIT {
+import io.quarkus.test.junit.NativeImageTest;
+
+@NativeImageTest
+public class NativeDJPIT
+        extends DJPTests {
 }
