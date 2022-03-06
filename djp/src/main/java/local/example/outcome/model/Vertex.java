@@ -16,6 +16,11 @@ public class Vertex {
         this.label = label;
     }
 
+    public Vertex(String label, Map<Vertex, Edge> edges) {
+        this.label = label;
+        this.edges = edges;
+    }
+
     public Vertex(String label, Map<Vertex, Edge> edges, boolean visited) {
         this.label = label;
         this.edges = edges;
