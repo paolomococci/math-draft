@@ -30,4 +30,8 @@ public class Vertex {
     public void add(Vertex vertex, Edge edge) {
         this.edges.put(vertex, edge);
     }
+
+    public void remove(Vertex vertex) {
+        this.edges.remove(vertex);
+    }
 }
