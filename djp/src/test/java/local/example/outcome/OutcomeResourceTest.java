@@ -17,6 +17,6 @@ public class OutcomeResourceTest {
           .when().get("/outcome")
           .then()
              .statusCode(200)
-             .body(is("---> outcome feedback <--"));
+             .body(is("---> outcome feedback <---"));
     }
 }
