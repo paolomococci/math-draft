@@ -4,4 +4,7 @@ public class Edge {
 
     public int weight;
     public boolean included;
+
+    public Edge() {
+    }
 }
