@@ -34,4 +34,12 @@ public class Vertex {
     public void remove(Vertex vertex) {
         this.edges.remove(vertex);
     }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
 }
