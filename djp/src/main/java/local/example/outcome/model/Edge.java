@@ -20,4 +20,12 @@ public class Edge {
     public void setWeight(int weight) {
         this.weight = weight;
     }
+
+    public boolean isIncluded() {
+        return included;
+    }
+
+    public void setIncluded(boolean included) {
+        this.included = included;
+    }
 }
