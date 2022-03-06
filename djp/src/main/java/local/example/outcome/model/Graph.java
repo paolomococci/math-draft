@@ -22,4 +22,10 @@ public class Graph {
     public List<Vertex> toList() {
         return this.vertices.stream().toList();
     }
+
+    public Vertex[] toArray() {
+        Vertex[] arrayOfVertices = new Vertex[this.vertices.size()];
+        arrayOfVertices = this.vertices.toArray(arrayOfVertices);
+        return arrayOfVertices;
+    }
 }
