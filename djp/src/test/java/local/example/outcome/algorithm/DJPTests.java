@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 public class DJPTests {
 
     @Test
-    public void sampleTest() {
+    public void createGraphTest() {
         Assertions.assertTrue(true);
     }
 }
