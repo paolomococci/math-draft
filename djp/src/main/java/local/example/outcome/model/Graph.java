@@ -28,4 +28,9 @@ public class Graph {
         arrayOfVertices = this.vertices.toArray(arrayOfVertices);
         return arrayOfVertices;
     }
+
+    public void fromArray(Vertex[] arrayOfVertices) {
+        this.vertices.clear();
+        this.vertices.addAll(List.of(arrayOfVertices));
+    }
 }
