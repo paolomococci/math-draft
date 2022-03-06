@@ -10,4 +10,8 @@ public class Graph {
     public Graph() {
         vertices = new ArrayList<>();
     }
+
+    public void add(Vertex vertex) {
+        this.vertices.add(vertex);
+    }
 }
