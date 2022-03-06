@@ -14,4 +14,8 @@ public class Graph {
     public void add(Vertex vertex) {
         this.vertices.add(vertex);
     }
+
+    public List<Vertex> getVertices() {
+        return vertices;
+    }
 }
