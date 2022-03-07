@@ -9,4 +9,9 @@ public class DJP {
     public DJP(Graph graph) {
         this.graph = graph;
     }
+
+    public String minimumSpanningTree() {
+        // TODO
+        return "";
+    }
 }
