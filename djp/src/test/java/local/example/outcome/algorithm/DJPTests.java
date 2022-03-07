@@ -2,6 +2,7 @@ package local.example.outcome.algorithm;
 
 import io.quarkus.test.junit.QuarkusTest;
 
+import local.example.outcome.model.Graph;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -9,7 +10,8 @@ import org.junit.jupiter.api.Test;
 public class DJPTests {
 
     @Test
-    public void createGraphTest() {
-        Assertions.assertTrue(true);
+    public void createVoidGraphTest() {
+        Graph graph = new Graph();
+        Assertions.assertTrue(graph.vertices.size() == 0);
     }
 }
