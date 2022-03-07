@@ -28,6 +28,9 @@ public class Vertex {
     }
 
     public void add(Vertex vertex, Edge edge) {
+        if (this.edges.containsKey(vertex))
+            if (edge.getWeight() < this.edges.get(vertex).getWeight())
+                this.edges.replace(vertex, edge);
         this.edges.put(vertex, edge);
     }
 
