@@ -18,6 +18,10 @@ public class DJP {
         this.graph = graph;
     }
 
+    public void pathFind() {
+        // TODO
+    }
+
     public String minimumSpanningTree() {
         // TODO
         return "";
