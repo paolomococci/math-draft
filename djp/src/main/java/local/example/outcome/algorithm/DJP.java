@@ -10,6 +10,14 @@ public class DJP {
         this.graph = graph;
     }
 
+    public Graph getGraph() {
+        return graph;
+    }
+
+    public void setGraph(Graph graph) {
+        this.graph = graph;
+    }
+
     public String minimumSpanningTree() {
         // TODO
         return "";
