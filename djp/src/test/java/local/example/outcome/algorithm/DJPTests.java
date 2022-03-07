@@ -2,6 +2,7 @@ package local.example.outcome.algorithm;
 
 import io.quarkus.test.junit.QuarkusTest;
 
+import local.example.outcome.model.Edge;
 import local.example.outcome.model.Graph;
 import local.example.outcome.model.Vertex;
 
@@ -25,6 +26,12 @@ public class DJPTests {
         Vertex vertexC = new Vertex("C");
         Vertex vertexD = new Vertex("D");
         Vertex vertexE = new Vertex("E");
+        Edge edgeAtoB = new Edge(2);
+        Edge edgeAtoC = new Edge(3);
+        Edge edgeBtoC = new Edge(2);
+        Edge edgeBtoE = new Edge(5);
+        Edge edgeCtoD = new Edge(1);
+        Edge edgeCtoE = new Edge(1);
         Assertions.assertEquals(0, graph.vertices.size());
     }
 }
