@@ -1,5 +1,7 @@
 package local.example.outcome.model;
 
+import org.apache.commons.math3.util.Pair;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -58,5 +60,10 @@ public class Vertex {
 
     public void setVisited(boolean visited) {
         this.visited = visited;
+    }
+
+    public Pair<Vertex, Edge> nextImprove() {
+        // TODO
+        return null;
     }
 }
