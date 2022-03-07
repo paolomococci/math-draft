@@ -66,9 +66,7 @@ public class Vertex {
     public Pair<Vertex, Edge> nextImprove() {
         Edge minEdge = new Edge();
         Vertex nextVertex = this;
-        Iterator<Map.Entry<Vertex, Edge>> entryIterator = this.edges.entrySet().iterator();
-        while (entryIterator.hasNext()) {
-            Map.Entry<Vertex, Edge> entry = entryIterator.next();
+        for (Map.Entry<Vertex, Edge> entry : this.edges.entrySet()) {
             if (!entry.getKey().isVisited()) {
                 if (!entry.getValue().isIncluded()) {
                     if (entry.getValue().getWeight() < minEdge.getWeight()) {
