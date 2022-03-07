@@ -8,6 +8,10 @@ public class Edge {
     public Edge() {
     }
 
+    public Edge(int weight) {
+        this.weight = weight;
+    }
+
     public Edge(int weight, boolean included) {
         this.weight = weight;
         this.included = included;
