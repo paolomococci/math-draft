@@ -31,6 +31,10 @@ public class Vertex {
         this.edges.put(vertex, edge);
     }
 
+    public Map<Vertex, Edge> getEdges() {
+        return edges;
+    }
+
     public void remove(Vertex vertex) {
         this.edges.remove(vertex);
     }
