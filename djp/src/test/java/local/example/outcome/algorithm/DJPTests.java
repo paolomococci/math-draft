@@ -26,12 +26,24 @@ public class DJPTests {
         Vertex vertexC = new Vertex("C");
         Vertex vertexD = new Vertex("D");
         Vertex vertexE = new Vertex("E");
-        Edge edgeAtoB = new Edge(2);
-        Edge edgeAtoC = new Edge(3);
-        Edge edgeBtoC = new Edge(2);
-        Edge edgeBtoE = new Edge(5);
-        Edge edgeCtoD = new Edge(1);
-        Edge edgeCtoE = new Edge(1);
+        Edge edgeAB = new Edge(2);
+        Edge edgeAC = new Edge(3);
+        Edge edgeBC = new Edge(2);
+        Edge edgeBE = new Edge(5);
+        Edge edgeCD = new Edge(1);
+        Edge edgeCE = new Edge(1);
+        vertexA.add(vertexB, edgeAB);
+        vertexB.add(vertexA, edgeAB);
+        vertexA.add(vertexC, edgeAC);
+        vertexC.add(vertexA, edgeAC);
+        vertexB.add(vertexC, edgeBC);
+        vertexC.add(vertexB, edgeBC);
+        vertexB.add(vertexE, edgeBE);
+        vertexE.add(vertexB, edgeBE);
+        vertexC.add(vertexD, edgeCD);
+        vertexD.add(vertexC, edgeCD);
+        vertexC.add(vertexE, edgeCE);
+        vertexE.add(vertexC, edgeCE);
         Assertions.assertEquals(0, graph.vertices.size());
     }
 }
