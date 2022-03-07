@@ -44,6 +44,11 @@ public class DJPTests {
         vertexD.add(vertexC, edgeCD);
         vertexC.add(vertexE, edgeCE);
         vertexE.add(vertexC, edgeCE);
-        Assertions.assertEquals(0, graph.vertices.size());
+        graph.add(vertexA);
+        graph.add(vertexB);
+        graph.add(vertexC);
+        graph.add(vertexD);
+        graph.add(vertexE);
+        Assertions.assertEquals(5, graph.vertices.size());
     }
 }
