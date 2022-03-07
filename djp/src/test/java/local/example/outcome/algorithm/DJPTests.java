@@ -3,8 +3,8 @@ package local.example.outcome.algorithm;
 import io.quarkus.test.junit.QuarkusTest;
 
 import local.example.outcome.model.Graph;
-
 import local.example.outcome.model.Vertex;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
