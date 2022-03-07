@@ -3,6 +3,7 @@ package local.example.outcome.model;
 import org.apache.commons.math3.util.Pair;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 public class Vertex {
@@ -63,7 +64,20 @@ public class Vertex {
     }
 
     public Pair<Vertex, Edge> nextImprove() {
-        // TODO
-        return null;
+        Edge minEdge = new Edge();
+        Vertex nextVertex = this;
+        Iterator<Map.Entry<Vertex, Edge>> entryIterator = this.edges.entrySet().iterator();
+        while (entryIterator.hasNext()) {
+            Map.Entry<Vertex, Edge> entry = entryIterator.next();
+            if (!entry.getKey().isVisited()) {
+                if (!entry.getValue().isIncluded()) {
+                    if (entry.getValue().getWeight() < minEdge.getWeight()) {
+                        minEdge = entry.getValue();
+                        nextVertex = entry.getKey();
+                    }
+                }
+            }
+        }
+        return new Pair<>(nextVertex, minEdge);
     }
 }
