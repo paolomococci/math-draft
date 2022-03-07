@@ -22,4 +22,9 @@ public class DJP {
         // TODO
         return "";
     }
+
+    public boolean isDisconnected() {
+        // TODO
+        return false;
+    }
 }
