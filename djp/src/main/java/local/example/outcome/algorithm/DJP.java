@@ -1,5 +1,6 @@
 package local.example.outcome.algorithm;
 
+import local.example.outcome.model.Edge;
 import local.example.outcome.model.Graph;
 import local.example.outcome.model.Vertex;
 
@@ -22,7 +23,10 @@ public class DJP {
     public void pathFind() {
         if (this.graph.vertices.size() > 0)
             graph.vertices.get(0).setVisited(true);
-
+        while (this.isDisconnected()) {
+            Edge nextMin = new Edge();
+            Vertex nextVertex = this.graph.vertices.get(0);
+        }
         // TODO
     }
 
