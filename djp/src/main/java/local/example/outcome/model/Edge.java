@@ -39,4 +39,12 @@ public class Edge {
     public void setIncluded(boolean included) {
         this.included = included;
     }
+
+    public boolean isHighlighted() {
+        return highlighted;
+    }
+
+    public void setHighlighted(boolean highlighted) {
+        this.highlighted = highlighted;
+    }
 }
