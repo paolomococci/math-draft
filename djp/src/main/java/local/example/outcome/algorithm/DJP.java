@@ -3,6 +3,7 @@ package local.example.outcome.algorithm;
 import local.example.outcome.model.Edge;
 import local.example.outcome.model.Graph;
 import local.example.outcome.model.Vertex;
+
 import org.apache.commons.math3.util.Pair;
 
 public class DJP {
@@ -42,8 +43,11 @@ public class DJP {
     }
 
     public String minimumSpanningTree() {
-        // TODO
-        return "";
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Vertex vertex : this.graph.vertices) {
+            stringBuilder.append(vertex.getLabel());
+        }
+        return stringBuilder.toString();
     }
 
     public boolean isDisconnected() {
