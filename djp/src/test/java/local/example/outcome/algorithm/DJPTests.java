@@ -83,6 +83,7 @@ public class DJPTests {
         graph.add(vertexC);
         graph.add(vertexD);
         graph.add(vertexE);
+        DJP djp = new DJP(graph);
         // TODO
         Assertions.assertTrue(true);
     }
