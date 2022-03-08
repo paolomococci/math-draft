@@ -3,6 +3,7 @@ package local.example.outcome.algorithm;
 import local.example.outcome.model.Edge;
 import local.example.outcome.model.Graph;
 import local.example.outcome.model.Vertex;
+import org.apache.commons.math3.util.Pair;
 
 public class DJP {
 
@@ -26,8 +27,18 @@ public class DJP {
         while (this.isDisconnected()) {
             Edge nextMin = new Edge();
             Vertex nextVertex = this.graph.vertices.get(0);
+            for (Vertex vertex : this.graph.vertices) {
+                if (vertex.isVisited()) {
+                    Pair<Vertex, Edge> pairCandidate = vertex.nextImprove();
+                    if (pairCandidate.getValue().getWeight() < nextMin.getWeight()) {
+                        nextMin = pairCandidate.getValue();
+                        nextVertex = pairCandidate.getKey();
+                    }
+                }
+            }
+            nextMin.setIncluded(true);
+            nextVertex.setVisited(true);
         }
-        // TODO
     }
 
     public String minimumSpanningTree() {
