@@ -18,6 +18,12 @@ public class Edge {
         this.included = included;
     }
 
+    public Edge(int weight, boolean included, boolean highlighted) {
+        this.weight = weight;
+        this.included = included;
+        this.highlighted = highlighted;
+    }
+
     public int getWeight() {
         return weight;
     }
