@@ -1,6 +1,7 @@
 package local.example.outcome.algorithm;
 
 import local.example.outcome.model.Graph;
+import local.example.outcome.model.Vertex;
 
 public class DJP {
 
@@ -21,6 +22,7 @@ public class DJP {
     public void pathFind() {
         if (this.graph.vertices.size() > 0)
             graph.vertices.get(0).setVisited(true);
+
         // TODO
     }
 
@@ -30,7 +32,10 @@ public class DJP {
     }
 
     public boolean isDisconnected() {
-        // TODO
+        for (Vertex vertex : this.graph.vertices) {
+            if (!vertex.isVisited())
+                return true;
+        }
         return false;
     }
 }
