@@ -85,6 +85,6 @@ public class DJPTests {
         graph.add(vertexE);
         DJP djp = new DJP(graph);
         djp.pathFind();
-        Assertions.assertTrue(djp.minimumSpanningTree() != null);
+        Assertions.assertNotNull(djp.minimumSpanningTree());
     }
 }
