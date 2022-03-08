@@ -3,6 +3,7 @@ package local.example.outcome.model;
 import org.apache.commons.math3.util.Pair;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 public class Vertex {
@@ -76,5 +77,41 @@ public class Vertex {
             }
         }
         return new Pair<>(nextVertex, minEdge);
+    }
+
+    public String original() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Map.Entry<Vertex, Edge> vertexEdgeEntry : this.edges.entrySet()) {
+            if (!vertexEdgeEntry.getValue().isHighlighted()) {
+                stringBuilder.append(this.getLabel());
+                stringBuilder.append("-");
+                stringBuilder.append(vertexEdgeEntry.getValue().getWeight());
+                stringBuilder.append("-");
+                stringBuilder.append(vertexEdgeEntry.getKey().getLabel());
+                stringBuilder.append("\n");
+                vertexEdgeEntry.getValue().setHighlighted(true);
+            }
+        }
+        return stringBuilder.toString();
+    }
+
+    public String computed() {
+        StringBuilder stringBuilder = new StringBuilder();
+        if (this.isVisited()) {
+            for (Map.Entry<Vertex, Edge> vertexEdgeEntry : this.edges.entrySet()) {
+                if (vertexEdgeEntry.getValue().isIncluded()) {
+                    if (!vertexEdgeEntry.getValue().isHighlighted()) {
+                        stringBuilder.append(this.getLabel());
+                        stringBuilder.append("-");
+                        stringBuilder.append(vertexEdgeEntry.getValue().getWeight());
+                        stringBuilder.append("-");
+                        stringBuilder.append(vertexEdgeEntry.getKey().getLabel());
+                        stringBuilder.append("\n");
+                        vertexEdgeEntry.getValue().setHighlighted(true);
+                    }
+                }
+            }
+        }
+        return stringBuilder.toString();
     }
 }
