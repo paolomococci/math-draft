@@ -53,7 +53,7 @@ public class DJPTests {
     }
 
     @Test
-    public void minimumSpanningTreeTest() {
+    public void computeMinimumSpanningTreeTest() {
         Graph graph = new Graph();
         Vertex vertexA = new Vertex("A");
         Vertex vertexB = new Vertex("B");
@@ -86,6 +86,12 @@ public class DJPTests {
         DJP djp = new DJP(graph);
         djp.pathFind();
         String mst = djp.minimumSpanningTree();
-        Assertions.assertEquals("ABCDE", mst);
+        String computed = """
+                A-2-B
+                B-2-C
+                C-1-D
+                C-1-E
+                """;
+        Assertions.assertEquals(computed, mst);
     }
 }
