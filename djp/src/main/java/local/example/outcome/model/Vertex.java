@@ -3,7 +3,6 @@ package local.example.outcome.model;
 import org.apache.commons.math3.util.Pair;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 public class Vertex {
