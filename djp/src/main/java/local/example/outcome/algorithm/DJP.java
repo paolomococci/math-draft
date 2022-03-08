@@ -19,6 +19,8 @@ public class DJP {
     }
 
     public void pathFind() {
+        if (this.graph.vertices.size() > 0)
+            graph.vertices.get(0).setVisited(true);
         // TODO
     }
 
