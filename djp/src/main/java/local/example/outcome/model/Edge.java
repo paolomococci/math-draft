@@ -4,6 +4,7 @@ public class Edge {
 
     public int weight = Integer.MAX_VALUE;
     public boolean included = false;
+    public boolean highlighted = false;
 
     public Edge() {
     }
