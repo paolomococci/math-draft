@@ -45,7 +45,7 @@ public class DJP {
     public String minimumSpanningTree() {
         StringBuilder stringBuilder = new StringBuilder();
         for (Vertex vertex : this.graph.vertices) {
-            stringBuilder.append(vertex.getLabel());
+            stringBuilder.append(vertex.computed());
         }
         return stringBuilder.toString();
     }
@@ -56,5 +56,13 @@ public class DJP {
                 return true;
         }
         return false;
+    }
+
+    public String original() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Vertex vertex : this.getGraph().vertices) {
+            stringBuilder.append(vertex.original());
+        }
+        return stringBuilder.toString();
     }
 }
