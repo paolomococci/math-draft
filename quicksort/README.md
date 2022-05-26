@@ -5,7 +5,7 @@ REST application which implements the quicksort algorithm, developed thanks to Q
 ## scaffolding
 
 ```shell
-mvn io.quarkus.platform:quarkus-maven-plugin:2.9.1.Final:create -DprojectGroupId=local.example -DprojectArtifactId=quicksort -DclassName="local.example.outcome.OutcomeResource" -Dpath="/outcome" -Dextensions="resteasy-jackson"
+mvn io.quarkus.platform:quarkus-maven-plugin:2.9.2.Final:create -DprojectGroupId=local.example -DprojectArtifactId=quicksort -DclassName="local.example.outcome.OutcomeResource" -Dpath="/outcome" -Dextensions="resteasy-jackson"
 ```
 
 ## run application in development mode
