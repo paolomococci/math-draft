@@ -11,3 +11,11 @@ mvn io.quarkus.platform:quarkus-maven-plugin:2.10.1.Final:create -DprojectGroupI
 ```shell
 ./gradlew quarkusDev
 ```
+
+## example of using this API with curl
+
+I can start with the GET method which simply returns a string of feedback
+
+```shell
+curl -i http://127.0.0.1:8080/outcome
+```
