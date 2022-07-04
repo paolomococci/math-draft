@@ -2,9 +2,7 @@ package local.example.outcome;
 
 import local.example.outcome.model.Eoq;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -25,5 +23,14 @@ public class OutcomeResource {
         if (this.eoqs.isEmpty())
             return Response.ok().build();
         return Response.ok(this.eoqs).build();
+    }
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Set<Eoq> compute(Eoq eoq) {
+        eoq.setEoq();
+        this.eoqs.add(eoq);
+        return this.eoqs;
     }
 }
