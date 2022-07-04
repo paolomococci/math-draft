@@ -6,6 +6,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import java.util.Collections;
 import java.util.LinkedHashMap;
@@ -19,8 +20,10 @@ public class OutcomeResource {
     );
 
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String feedback() {
-        return "<!--feedback endpoint-->";
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response read() {
+        if (this.eoqs.isEmpty())
+            return Response.ok().build();
+        return Response.ok(this.eoqs).build();
     }
 }
