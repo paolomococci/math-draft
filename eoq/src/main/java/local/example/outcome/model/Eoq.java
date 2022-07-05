@@ -1,6 +1,46 @@
 package local.example.outcome.model;
 
 public class Eoq {
+
+    public double demand;
+    public double costOfIssuing;
+    public double price;
+    public double interestRate;
+    public long quantity;
+
+    public Eoq() {
+    }
+
+    public Eoq(
+            double demand,
+            double costOfIssuing,
+            double price,
+            double interestRate
+    ) {
+        this.demand = Math.abs(demand);
+        this.costOfIssuing = Math.abs(costOfIssuing);
+        this.price = Math.abs(price);
+        this.interestRate = Math.abs(interestRate);
+    }
+
     public void setEoq() {
+        this.quantity = this.economicOrderQuantity(
+                this.demand,
+                this.costOfIssuing,
+                this.price,
+                this.interestRate
+        );
+    }
+
+    private long economicOrderQuantity(
+            double demand,
+            double costOfIssuing,
+            double price,
+            double interestRate
+    ) {
+        double epsilon = 0.000001D;
+        if (Double.compare(price, 0.0) < epsilon || Double.compare(interestRate, 0.0) < epsilon)
+            return 0L;
+        return Math.round(Math.sqrt((2 * costOfIssuing * demand) / (price * interestRate)));
     }
 }
