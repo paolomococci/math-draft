@@ -7,6 +7,7 @@ public class Eoq {
     public double price;
     public double interestRate;
     public long quantity;
+    public long ordersToProcess;
 
     public Eoq() {
     }
@@ -30,6 +31,10 @@ public class Eoq {
                 this.price,
                 this.interestRate
         );
+        this.ordersToProcess = this.numberOfOrdersToProcess(
+                this.demand,
+                this.quantity
+        );
     }
 
     private long economicOrderQuantity(
@@ -42,5 +47,14 @@ public class Eoq {
         if (Double.compare(price, 0.0) < epsilon || Double.compare(interestRate, 0.0) < epsilon)
             return 0L;
         return Math.round(Math.sqrt((2 * costOfIssuing * demand) / (price * interestRate)));
+    }
+
+    private long numberOfOrdersToProcess(
+            double demand,
+            long quantity
+    ) {
+        if (this.quantity <= 0L)
+            return 0;
+        return Math.round(demand / quantity);
     }
 }
