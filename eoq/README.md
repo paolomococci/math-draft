@@ -38,9 +38,9 @@ and the system responds with a first solution:
 ```text
 HTTP/1.1 200 OK
 Content-Type: application/json
-content-length: 88
+content-length: 108
 
-[{"demand":2000.0,"costOfIssuing":125.0,"price":23.0,"interestRate":0.1,"quantity":466}]
+[{"demand":2000.0,"costOfIssuing":125.0,"price":23.0,"interestRate":0.1,"quantity":466,"ordersToProcess":4}]
 ```
 
 I try to pass a new object:
@@ -54,7 +54,7 @@ system respond with an array of Eoq objects in json format:
 ```text
 HTTP/1.1 200 OK
 Content-Type: application/json
-content-length: 179
+content-length: 221
 
-[{"demand":2000.0,"costOfIssuing":125.0,"price":23.0,"interestRate":0.1,"quantity":466},{"demand":20000.0,"costOfIssuing":210.0,"price":1650.0,"interestRate":0.25,"quantity":143}]
+[{"demand":2000.0,"costOfIssuing":125.0,"price":23.0,"interestRate":0.1,"quantity":466,"ordersToProcess":4},{"demand":20000.0,"costOfIssuing":210.0,"price":1650.0,"interestRate":0.25,"quantity":143,"ordersToProcess":140}]
 ```
