@@ -10,7 +10,7 @@ public class OutcomeResource {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    public String hello() {
-        return "Hello RESTEasy";
+    public String feedback() {
+        return "returning a string";
     }
 }
