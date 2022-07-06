@@ -16,7 +16,7 @@ public class OutcomeResourceTest {
           .when().get("/outcome")
           .then()
              .statusCode(200)
-             .body(is("returning a string"));
+             .body(is(""));
     }
 
 }
