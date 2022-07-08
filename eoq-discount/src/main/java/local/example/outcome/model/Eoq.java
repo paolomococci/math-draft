@@ -86,4 +86,9 @@ public class Eoq {
         }
         return nop;
     }
+
+    private boolean[] validityCheck() {
+        boolean[] validity = new boolean[0];
+        return validity;
+    }
 }
