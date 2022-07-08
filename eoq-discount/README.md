@@ -1,5 +1,7 @@
 # eoq-discount  (Economic Order Quantity)
 
+In case the price depends on the quantity purchased.
+
 ## scaffolding
 
 ```shell
