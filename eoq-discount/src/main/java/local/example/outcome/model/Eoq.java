@@ -15,6 +15,7 @@ public class Eoq {
     public long[] quantity;
     public long[] ordersToProcess;
     public boolean[] validityOfTheMinPurchaseQuantity;
+    public long[] diff;
 
     public Eoq() {
     }
@@ -53,6 +54,11 @@ public class Eoq {
         this.validityOfTheMinPurchaseQuantity = this.validityCheck(
                 this.quantity,
                 this.minPurchase
+        );
+        this.diff = bestChoice(
+                this.demand,
+                this.quantity,
+                this.ordersToProcess
         );
     }
 
@@ -102,8 +108,17 @@ public class Eoq {
         return validity;
     }
 
-    private String[] bestChoice() {
-        String[] choice = new String[0];
-        return choice;
+    private long[] bestChoice(
+            double demand,
+            long[] quantity,
+            long[] ordersToProcess
+    ) {
+        long[] diff = new long[quantity.length];
+        for (int i = 0; i < quantity.length; i++) {
+            diff[i] = Math.round(
+                    Math.abs(demand - quantity[i] * ordersToProcess[i])
+            );
+        }
+        return diff;
     }
 }
