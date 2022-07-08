@@ -23,7 +23,7 @@ getting:
 ```text
 HTTP/1.1 200 OK
 Content-Type: application/json
-content-length: 265
+content-length: 285
 
-[{"demand":800.0,"costOfIssuing":14.0,"price":73.0,"discounts":[0.0,0.9,0.12,0.15],"minPurchase":[0,50,80,100],"interestRate":0.12,"costOfStock":1.0,"quantity":[46,88,48,49],"ordersToProcess":[17,9,17,16],"validityOfTheMinPurchaseQuantity":[true,true,false,false]}]
+[{"demand":800.0,"costOfIssuing":14.0,"price":73.0,"discounts":[0.0,0.9,0.12,0.15],"minPurchase":[0,50,80,100],"interestRate":0.12,"costOfStock":1.0,"quantity":[46,88,48,49],"ordersToProcess":[17,9,17,16],"validityOfTheMinPurchaseQuantity":[true,true,false,false],"diff":[18,8,16,16]}]
 ```
