@@ -27,6 +27,20 @@ public class Eoq {
         this.costOfStock = Math.abs(costOfStock);
     }
 
+    public void setEoq() {
+        this.quantity = this.economicOrderQuantity(
+                this.demand,
+                this.costOfIssuing,
+                this.price,
+                this.interestRate,
+                this.costOfStock
+        );
+        this.ordersToProcess = this.numberOfOrdersToProcess(
+                this.demand,
+                this.quantity
+        );
+    }
+
     private long economicOrderQuantity(
             double demand,
             double costOfIssuing,
