@@ -50,6 +50,10 @@ public class Eoq {
                 this.demand,
                 this.quantity
         );
+        this.validityOfTheMinPurchaseQuantity = this.validityCheck(
+                this.quantity,
+                this.minPurchase
+        );
     }
 
     private long[] economicOrderQuantity(
@@ -91,7 +95,10 @@ public class Eoq {
             long[] quantity,
             long[] minPurchase
     ) {
-        boolean[] validity = new boolean[0];
+        boolean[] validity = new boolean[quantity.length];
+        for (int i = 0; i < quantity.length; i++) {
+            validity[i] = minPurchase[i] <= quantity[i];
+        }
         return validity;
     }
 }
