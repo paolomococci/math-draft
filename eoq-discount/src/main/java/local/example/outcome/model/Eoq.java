@@ -26,4 +26,13 @@ public class Eoq {
         this.interestRate = Math.abs(interestRate);
         this.costOfStock = Math.abs(costOfStock);
     }
+
+    private long numberOfOrdersToProcess(
+            double demand,
+            long quantity
+    ) {
+        if (this.quantity <= 0L)
+            return 0;
+        return Math.round(demand / quantity);
+    }
 }
