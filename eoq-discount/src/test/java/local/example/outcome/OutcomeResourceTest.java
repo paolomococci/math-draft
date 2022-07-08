@@ -14,9 +14,9 @@ public class OutcomeResourceTest {
     @Test
     public void testHelloEndpoint() {
         given()
-          .when().get("/outcome")
-          .then()
-             .statusCode(200)
-             .body(is("feedback string\n"));
+                .when().get("/outcome")
+                .then()
+                .statusCode(200)
+                .body(is(""));
     }
 }
