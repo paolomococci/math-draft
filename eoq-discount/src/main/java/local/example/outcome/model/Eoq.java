@@ -14,6 +14,7 @@ public class Eoq {
     public double costOfStock;
     public long[] quantity;
     public long[] ordersToProcess;
+    public boolean[] validityOfTheMinPurchaseQuantity;
 
     public Eoq() {
     }
