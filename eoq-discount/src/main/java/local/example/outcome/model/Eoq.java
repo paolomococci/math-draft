@@ -9,7 +9,7 @@ public class Eoq {
     public double costOfIssuing;
     public double price;
     public double[] discounts;
-    public long minPurchase;
+    public long[] minPurchase;
     public double interestRate;
     public double costOfStock;
     public long[] quantity;
@@ -87,7 +87,10 @@ public class Eoq {
         return nop;
     }
 
-    private boolean[] validityCheck() {
+    private boolean[] validityCheck(
+            long[] quantity,
+            long[] minPurchase
+    ) {
         boolean[] validity = new boolean[0];
         return validity;
     }
