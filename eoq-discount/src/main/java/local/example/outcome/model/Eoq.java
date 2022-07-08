@@ -101,4 +101,9 @@ public class Eoq {
         }
         return validity;
     }
+
+    private String[] bestChoice() {
+        String[] choice = new String[0];
+        return choice;
+    }
 }
