@@ -1,4 +1,6 @@
-# eoq-rhythm 
+# eoq-rhythm (Economic Order Quantity)
+
+EOQ applied to production rate.
 
 ## scaffolding
 
