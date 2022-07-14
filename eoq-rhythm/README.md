@@ -23,5 +23,9 @@ curl -i -X POST -H "Content-Type: application/json" -d '{"demand":91000,"setUpCo
 getting the following answer:
 
 ```text
+HTTP/1.1 200 OK
+Content-Type: application/json
+content-length: 194
 
+[{"demand":91000.0,"setUpCost":4.8,"interestRate":0.12,"stockCost":0.5,"productionCost":0.5,"productionRateInMinutes":0.347222222,"quantity":1282,"leadTimeInMinutes":3692,"batchesToProcess":71}]
 ```
