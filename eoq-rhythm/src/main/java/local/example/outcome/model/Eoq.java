@@ -7,6 +7,8 @@ public class Eoq {
     public double price;
     public double interestRate;
     public double costOfStock;
+    public double demandRate;
+    public double productionRate;
     public long quantity;
     public long ordersToProcess;
 
