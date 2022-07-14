@@ -60,8 +60,17 @@ public class Eoq {
         );
     }
 
-    private long numberOfBatchesToBeProcess() {
+    private long numberOfBatchesToBeProcess(
+            double demand,
+            long quantity
+    ) {
+        if (this.quantity <= 0L)
+            return 0;
+        return Math.round(demand / quantity);
+    }
+
+    private double leadTimeInMinutes() {
         // TODO
-        return 0L;
+        return 0.0;
     }
 }
