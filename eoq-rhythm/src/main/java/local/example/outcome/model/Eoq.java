@@ -12,7 +12,7 @@ public class Eoq {
     public double productionCost;
     public double productionRateInMinutes;
     public long quantity;
-    public double leadTimeInMinutes;
+    public long leadTimeInMinutes;
     public long batchesToProcess;
 
     public Eoq() {
@@ -69,12 +69,12 @@ public class Eoq {
         return Math.round(demand / quantity);
     }
 
-    private double leadTimeInMinutes(
+    private long leadTimeInMinutes(
             double quantity,
             double productionRateInMinutes
     ) {
         if (Double.compare(productionRateInMinutes, 0.0) < EPSILON)
-            return 0.0;
-        return quantity / productionRateInMinutes;
+            return 0L;
+        return Math.round(quantity / productionRateInMinutes);
     }
 }
