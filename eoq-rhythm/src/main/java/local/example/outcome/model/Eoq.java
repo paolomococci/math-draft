@@ -4,7 +4,6 @@ public class Eoq {
 
     public double demand;
     public double setUpCost;
-    public double price;
     public double interestRate;
     public double stockCost;
     public double productionCost;
@@ -29,7 +28,6 @@ public class Eoq {
     ) {
         this.demand = Math.abs(demand);
         this.setUpCost = Math.abs(setUpCost);
-        this.price = Math.abs(price);
         this.interestRate = Math.abs(interestRate);
         this.stockCost = Math.abs(stockCost);
         this.productionCost = Math.abs(productionCost);
@@ -41,9 +39,25 @@ public class Eoq {
         // TODO
     }
 
-    private long economicOrderQuantity() {
-        // TODO
-        return 0L;
+    private long economicOrderQuantity(
+            double demand,
+            double setUpCost,
+            double interestRate,
+            double stockCost,
+            double productionCost,
+            double demandRate,
+            double productionRate
+    ) {
+        double epsilon = 0.000001D;
+        if (Double.compare((productionCost * interestRate + 2 * stockCost), 0.0) < epsilon || Double.compare(interestRate, 0.0) < epsilon)
+            return 0L;
+        return Math.round(
+                Math.sqrt(
+                        (2 * setUpCost * demand) / (
+                                (productionCost * interestRate + 2 * stockCost) * (1 - demandRate / productionRate)
+                        )
+                )
+        );
     }
 
     private long numberOfBatchesToBeProcess() {
