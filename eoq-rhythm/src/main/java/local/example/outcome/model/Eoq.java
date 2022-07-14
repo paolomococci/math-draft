@@ -3,7 +3,7 @@ package local.example.outcome.model;
 public class Eoq {
 
     private static final double EPSILON = 0.000001D;
-    private static final int FACTOR = 525600;
+    private static final int NUMBER_OF_MINUTES_IN_A_YEAR = 525600;
 
     public double demand;
     public double setUpCost;
@@ -47,6 +47,10 @@ public class Eoq {
                 this.demand,
                 this.quantity
         );
+        this.leadTimeInMinutes = this.leadTimeInMinutes(
+                this.quantity,
+                this.productionRateInMinutes
+        );
     }
 
     private long economicOrderQuantity(
@@ -60,7 +64,7 @@ public class Eoq {
         if (Double.compare((productionCost * interestRate + 2 * stockCost), 0.0) < EPSILON
                 || Double.compare(interestRate, 0.0) < EPSILON)
             return 0L;
-        double demandRateInMinutes = demand / FACTOR;
+        double demandRateInMinutes = demand / NUMBER_OF_MINUTES_IN_A_YEAR;
         return Math.round(
                 Math.sqrt(
                         (2 * setUpCost * demand) / (
