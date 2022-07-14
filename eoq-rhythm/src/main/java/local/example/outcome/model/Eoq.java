@@ -33,4 +33,14 @@ public class Eoq {
         this.demandRate = Math.abs(demandRate);
         this.productionRate = Math.abs(productionRate);
     }
+
+    private long economicOrderQuantity() {
+        // TODO
+        return 0L;
+    }
+
+    private long numberOfBatchesToBeProcess() {
+        // TODO
+        return 0L;
+    }
 }
