@@ -69,7 +69,7 @@ public class Eoq {
                 Math.sqrt(
                         (2 * setUpCost * demand) / (
                                 (productionCost * interestRate + 2 * stockCost) *
-                                        (1 - demandRateInMinutes / productionRateInMinutes)
+                                        (1 - (demandRateInMinutes / productionRateInMinutes))
                         )
                 )
         );
