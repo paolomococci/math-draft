@@ -6,7 +6,8 @@ public class Eoq {
     public double setUpCost;
     public double price;
     public double interestRate;
-    public double costOfStock;
+    public double stockCost;
+    public double productionCost;
     public double demandRate;
     public double productionRate;
     public long quantity;
@@ -21,7 +22,8 @@ public class Eoq {
             double setUpCost,
             double price,
             double interestRate,
-            double costOfStock,
+            double stockCost,
+            double productionCost,
             double demandRate,
             double productionRate
     ) {
@@ -29,9 +31,14 @@ public class Eoq {
         this.setUpCost = Math.abs(setUpCost);
         this.price = Math.abs(price);
         this.interestRate = Math.abs(interestRate);
-        this.costOfStock = Math.abs(costOfStock);
+        this.stockCost = Math.abs(stockCost);
+        this.productionCost = Math.abs(productionCost);
         this.demandRate = Math.abs(demandRate);
         this.productionRate = Math.abs(productionRate);
+    }
+
+    public void setEoq() {
+        // TODO
     }
 
     private long economicOrderQuantity() {
