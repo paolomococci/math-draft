@@ -12,4 +12,18 @@ public class Eoq {
 
     public Eoq() {
     }
+
+    public Eoq(
+            double demand,
+            double costOfIssuing,
+            double price,
+            double interestRate,
+            double costOfStock
+    ) {
+        this.demand = Math.abs(demand);
+        this.costOfIssuing = Math.abs(costOfIssuing);
+        this.price = Math.abs(price);
+        this.interestRate = Math.abs(interestRate);
+        this.costOfStock = Math.abs(costOfStock);
+    }
 }
