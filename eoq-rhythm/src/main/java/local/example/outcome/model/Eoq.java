@@ -35,7 +35,18 @@ public class Eoq {
     }
 
     public void setEoq() {
-        // TODO
+        this.quantity = this.economicOrderQuantity(
+                this.demand,
+                this.setUpCost,
+                this.interestRate,
+                this.stockCost,
+                this.productionCost,
+                this.productionRateInMinutes
+        );
+        this.batchesToProcess = this.numberOfBatchesToBeProcess(
+                this.demand,
+                this.quantity
+        );
     }
 
     private long economicOrderQuantity(
