@@ -2,13 +2,14 @@ package local.example.outcome.model;
 
 public class Eoq {
 
+    private static final double EPSILON = 0.000001D;
+
     public double demand;
     public double setUpCost;
     public double interestRate;
     public double stockCost;
     public double productionCost;
-    public double demandRate;
-    public double productionRate;
+    public double productionRateInMinutes;
     public long quantity;
     public double leadTimeInMinutes;
     public long batchesToProcess;
@@ -19,20 +20,17 @@ public class Eoq {
     public Eoq(
             double demand,
             double setUpCost,
-            double price,
             double interestRate,
             double stockCost,
             double productionCost,
-            double demandRate,
-            double productionRate
+            double productionRateInMinutes
     ) {
         this.demand = Math.abs(demand);
         this.setUpCost = Math.abs(setUpCost);
         this.interestRate = Math.abs(interestRate);
         this.stockCost = Math.abs(stockCost);
         this.productionCost = Math.abs(productionCost);
-        this.demandRate = Math.abs(demandRate);
-        this.productionRate = Math.abs(productionRate);
+        this.productionRateInMinutes = Math.abs(productionRateInMinutes);
     }
 
     public void setEoq() {
@@ -45,16 +43,15 @@ public class Eoq {
             double interestRate,
             double stockCost,
             double productionCost,
-            double demandRate,
-            double productionRate
+            double demandRateInMinutes,
+            double productionRateInMinutes
     ) {
-        double epsilon = 0.000001D;
-        if (Double.compare((productionCost * interestRate + 2 * stockCost), 0.0) < epsilon || Double.compare(interestRate, 0.0) < epsilon)
+        if (Double.compare((productionCost * interestRate + 2 * stockCost), 0.0) < EPSILON || Double.compare(interestRate, 0.0) < EPSILON)
             return 0L;
         return Math.round(
                 Math.sqrt(
                         (2 * setUpCost * demand) / (
-                                (productionCost * interestRate + 2 * stockCost) * (1 - demandRate / productionRate)
+                                (productionCost * interestRate + 2 * stockCost) * (1 - demandRateInMinutes / productionRateInMinutes)
                         )
                 )
         );
@@ -69,8 +66,12 @@ public class Eoq {
         return Math.round(demand / quantity);
     }
 
-    private double leadTimeInMinutes() {
-        // TODO
-        return 0.0;
+    private double leadTimeInMinutes(
+            double quantity,
+            double productionRateInMinutes
+    ) {
+        if (Double.compare(productionRateInMinutes, 0.0) < EPSILON)
+            return 0.0;
+        return quantity / productionRateInMinutes;
     }
 }
