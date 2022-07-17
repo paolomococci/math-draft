@@ -1,4 +1,4 @@
-# eoq-safety 
+# eoq-safety (Economic Order Quantity with Safety Stock) 
 
 ## scaffolding
 
