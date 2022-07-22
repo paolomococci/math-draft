@@ -9,4 +9,6 @@ class Eoq {
     var costOfStock = 0.0
     var quantity: Long = 0
     var ordersToProcess: Long = 0
+
+    fun Eoq() {}
 }
