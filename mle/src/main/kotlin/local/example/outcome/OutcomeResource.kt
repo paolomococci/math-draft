@@ -10,5 +10,5 @@ class OutcomeResource {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    fun hello() = "Hello from RESTEasy Reactive"
+    fun feedback() = "reactive feedback"
 }
