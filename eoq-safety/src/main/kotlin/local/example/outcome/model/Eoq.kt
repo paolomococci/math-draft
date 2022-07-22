@@ -45,4 +45,11 @@ class Eoq {
             2 * costOfIssuing * demand / (price * interestRate + 2 * costOfStock)
         ).roundToLong()
     }
+
+    private fun numberOfOrdersToProcess(
+        demand: Double,
+        quantity: Long
+    ): Long {
+        return if (this.quantity <= 0L) 0 else (demand / quantity).roundToLong()
+    }
 }
