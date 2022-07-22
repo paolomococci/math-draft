@@ -30,7 +30,19 @@ class Eoq {
         this.costOfStock = abs(costOfStock)
     }
 
-    // TODO public fun setEoq()
+    fun setEoq() {
+        quantity = economicOrderQuantity(
+            demand,
+            costOfIssuing,
+            price,
+            interestRate,
+            costOfStock
+        )
+        ordersToProcess = numberOfOrdersToProcess(
+            demand,
+            quantity
+        )
+    }
 
     private fun economicOrderQuantity(
         demand: Double,
