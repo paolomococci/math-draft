@@ -1,5 +1,7 @@
 package local.example.outcome.model
 
+import kotlin.math.abs
+
 class Eoq {
 
     var demand = 0.0
@@ -11,4 +13,18 @@ class Eoq {
     var ordersToProcess: Long = 0
 
     fun Eoq() {}
+
+    fun Eoq(
+        demand: Double,
+        costOfIssuing: Double,
+        price: Double,
+        interestRate: Double,
+        costOfStock: Double
+    ) {
+        this.demand = abs(demand)
+        this.costOfIssuing = abs(costOfIssuing)
+        this.price = abs(price)
+        this.interestRate = abs(interestRate)
+        this.costOfStock = abs(costOfStock)
+    }
 }
