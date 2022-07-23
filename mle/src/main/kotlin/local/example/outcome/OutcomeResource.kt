@@ -8,6 +8,7 @@ import javax.ws.rs.GET
 import javax.ws.rs.Path
 import javax.ws.rs.Produces
 import javax.ws.rs.core.MediaType
+import javax.ws.rs.core.Response
 
 @Path("/outcome")
 class OutcomeResource {
@@ -19,6 +20,8 @@ class OutcomeResource {
     )
 
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    fun feedback() = "reactive feedback"
+    @Produces(MediaType.APPLICATION_JSON)
+    fun read(): Response? {
+        return if (outcome.isEmpty()) Response.ok().build() else Response.ok(outcome).build()
+    }
 }
