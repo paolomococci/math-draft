@@ -4,7 +4,7 @@ import kotlin.math.abs
 import kotlin.math.roundToLong
 import kotlin.math.sqrt
 
-class Eoq {
+class Eoq() {
 
     var demand = 0.0
     var costOfIssuing = 0.0
@@ -14,15 +14,13 @@ class Eoq {
     var quantity: Long = 0
     var ordersToProcess: Long = 0
 
-    fun Eoq() {}
-
-    fun Eoq(
+    constructor(
         demand: Double,
         costOfIssuing: Double,
         price: Double,
         interestRate: Double,
         costOfStock: Double
-    ) {
+    ) : this() {
         this.demand = abs(demand)
         this.costOfIssuing = abs(costOfIssuing)
         this.price = abs(price)
