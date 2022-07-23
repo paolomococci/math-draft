@@ -1,4 +1,7 @@
 package local.example.outcome.model
 
-class Average {
+class Average(values: Array<Double>) {
+    fun setAverage() {
+        TODO("Not yet implemented")
+    }
 }
