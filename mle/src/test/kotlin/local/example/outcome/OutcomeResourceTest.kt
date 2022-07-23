@@ -17,5 +17,4 @@ class OutcomeResourceTest {
              .statusCode(200)
              .body(`is`(""))
     }
-
 }
