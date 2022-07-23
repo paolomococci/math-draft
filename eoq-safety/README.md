@@ -11,3 +11,19 @@ mvn io.quarkus.platform:quarkus-maven-plugin:2.10.3.Final:create -DprojectGroupI
 ```shell
 ./gradlew quarkusDev
 ```
+
+## now I try to post a first Eoq object in json format:
+
+```shell
+curl -i -X POST -H "Content-Type: application/json" -d '{"demand":800,"costOfIssuing":14,"price":73,"interestRate":0.12,"costOfStock":1}' http://127.0.0.1:8080/outcome
+```
+
+getting:
+
+```text
+HTTP/1.1 200 OK
+content-length: 125
+Content-Type: application/json;charset=UTF-8
+
+[{"demand":800.0,"costOfIssuing":14.0,"price":73.0,"interestRate":0.12,"costOfStock":1.0,"quantity":46,"ordersToProcess":17}]
+```
