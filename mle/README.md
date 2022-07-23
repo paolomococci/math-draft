@@ -11,4 +11,3 @@ mvn io.quarkus.platform:quarkus-maven-plugin:2.10.3.Final:create -DprojectGroupI
 ```shell
 ./gradlew quarkusDev
 ```
-
