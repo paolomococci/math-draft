@@ -11,7 +11,7 @@ import javax.ws.rs.core.Response
 @Path("/outcome")
 class OutcomeResource {
 
-    private val outcome = Collections.newSetFromMap(
+    private val outcomes = Collections.newSetFromMap(
         Collections.synchronizedMap(
             LinkedHashMap<Outcome, Boolean>()
         )
@@ -20,15 +20,15 @@ class OutcomeResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     fun read(): Response? {
-        return if (outcome.isEmpty()) Response.ok().build() else Response.ok(outcome).build()
+        return if (outcomes.isEmpty()) Response.ok().build() else Response.ok(outcomes).build()
     }
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    fun compute(eoq: Outcome): Set<Outcome?>? {
-        eoq.setOutcome()
-        outcome.add(eoq)
-        return outcome
+    fun compute(outcome: Outcome): Set<Outcome?>? {
+        outcome.setOutcome()
+        outcomes.add(outcome)
+        return outcomes
     }
 }
