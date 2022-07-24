@@ -7,6 +7,9 @@ class Average() {
 
     constructor(values: Array<Double>) : this() {
         this.values = values.copyOf()
-        this.mu = values.average()
+    }
+
+    fun setAverage() {
+        this.mu = this.values.average()
     }
 }
