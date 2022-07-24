@@ -10,11 +10,11 @@ import org.junit.jupiter.api.Test
 class OutcomeResourceTest {
 
     @Test
-    fun testFeedbackEndpoint() {
+    fun testReadEndpoint() {
         given()
           .`when`().get("/outcome")
           .then()
              .statusCode(200)
-             .body(`is`("feedback reactive"))
+             .body(`is`(""))
     }
 }
