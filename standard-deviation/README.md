@@ -1,0 +1,7 @@
+# standard-deviation 
+
+## scaffolding
+
+```shell
+mvn io.quarkus.platform:quarkus-maven-plugin:2.10.3.Final:create -DprojectGroupId=local.example -DprojectArtifactId=standard-deviation -DclassName="local.example.outcome.OutcomeResource" -Dpath="/outcome" -Dextensions="kotlin,resteasy-reactive-jackson" -DbuildTool=gradle
+```
