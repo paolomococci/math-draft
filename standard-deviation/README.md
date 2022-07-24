@@ -11,3 +11,9 @@ mvn io.quarkus.platform:quarkus-maven-plugin:2.10.3.Final:create -DprojectGroupI
 ```shell
 ./gradlew quarkusDev
 ```
+
+## now I try to post a first Average object in json format:
+
+```shell
+curl -i -X POST -H "Content-Type: application/json" -d '{"values":[2.3,7.1,3.5,6.2,9.0]}' http://127.0.0.1:8080/outcome
+```
