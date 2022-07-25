@@ -12,7 +12,7 @@ import static org.hamcrest.CoreMatchers.is;
 public class OutcomeResourceTest {
 
     @Test
-    public void testHelloEndpoint() {
+    public void testReadEndpoint() {
         given()
                 .when().get("/outcome")
                 .then()
