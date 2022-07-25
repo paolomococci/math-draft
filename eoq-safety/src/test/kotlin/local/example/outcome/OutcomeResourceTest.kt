@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test
 class OutcomeResourceTest {
 
     @Test
-    fun testFeedbackEndpoint() {
+    fun testReadEndpoint() {
         given()
           .`when`().get("/outcome")
           .then()
