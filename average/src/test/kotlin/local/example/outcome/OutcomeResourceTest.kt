@@ -19,4 +19,20 @@ class OutcomeResourceTest {
           .then()
              .statusCode(200)
     }
+
+    @Test
+    fun testComputeEndpoint() {
+        given().contentType(ContentType.JSON)
+            .body(JSON_DATA).`when`().post(BASE_PATH)
+            .then().statusCode(HttpStatus.SC_OK)
+            .body(`is`(JSON_OUTCOME))
+    }
+
+    companion object {
+        private const val BASE_PATH = "/outcome"
+        private const val JSON_DATA =
+            ""
+        private const val JSON_OUTCOME =
+            ""
+    }
 }
