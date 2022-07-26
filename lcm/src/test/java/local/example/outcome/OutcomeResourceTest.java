@@ -10,6 +10,13 @@ import static io.restassured.RestAssured.given;
 @QuarkusTest
 public class OutcomeResourceTest {
 
+    private static final String BASE_PATH = "/outcome";
+    private static final String JSON_DATA = """
+            
+            """;
+    private static final String JSON_OUTCOME =
+            "";
+
     @Test
     public void readEndpointTest() {
         given()
