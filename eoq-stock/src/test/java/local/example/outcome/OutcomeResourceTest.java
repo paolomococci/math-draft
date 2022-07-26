@@ -8,6 +8,7 @@ import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 
 @QuarkusTest
@@ -33,6 +34,6 @@ public class OutcomeResourceTest {
         given().contentType(ContentType.JSON)
                 .body(JSON_DATA).when().post(BASE_PATH)
                 .then().statusCode(HttpStatus.SC_OK)
-                .body(is(JSON_OUTCOME));
+                .body("quantity[0]", equalTo(46));
     }
 }
