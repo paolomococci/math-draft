@@ -31,8 +31,8 @@ class OutcomeResourceTest {
     companion object {
         private const val BASE_PATH = "/outcome"
         private const val JSON_DATA =
-            ""
+            "{\"values\":[2.3,7.1,3.5,6.2,9.0]}"
         private const val JSON_OUTCOME =
-            ""
+            "[{\"values\":[2.3,7.1,3.5,6.2,9.0],\"mu\":5.619999999999999}]"
     }
 }
