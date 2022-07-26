@@ -14,15 +14,15 @@ public class OutcomeResourceTest {
 
     private static final String BASE_PATH = "/outcome";
     private static final String JSON_DATA = """
-            
+            {"a":405,"b":450}
             """;
     private static final String JSON_OUTCOME =
-            "";
+            "[{\"a\":405,\"b\":450,\"lcm\":4050}]";
 
     @Test
     public void readEndpointTest() {
         given()
-          .when().get("/outcome")
+          .when().get(BASE_PATH)
           .then()
              .statusCode(HttpStatus.SC_OK);
     }
