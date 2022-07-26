@@ -14,10 +14,10 @@ public class OutcomeResourceTest {
 
     private static final String BASE_PATH = "/outcome";
     private static final String JSON_DATA = """
-            
+            {"a":20,"b":125}
             """;
     private static final String JSON_OUTCOME =
-            "";
+            "[{\"a\":20,\"b\":125,\"gcd\":5}]";
 
     @Test
     public void readEndpointTest() {
