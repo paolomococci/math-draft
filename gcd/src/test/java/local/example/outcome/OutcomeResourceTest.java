@@ -14,6 +14,6 @@ public class OutcomeResourceTest {
         given()
           .when().get("/outcome")
           .then()
-             .statusCode(200);
+             .statusCode(HttpStatus.SC_OK);
     }
 }
