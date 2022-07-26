@@ -15,9 +15,8 @@ class OutcomeResourceTest {
     @Test
     fun testReadEndpoint() {
         given()
-          .`when`().get("/outcome")
-          .then()
-             .statusCode(HttpStatus.SC_OK)
+          .`when`().get(BASE_PATH)
+          .then().statusCode(HttpStatus.SC_OK)
     }
 
     @Test
