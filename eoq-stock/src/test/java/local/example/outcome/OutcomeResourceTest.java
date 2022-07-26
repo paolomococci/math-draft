@@ -23,7 +23,7 @@ public class OutcomeResourceTest {
     @Test
     public void testReadEndpoint() {
         given()
-          .when().get("/outcome")
+          .when().get(BASE_PATH)
           .then()
              .statusCode(HttpStatus.SC_OK);
     }
