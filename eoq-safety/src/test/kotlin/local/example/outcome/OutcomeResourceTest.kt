@@ -21,6 +21,7 @@ class OutcomeResourceTest {
           .then()
              .statusCode(HttpStatus.SC_OK)
     }
+
     @Test
     fun testComputeEndpoint() {
         given().contentType(ContentType.JSON)
