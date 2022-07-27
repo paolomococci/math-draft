@@ -1,11 +1,15 @@
 package local.example.outcome.model
 
+import java.util.concurrent.atomic.AtomicLong
 import kotlin.math.abs
 import kotlin.math.roundToLong
 import kotlin.math.sqrt
 
 class Eoq() {
 
+    private val atomicLong = AtomicLong()
+
+    lateinit var id: String
     var demand = 0.0
     var costOfIssuing = 0.0
     var price = 0.0
@@ -29,6 +33,7 @@ class Eoq() {
     }
 
     fun setEoq() {
+        this.id = this.generateID()!!
         quantity = economicOrderQuantity(
             demand,
             costOfIssuing,
@@ -61,5 +66,9 @@ class Eoq() {
         quantity: Long
     ): Long {
         return if (this.quantity <= 0L) 0 else (demand / quantity).roundToLong()
+    }
+
+    private fun generateID(): String? {
+        return this.atomicLong.getAndIncrement().toString()
     }
 }
