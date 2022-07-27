@@ -10,6 +10,11 @@ import static org.hamcrest.CoreMatchers.is;
 @QuarkusTest
 public class OutcomeResourceTest {
 
+    private static final String BASE_PATH = "/outcome";
+    private static final String JSON_DATA = """
+            
+            """;
+
     @Test
     public void testReadEndpoint() {
         given()
