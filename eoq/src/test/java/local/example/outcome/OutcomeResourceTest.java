@@ -29,6 +29,7 @@ public class OutcomeResourceTest {
         given().contentType(ContentType.JSON)
                 .body(JSON_DATA).when().post(BASE_PATH)
                 .then().statusCode(HttpStatus.SC_OK)
+                .body("id[0]", equalTo("0"))
                 .body("quantity[0]", equalTo(466))
                 .body("ordersToProcess[0]", equalTo(4));
     }
