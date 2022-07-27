@@ -1,7 +1,12 @@
 package local.example.outcome.model;
 
+import java.util.concurrent.atomic.AtomicLong;
+
 public class Eoq {
 
+    private static final AtomicLong ATOMIC_LONG = new AtomicLong();
+
+    public String id;
     public double demand;
     public double costOfIssuing;
     public double price;
@@ -25,6 +30,7 @@ public class Eoq {
     }
 
     public void setEoq() {
+        this.id = this.generateID();
         this.quantity = this.economicOrderQuantity(
                 this.demand,
                 this.costOfIssuing,
@@ -56,5 +62,9 @@ public class Eoq {
         if (this.quantity <= 0L)
             return 0;
         return Math.round(demand / quantity);
+    }
+
+    private String generateID() {
+        return String.valueOf(ATOMIC_LONG.getAndIncrement());
     }
 }
