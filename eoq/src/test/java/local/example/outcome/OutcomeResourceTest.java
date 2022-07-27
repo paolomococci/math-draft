@@ -18,7 +18,7 @@ public class OutcomeResourceTest {
     @Test
     public void testReadEndpoint() {
         given()
-          .when().get("/outcome")
+          .when().get(BASE_PATH)
           .then()
              .statusCode(200)
              .body(is(""));
