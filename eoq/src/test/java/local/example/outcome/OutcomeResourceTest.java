@@ -12,7 +12,7 @@ public class OutcomeResourceTest {
 
     private static final String BASE_PATH = "/outcome";
     private static final String JSON_DATA = """
-            
+            {"demand":2000,"costOfIssuing":125,"price":23,"interestRate":0.1}
             """;
 
     @Test
