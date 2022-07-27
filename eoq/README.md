@@ -54,7 +54,7 @@ system respond with an array of Eoq objects in json format:
 ```text
 HTTP/1.1 200 OK
 Content-Type: application/json
-content-length: 221
+content-length: 239
 
-[{"demand":2000.0,"costOfIssuing":125.0,"price":23.0,"interestRate":0.1,"quantity":466,"ordersToProcess":4},{"demand":20000.0,"costOfIssuing":210.0,"price":1650.0,"interestRate":0.25,"quantity":143,"ordersToProcess":140}]
+[{"id":"0","demand":2000.0,"costOfIssuing":125.0,"price":23.0,"interestRate":0.1,"quantity":466,"ordersToProcess":4},{"id":"1","demand":20000.0,"costOfIssuing":210.0,"price":1650.0,"interestRate":0.25,"quantity":143,"ordersToProcess":140}]
 ```
