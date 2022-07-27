@@ -17,7 +17,7 @@ class OutcomeResourceTest {
     @Test
     fun testReadEndpoint() {
         given()
-          .`when`().get("/outcome")
+          .`when`().get(BASE_PATH)
           .then()
              .statusCode(HttpStatus.SC_OK)
     }
@@ -35,6 +35,6 @@ class OutcomeResourceTest {
         private const val JSON_DATA =
             "{\"demand\":800,\"costOfIssuing\":14,\"price\":73,\"interestRate\":0.12,\"costOfStock\":1}"
         private const val JSON_OUTCOME =
-            "[{\"demand\":800.0,\"costOfIssuing\":14.0,\"price\":73.0,\"interestRate\":0.12,\"costOfStock\":1.0,\"quantity\":46,\"ordersToProcess\":17}]"
+            "[{\"id\":\"0\",\"demand\":800.0,\"costOfIssuing\":14.0,\"price\":73.0,\"interestRate\":0.12,\"costOfStock\":1.0,\"quantity\":46,\"ordersToProcess\":17}]"
     }
 }
