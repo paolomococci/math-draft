@@ -38,9 +38,9 @@ and the system responds with a first solution:
 ```text
 HTTP/1.1 200 OK
 Content-Type: application/json
-content-length: 108
+content-length: 117
 
-[{"demand":2000.0,"costOfIssuing":125.0,"price":23.0,"interestRate":0.1,"quantity":466,"ordersToProcess":4}]
+[{"id":"0","demand":2000.0,"costOfIssuing":125.0,"price":23.0,"interestRate":0.1,"quantity":466,"ordersToProcess":4}]
 ```
 
 I try to pass a new object:
