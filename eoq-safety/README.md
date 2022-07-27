@@ -22,8 +22,8 @@ getting:
 
 ```text
 HTTP/1.1 200 OK
-content-length: 125
+content-length: 134
 Content-Type: application/json;charset=UTF-8
 
-[{"demand":800.0,"costOfIssuing":14.0,"price":73.0,"interestRate":0.12,"costOfStock":1.0,"quantity":46,"ordersToProcess":17}]
+[{"id":"0","demand":800.0,"costOfIssuing":14.0,"price":73.0,"interestRate":0.12,"costOfStock":1.0,"quantity":46,"ordersToProcess":17}]
 ```
