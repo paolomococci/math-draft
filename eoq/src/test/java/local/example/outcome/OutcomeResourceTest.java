@@ -2,6 +2,7 @@ package local.example.outcome;
 
 import io.quarkus.test.junit.QuarkusTest;
 
+import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
@@ -19,8 +20,6 @@ public class OutcomeResourceTest {
     public void testReadEndpoint() {
         given()
           .when().get(BASE_PATH)
-          .then()
-             .statusCode(200)
-             .body(is(""));
+          .then().statusCode(HttpStatus.SC_OK);
     }
 }
