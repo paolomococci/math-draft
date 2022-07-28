@@ -33,7 +33,18 @@ class Eoq() {
     }
 
     fun setEoq() {
-        TODO("Not yet implemented")
+        this.id = this.generateID()!!
+        quantity = economicOrderQuantity(
+            demand,
+            costOfIssuing,
+            price,
+            interestRate,
+            costOfStock
+        )
+        ordersToProcess = numberOfOrdersToProcess(
+            demand,
+            quantity
+        )
     }
 
     private fun economicOrderQuantity(
