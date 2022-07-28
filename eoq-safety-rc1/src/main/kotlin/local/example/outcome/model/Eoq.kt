@@ -68,7 +68,7 @@ class Eoq() {
         return if (this.quantity <= 0L) 0 else (demand / quantity).roundToLong()
     }
 
-    private fun generateID(): String? {
+    private fun generateID(): String {
         return this.atomicLong.getAndIncrement().toString()
     }
 }
