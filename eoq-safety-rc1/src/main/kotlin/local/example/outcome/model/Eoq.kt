@@ -11,6 +11,7 @@ class Eoq() {
 
     var id: String? = null
     var demand = 0.0
+    var standardDeviation = 0.0
     var leadTimeOfSupplyInDays = 0.0
     var costOfIssuing = 0.0
     var price = 0.0
