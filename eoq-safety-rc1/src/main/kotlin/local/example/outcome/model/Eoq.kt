@@ -7,23 +7,29 @@ import kotlin.math.sqrt
 
 class Eoq() {
 
+    // TODO
+
     private val atomicLong = AtomicLong()
 
     var id: String? = null
     var demand = 0.0
     var standardDeviationPerDay = 0.0
     var leadTimeOfSupplyInDays = 0.0
+    var serviceLevelKey = 0.0
     var costOfIssuing = 0.0
     var price = 0.0
     var interestRate = 0.0
     var costOfStock = 0.0
-    var quantity: Long = 0
-    var ordersToProcess: Long = 0
+    var quantity: Long = 0L
+    var ordersToProcess: Long = 0L
+    var securityStock: Long = 0L
+    var reorderLevel: Long = 0L
 
     constructor(
         demand: Double,
         standardDeviationPerDay: Double,
         leadTimeOfSupplyInDays: Double,
+        serviceLevelKey: Double,
         costOfIssuing: Double,
         price: Double,
         interestRate: Double,
@@ -32,6 +38,7 @@ class Eoq() {
         this.demand = abs(demand)
         this.standardDeviationPerDay = abs(standardDeviationPerDay)
         this.leadTimeOfSupplyInDays = abs(leadTimeOfSupplyInDays)
+        this.serviceLevelKey = abs(serviceLevelKey)
         this.costOfIssuing = abs(costOfIssuing)
         this.price = abs(price)
         this.interestRate = abs(interestRate)
