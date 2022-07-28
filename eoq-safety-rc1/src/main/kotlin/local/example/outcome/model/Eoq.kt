@@ -2,6 +2,7 @@ package local.example.outcome.model
 
 import java.util.concurrent.atomic.AtomicLong
 import kotlin.math.roundToLong
+import kotlin.math.sqrt
 
 class Eoq() {
 
@@ -18,6 +19,20 @@ class Eoq() {
 
     fun setEoq() {
         TODO("Not yet implemented")
+    }
+
+    private fun economicOrderQuantity(
+        demand: Double,
+        costOfIssuing: Double,
+        price: Double,
+        interestRate: Double,
+        costOfStock: Double
+    ): Long {
+        val epsilon = 0.000001
+        return if (price.compareTo(0.0) < epsilon || interestRate.compareTo(0.0) < epsilon
+        ) 0L else sqrt(
+            2 * costOfIssuing * demand / (price * interestRate + 2 * costOfStock)
+        ).roundToLong()
     }
 
     private fun numberOfOrdersToProcess(
