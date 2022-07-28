@@ -11,3 +11,9 @@ mvn io.quarkus.platform:quarkus-maven-plugin:2.11.1.Final:create -DprojectGroupI
 ```shell
 ./gradlew quarkusDev
 ```
+
+## please note
+
+```text
+Defined as a percentage of service level, the value for the "service level key" is obtained from the tables of the standardized variable.
+```
