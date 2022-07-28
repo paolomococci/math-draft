@@ -1,6 +1,7 @@
 package local.example.outcome.model
 
 import java.util.concurrent.atomic.AtomicLong
+import kotlin.math.abs
 import kotlin.math.roundToLong
 import kotlin.math.sqrt
 
@@ -16,6 +17,20 @@ class Eoq() {
     var costOfStock = 0.0
     var quantity: Long = 0
     var ordersToProcess: Long = 0
+
+    constructor(
+        demand: Double,
+        costOfIssuing: Double,
+        price: Double,
+        interestRate: Double,
+        costOfStock: Double
+    ) : this() {
+        this.demand = abs(demand)
+        this.costOfIssuing = abs(costOfIssuing)
+        this.price = abs(price)
+        this.interestRate = abs(interestRate)
+        this.costOfStock = abs(costOfStock)
+    }
 
     fun setEoq() {
         TODO("Not yet implemented")
