@@ -1,6 +1,7 @@
 package local.example.outcome.model
 
 import java.util.concurrent.atomic.AtomicLong
+import kotlin.math.roundToLong
 
 class Eoq() {
 
@@ -17,6 +18,13 @@ class Eoq() {
 
     fun setEoq() {
         TODO("Not yet implemented")
+    }
+
+    private fun numberOfOrdersToProcess(
+        demand: Double,
+        quantity: Long
+    ): Long {
+        return if (this.quantity <= 0L) 0 else (demand / quantity).roundToLong()
     }
 
     private fun generateID(): String? {
