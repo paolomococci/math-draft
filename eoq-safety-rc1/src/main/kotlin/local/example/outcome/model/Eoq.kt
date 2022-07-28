@@ -18,4 +18,8 @@ class Eoq() {
     fun setEoq() {
         TODO("Not yet implemented")
     }
+
+    private fun generateID(): String? {
+        return this.atomicLong.getAndIncrement().toString()
+    }
 }
