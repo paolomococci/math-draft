@@ -11,7 +11,7 @@ class Eoq() {
 
     var id: String? = null
     var demand = 0.0
-    var standardDeviation = 0.0
+    var standardDeviationPerDay = 0.0
     var leadTimeOfSupplyInDays = 0.0
     var costOfIssuing = 0.0
     var price = 0.0
@@ -22,6 +22,7 @@ class Eoq() {
 
     constructor(
         demand: Double,
+        standardDeviationPerDay: Double,
         leadTimeOfSupplyInDays: Double,
         costOfIssuing: Double,
         price: Double,
@@ -29,6 +30,7 @@ class Eoq() {
         costOfStock: Double
     ) : this() {
         this.demand = abs(demand)
+        this.standardDeviationPerDay = abs(standardDeviationPerDay)
         this.leadTimeOfSupplyInDays = abs(leadTimeOfSupplyInDays)
         this.costOfIssuing = abs(costOfIssuing)
         this.price = abs(price)
@@ -38,7 +40,7 @@ class Eoq() {
 
     fun setEoq() {
         this.id = this.generateID()
-        val averageDemandExpressedInPiecesPerDay: Double = this.demand /365
+        val averageDemandExpressedInPiecesPerDay: Double = this.demand / 365
         quantity = economicOrderQuantity(
             demand,
             costOfIssuing,
