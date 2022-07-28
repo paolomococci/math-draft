@@ -9,7 +9,7 @@ class Eoq() {
 
     private val atomicLong = AtomicLong()
 
-    lateinit var id: String
+    var id: String? = null
     var demand = 0.0
     var costOfIssuing = 0.0
     var price = 0.0
@@ -33,7 +33,7 @@ class Eoq() {
     }
 
     fun setEoq() {
-        this.id = this.generateID()!!
+        this.id = this.generateID()
         quantity = economicOrderQuantity(
             demand,
             costOfIssuing,
