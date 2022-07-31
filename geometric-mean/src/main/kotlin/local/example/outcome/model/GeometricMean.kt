@@ -24,7 +24,7 @@ class GeometricMean() {
     private fun product(values: Array<Double>): Double {
         var factors = 1.0
         for (temp in values) {
-            factors *= temp
+            factors *= abs(temp)
         }
         return factors
     }
