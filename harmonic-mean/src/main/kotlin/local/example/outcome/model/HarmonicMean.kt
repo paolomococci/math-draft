@@ -6,9 +6,10 @@ class HarmonicMean() {
     var harmonicMu: Double = 0.0
 
     constructor(
-        values: Array<Double>
+        values: Array<Double>,
+        harmonicMu: Double = 0.0
     ) : this() {
         this.values = values.copyOf()
-        this.harmonicMu
+        this.harmonicMu = harmonicMu
     }
 }
