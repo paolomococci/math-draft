@@ -1,5 +1,7 @@
 package local.example.outcome.model
 
+import kotlin.math.roundToLong
+
 class HarmonicMean() {
 
     var values: Array<Double> = emptyArray()
@@ -11,5 +13,12 @@ class HarmonicMean() {
     ) : this() {
         this.values = values.copyOf()
         this.harmonicMu = harmonicMu
+    }
+
+    private fun roundOff(value: Double, placeTo: Int): Double {
+        var place = 10.0
+        for (i in 1..placeTo)
+            place *= 10.0
+        return ((value * place).roundToLong() / place)
     }
 }
