@@ -7,12 +7,17 @@ import org.apache.http.HttpStatus
 import org.hamcrest.CoreMatchers.`is`
 import org.json.JSONArray
 import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.MethodOrderer
+import org.junit.jupiter.api.Order
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.TestMethodOrder
 
 @QuarkusTest
+@TestMethodOrder(MethodOrderer.OrderAnnotation::class)
 class OutcomeResourceTest {
 
     @Test
+    @Order(1)
     fun testReadEndpoint() {
         given()
             .`when`().get(BASE_PATH)
@@ -20,6 +25,7 @@ class OutcomeResourceTest {
     }
 
     @Test
+    @Order(2)
     fun testComputeEndpoint() {
         given().contentType(ContentType.JSON)
             .body(JSON_DATA).`when`().post(BASE_PATH)
@@ -28,6 +34,7 @@ class OutcomeResourceTest {
     }
 
     @Test
+    @Order(3)
     fun testComputedGeoMu() {
         val response = given().contentType(ContentType.JSON)
             .body(
@@ -35,7 +42,13 @@ class OutcomeResourceTest {
             ).`when`().post(BASE_PATH)
             .then().statusCode(HttpStatus.SC_OK).extract().body()
         val jsonArray = JSONArray(response.asString())
-        val jsonObject = jsonArray.getJSONObject(0)
+        val jsonObject = when {
+            jsonArray.length() > 1 -> {
+                jsonArray.getJSONObject(1)
+            } else -> {
+                jsonArray.getJSONObject(0)
+            }
+        }
         assertEquals(jsonObject["geoMu"].toString(), (1.09357).toString())
     }
 
