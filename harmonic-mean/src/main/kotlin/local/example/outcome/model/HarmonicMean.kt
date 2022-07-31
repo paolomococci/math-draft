@@ -15,6 +15,18 @@ class HarmonicMean() {
         this.harmonicMu = harmonicMu
     }
 
+    fun setHarmonicMu() {
+        this.harmonicMu = this.roundOff(
+            this.summation(this.values),
+            5
+        )
+    }
+
+    private fun summation(values: Array<Double>): Double {
+
+        return TODO("Provide the return value")
+    }
+
     private fun roundOff(value: Double, placeTo: Int): Double {
         var place = 10.0
         for (i in 1..placeTo)
