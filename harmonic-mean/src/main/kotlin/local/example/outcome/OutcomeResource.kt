@@ -2,9 +2,7 @@ package local.example.outcome
 
 import local.example.outcome.model.HarmonicMean
 import java.util.*
-import javax.ws.rs.GET
-import javax.ws.rs.Path
-import javax.ws.rs.Produces
+import javax.ws.rs.*
 import javax.ws.rs.core.MediaType
 import javax.ws.rs.core.Response
 
@@ -23,5 +21,14 @@ class OutcomeResource {
         return if (
             harmonicMeans.isEmpty()
         ) Response.ok().build() else Response.ok(harmonicMeans).build()
+    }
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    fun compute(harmonic: HarmonicMean): Set<HarmonicMean?>? {
+        harmonic.setHarmonicMu()
+        harmonicMeans.add(harmonic)
+        return harmonicMeans
     }
 }
