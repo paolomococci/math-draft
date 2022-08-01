@@ -49,7 +49,10 @@ class OutcomeResourceTest {
                 jsonArray.getJSONObject(0)
             }
         }
-        assertEquals(jsonObject["geoMu"].toString(), (1.09357).toString())
+        assertEquals(
+            (1.09357).toString(),
+            jsonObject["geoMu"].toString()
+        )
     }
 
     companion object {
