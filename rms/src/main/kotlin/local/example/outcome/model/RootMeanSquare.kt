@@ -3,6 +3,7 @@ package local.example.outcome.model
 import java.lang.Math.pow
 import kotlin.math.pow
 import kotlin.math.roundToLong
+import kotlin.math.sqrt
 
 class RootMeanSquare() {
 
@@ -29,7 +30,7 @@ class RootMeanSquare() {
     }
 
     private fun rms(square: Double): Double {
-        return TODO("Provide the return value")
+        return sqrt(square)
     }
 
     private fun roundOff(value: Double, placeTo: Int): Double {
