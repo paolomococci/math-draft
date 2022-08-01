@@ -15,7 +15,7 @@ class RootMeanSquare() {
         this.rmsMu = rmsMu
     }
 
-    private fun sumOfSquares(): Double {
+    private fun sumOfSquares(values: Array<Double>): Double {
         return TODO("Provide the return value")
     }
 
