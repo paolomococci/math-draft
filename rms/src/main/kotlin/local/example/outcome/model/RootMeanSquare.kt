@@ -23,6 +23,10 @@ class RootMeanSquare() {
         return TODO("Provide the return value")
     }
 
+    private fun rms(): Double {
+        return TODO("Provide the return value")
+    }
+
     private fun roundOff(value: Double, placeTo: Int): Double {
         var place = 1.0
         for (i in 1..placeTo)
