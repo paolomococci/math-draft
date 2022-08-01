@@ -1,6 +1,5 @@
 package local.example.outcome.model
 
-import java.lang.Math.pow
 import kotlin.math.pow
 import kotlin.math.roundToLong
 import kotlin.math.sqrt
@@ -16,6 +15,20 @@ class RootMeanSquare() {
     ) : this() {
         this.values = values.copyOf()
         this.rmsMu = rmsMu
+    }
+
+    fun setRmsMu() {
+        this.rmsMu = this.roundOff(
+            this.rms(
+                this.producedInverseOfNum(
+                    this.values.size,
+                    this.sumOfSquares(
+                        this.values
+                    )
+                )
+            ),
+            2
+        )
     }
 
     private fun sumOfSquares(values: Array<Double>): Double {
