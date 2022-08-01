@@ -21,5 +21,9 @@ curl -i -X POST -H "Content-Type: application/json" -d '{"values":[40,-700,780,8
 ### and I got the following answer
 
 ```text
+HTTP/1.1 200 OK
+content-length: 81
+Content-Type: application/json;charset=UTF-8
 
+[{"values":[40.0,-700.0,780.0,850.0,880.0,-970.0,1000.0,-1200.0],"rmsMu":864.42}]
 ```
