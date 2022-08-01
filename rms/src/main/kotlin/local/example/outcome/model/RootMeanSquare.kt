@@ -16,4 +16,8 @@ class RootMeanSquare() {
     private fun sumOfSquares(): Double {
         return TODO("Provide the return value")
     }
+
+    private fun producedInverseOfTheNum(): Double {
+        return TODO("Provide the return value")
+    }
 }
