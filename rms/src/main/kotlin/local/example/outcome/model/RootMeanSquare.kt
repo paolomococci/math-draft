@@ -23,7 +23,7 @@ class RootMeanSquare() {
         return TODO("Provide the return value")
     }
 
-    private fun rms(): Double {
+    private fun rms(square: Double): Double {
         return TODO("Provide the return value")
     }
 
