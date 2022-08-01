@@ -2,9 +2,7 @@ package local.example.outcome
 
 import local.example.outcome.model.RootMeanSquare
 import java.util.*
-import javax.ws.rs.GET
-import javax.ws.rs.Path
-import javax.ws.rs.Produces
+import javax.ws.rs.*
 import javax.ws.rs.core.MediaType
 import javax.ws.rs.core.Response
 
@@ -23,5 +21,14 @@ class OutcomeResource {
         return if (
             rootMeanSquares.isEmpty()
         ) Response.ok().build() else Response.ok(rootMeanSquares).build()
+    }
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    fun compute(rms: RootMeanSquare): Set<RootMeanSquare?>? {
+        rms.setRmsMu()
+        rootMeanSquares.add(rms)
+        return rootMeanSquares
     }
 }
