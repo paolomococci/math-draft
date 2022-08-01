@@ -22,5 +22,7 @@ class OutcomeResourceTest {
 
     companion object {
         private const val BASE_PATH = "/outcome"
+        private const val JSON_DATA =
+            "{\"values\":[40,700,780,850,880,900,970,1000,1200]}"
     }
 }
