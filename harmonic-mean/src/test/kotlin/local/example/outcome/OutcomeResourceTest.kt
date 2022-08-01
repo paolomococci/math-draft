@@ -33,7 +33,7 @@ class OutcomeResourceTest {
             .then().statusCode(HttpStatus.SC_OK).extract().body()
         val jsonArray = JSONArray(response.asString())
         val jsonObject = jsonArray.getJSONObject(0)
-        assertEquals(jsonObject["harmonicMu"].toString(), (243.25).toString())
+        assertEquals((243.25).toString(), jsonObject["harmonicMu"].toString())
     }
 
     @Test
@@ -50,12 +50,12 @@ class OutcomeResourceTest {
                 jsonObject["harmonicMu"].toString().toDouble()
             )
             assertEquals(
-                temporaryHarmonicMean.values[0].toString(),
-                (40.0).toString()
+                (40.0).toString(),
+                temporaryHarmonicMean.values[0].toString()
             )
             assertEquals(
-                temporaryHarmonicMean.harmonicMu.toString(),
-                (243.25).toString()
+                (243.25).toString(),
+                temporaryHarmonicMean.harmonicMu.toString()
             )
         }
     }
