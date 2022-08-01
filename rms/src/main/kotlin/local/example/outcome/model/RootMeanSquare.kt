@@ -39,7 +39,7 @@ class RootMeanSquare() {
     }
 
     private fun producedInverseOfNum(num: Int, sum: Double): Double {
-        return (1 / num) * sum
+        return sum * (1.0 / num)
     }
 
     private fun rms(square: Double): Double {
