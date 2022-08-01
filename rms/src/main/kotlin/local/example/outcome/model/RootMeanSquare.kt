@@ -1,5 +1,7 @@
 package local.example.outcome.model
 
+import java.lang.Math.pow
+import kotlin.math.pow
 import kotlin.math.roundToLong
 
 class RootMeanSquare() {
@@ -16,7 +18,10 @@ class RootMeanSquare() {
     }
 
     private fun sumOfSquares(values: Array<Double>): Double {
-        return TODO("Provide the return value")
+        var sum = 0.0
+        for (value in values)
+            sum += value.pow(2.0)
+        return sum
     }
 
     private fun producedInverseOfNum(num: Int, sum: Double): Double {
