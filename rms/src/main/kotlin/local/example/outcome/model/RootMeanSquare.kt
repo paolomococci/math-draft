@@ -12,4 +12,8 @@ class RootMeanSquare() {
         this.values = values.copyOf()
         this.rmsMu = rmsMu
     }
+
+    private fun sumOfSquares(): Double {
+        return TODO("Provide the return value")
+    }
 }
