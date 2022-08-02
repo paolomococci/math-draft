@@ -7,8 +7,6 @@ import kotlin.math.sqrt
 
 class Eoq() {
 
-    // TODO
-
     private val atomicLong = AtomicLong()
 
     var id: String? = null
@@ -87,7 +85,8 @@ class Eoq() {
         standardDeviationPerDay: Double,
         procurementLeadTime: Double
     ): Long {
-        return TODO("Provide the return value")
+        return (serviceLevelKey * standardDeviationPerDay * sqrt(procurementLeadTime))
+            .roundToLong()
     }
 
     private fun computeReorderLevel(
