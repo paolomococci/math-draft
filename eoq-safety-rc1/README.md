@@ -39,5 +39,9 @@ curl -i -X POST -H "Content-Type: application/json" -d '{"demand":43800,"standar
 getting:
 
 ```text
+HTTP/1.1 200 OK
+content-length: 257
+Content-Type: application/json;charset=UTF-8
 
+[{"id":"0","demand":43800.0,"standardDeviationPerDay":100.6,"procurementLeadTime":9.0,"serviceLevelKey":2.06,"costOfIssuing":14.0,"price":73.0,"interestRate":0.12,"costOfStock":1.0,"quantity":338,"ordersToProcess":130,"safetyStock":622,"reorderLevel":1702}]
 ```
