@@ -3,16 +3,19 @@ package local.example.outcome
 import io.quarkus.test.junit.QuarkusTest
 import io.restassured.RestAssured.given
 import io.restassured.http.ContentType
+import local.example.outcome.model.Eoq
 import org.apache.http.HttpStatus
 import org.hamcrest.CoreMatchers.`is`
-import org.junit.jupiter.api.Order
-import org.junit.jupiter.api.Test
+import org.json.JSONArray
+import org.junit.jupiter.api.*
 import java.util.*
 
 @QuarkusTest
+@TestMethodOrder(MethodOrderer.OrderAnnotation::class)
 class OutcomeResourceTest {
 
     @Test
+    @Order(1)
     fun testReadEndpoint() {
         given()
             .`when`().get(BASE_PATH)
@@ -27,6 +30,53 @@ class OutcomeResourceTest {
             .body(JSON_DATA).`when`().post(BASE_PATH)
             .then().statusCode(HttpStatus.SC_OK)
             .body(`is`(JSON_OUTCOME))
+    }
+
+    @Test
+    @Order(3)
+    fun testReadObjectStoredSoFar() {
+        val response = given()
+            .`when`().get(BASE_PATH)
+            .then().statusCode(HttpStatus.SC_OK).extract().body()
+        val jsonArray = JSONArray(response.asString())
+        if (!jsonArray.isEmpty) {
+            val jsonObject = jsonArray.getJSONObject(0)
+            val eoq = Eoq(
+                jsonObject["id"].toString(),
+                jsonObject["demand"].toString().toDouble(),
+                jsonObject["standardDeviationPerDay"].toString().toDouble(),
+                jsonObject["procurementLeadTime"].toString().toDouble(),
+                jsonObject["serviceLevelKey"].toString().toDouble(),
+                jsonObject["costOfIssuing"].toString().toDouble(),
+                jsonObject["price"].toString().toDouble(),
+                jsonObject["interestRate"].toString().toDouble(),
+                jsonObject["costOfStock"].toString().toDouble(),
+                jsonObject["quantity"].toString().toLong(),
+                jsonObject["ordersToProcess"].toString().toLong(),
+                jsonObject["safetyStock"].toString().toLong(),
+                jsonObject["reorderLevel"].toString().toLong(),
+            )
+            Assertions.assertEquals(
+                (0).toString(),
+                eoq.id
+            )
+            Assertions.assertEquals(
+                (338).toString(),
+                eoq.quantity.toString()
+            )
+            Assertions.assertEquals(
+                (130).toString(),
+                eoq.ordersToProcess.toString()
+            )
+            Assertions.assertEquals(
+                (622).toString(),
+                eoq.safetyStock.toString()
+            )
+            Assertions.assertEquals(
+                (1702).toString(),
+                eoq.reorderLevel.toString()
+            )
+        }
     }
 
     private fun toArray(values: Array<String>): Array<Double> {
