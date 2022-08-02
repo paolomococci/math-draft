@@ -22,7 +22,7 @@ class Eoq() {
     var costOfStock = 0.0
     var quantity: Long = 0L
     var ordersToProcess: Long = 0L
-    var securityStock: Long = 0L
+    var safetyStock: Long = 0L
     var reorderLevel: Long = 0L
 
     constructor(
@@ -86,12 +86,16 @@ class Eoq() {
         serviceLevelKey: Double,
         standardDeviationPerDay: Double,
         procurementLeadTime: Double
-    ): Double {
+    ): Long {
         return TODO("Provide the return value")
     }
 
-    private fun computeReorderLevel() {
-
+    private fun computeReorderLevel(
+        averageDemandExpressedInPiecesPerDay: Double,
+        procurementLeadTime: Double,
+        safetyStock: Double
+    ): Long {
+        return TODO("Provide the return value")
     }
 
     private fun generateID(): String {
