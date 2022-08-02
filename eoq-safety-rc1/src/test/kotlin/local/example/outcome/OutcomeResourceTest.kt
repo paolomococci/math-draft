@@ -28,6 +28,14 @@ class OutcomeResourceTest {
             .body(`is`(JSON_OUTCOME))
     }
 
+    private fun toSplit(values: String): Array<String> {
+        return values.removeSurrounding("[", "]")
+            .takeIf(String::isNotEmpty)
+            ?.split(",")
+            ?.toTypedArray()
+            ?: emptyArray()
+    }
+
     companion object {
         private const val BASE_PATH = "/outcome"
         private const val JSON_DATA =
