@@ -104,7 +104,7 @@ class Eoq() {
         procurementLeadTime: Double,
         safetyStock: Long
     ): Long {
-        return (averageDemandExpressedInPiecesPerDay * procurementLeadTime * safetyStock)
+        return ((averageDemandExpressedInPiecesPerDay * procurementLeadTime) + safetyStock)
             .roundToLong()
     }
 
