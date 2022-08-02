@@ -8,7 +8,6 @@ import org.apache.http.HttpStatus
 import org.hamcrest.CoreMatchers.`is`
 import org.json.JSONArray
 import org.junit.jupiter.api.*
-import java.util.*
 
 @QuarkusTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation::class)
