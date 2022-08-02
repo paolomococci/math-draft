@@ -14,7 +14,7 @@ class Eoq() {
     var id: String? = null
     var demand = 0.0
     var standardDeviationPerDay = 0.0
-    var leadTimeOfSupplyInDays = 0.0
+    var procurementLeadTime = 0.0
     var serviceLevelKey = 0.0
     var costOfIssuing = 0.0
     var price = 0.0
@@ -37,7 +37,7 @@ class Eoq() {
     ) : this() {
         this.demand = abs(demand)
         this.standardDeviationPerDay = abs(standardDeviationPerDay)
-        this.leadTimeOfSupplyInDays = abs(leadTimeOfSupplyInDays)
+        this.procurementLeadTime = abs(leadTimeOfSupplyInDays)
         this.serviceLevelKey = abs(serviceLevelKey)
         this.costOfIssuing = abs(costOfIssuing)
         this.price = abs(price)
@@ -80,6 +80,18 @@ class Eoq() {
         quantity: Long
     ): Long {
         return if (this.quantity <= 0L) 0 else (demand / quantity).roundToLong()
+    }
+
+    private fun computeSafetyStock(
+        serviceLevelKey: Double,
+        standardDeviationPerDay: Double,
+        procurementLeadTime: Double
+    ): Double {
+        return TODO("Provide the return value")
+    }
+
+    private fun computeReorderLevel() {
+
     }
 
     private fun generateID(): String {
