@@ -62,6 +62,11 @@ class Eoq() {
             this.standardDeviationPerDay,
             this.procurementLeadTime
         )
+        this.reorderLevel = this.computeReorderLevel(
+            averageDemandExpressedInPiecesPerDay,
+            this.procurementLeadTime,
+            this.safetyStock
+        )
     }
 
     private fun economicOrderQuantity(
