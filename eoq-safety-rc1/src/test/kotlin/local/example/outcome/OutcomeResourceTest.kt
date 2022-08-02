@@ -79,22 +79,6 @@ class OutcomeResourceTest {
         }
     }
 
-    private fun toArray(values: Array<String>): Array<Double> {
-        val doubles = Arrays.stream(values)
-            .mapToDouble {
-                    item: String -> item.toDouble()
-            }.toArray()
-        return doubles.toTypedArray()
-    }
-
-    private fun toSplit(values: String): Array<String> {
-        return values.removeSurrounding("[", "]")
-            .takeIf(String::isNotEmpty)
-            ?.split(",")
-            ?.toTypedArray()
-            ?: emptyArray()
-    }
-
     companion object {
         private const val BASE_PATH = "/outcome"
         private const val JSON_DATA =
