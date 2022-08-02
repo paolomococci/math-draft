@@ -29,7 +29,7 @@ class OutcomeResourceTest {
         private const val BASE_PATH = "/outcome"
         private const val JSON_DATA =
             """
-                
+                {"demand":8210,"standardDeviationPerDay":100.6,"procurementLeadTime":9,"serviceLevelKey":2.06,"costOfIssuing":14,"price":73,"interestRate":0.12,"costOfStock":1}
             """
     }
 }
