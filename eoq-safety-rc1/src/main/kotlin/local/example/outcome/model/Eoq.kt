@@ -92,9 +92,10 @@ class Eoq() {
     private fun computeReorderLevel(
         averageDemandExpressedInPiecesPerDay: Double,
         procurementLeadTime: Double,
-        safetyStock: Double
+        safetyStock: Long
     ): Long {
-        return TODO("Provide the return value")
+        return (averageDemandExpressedInPiecesPerDay * procurementLeadTime * safetyStock)
+            .roundToLong()
     }
 
     private fun generateID(): String {
