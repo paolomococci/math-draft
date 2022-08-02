@@ -29,3 +29,15 @@ That is, if you want to avoid falling into a stock-out in ninety-nine percent of
 
 If you want a service level around 99,9%.
 That is, if you want to avoid falling into a stock-out in nine hundred ninety-nine per thousand of cases, serviceLevelKey will have a value of 3.09.
+
+## now I try to post a first Eoq object in json format:
+
+```shell
+
+```
+
+getting:
+
+```text
+
+```
