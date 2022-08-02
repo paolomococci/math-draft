@@ -17,3 +17,6 @@ mvn io.quarkus.platform:quarkus-maven-plugin:2.11.1.Final:create -DprojectGroupI
 ```text
 Defined as a percentage of service level, the value for the "service level key" is obtained from the tables of the standardized variable.
 ```
+
+For example, if you want a service level around 95%. 
+That is, if you want to avoid falling into a stock-out in ninety-five percent of cases, serviceLevelKey will have a value of 1.65.
