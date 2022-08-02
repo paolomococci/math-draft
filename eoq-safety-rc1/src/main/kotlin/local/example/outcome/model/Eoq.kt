@@ -46,16 +46,21 @@ class Eoq() {
     fun setEoq() {
         this.id = this.generateID()
         val averageDemandExpressedInPiecesPerDay: Double = this.demand / 365
-        quantity = economicOrderQuantity(
+        this.quantity = this.economicOrderQuantity(
             demand,
             costOfIssuing,
             price,
             interestRate,
             costOfStock
         )
-        ordersToProcess = numberOfOrdersToProcess(
+        this.ordersToProcess = this.numberOfOrdersToProcess(
             demand,
             quantity
+        )
+        this.safetyStock = this.computeSafetyStock(
+            this.serviceLevelKey,
+            this.standardDeviationPerDay,
+            this.procurementLeadTime
         )
     }
 
