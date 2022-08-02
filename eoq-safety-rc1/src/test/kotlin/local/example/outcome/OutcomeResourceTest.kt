@@ -7,6 +7,7 @@ import org.apache.http.HttpStatus
 import org.hamcrest.CoreMatchers.`is`
 import org.junit.jupiter.api.Order
 import org.junit.jupiter.api.Test
+import java.util.*
 
 @QuarkusTest
 class OutcomeResourceTest {
@@ -26,6 +27,14 @@ class OutcomeResourceTest {
             .body(JSON_DATA).`when`().post(BASE_PATH)
             .then().statusCode(HttpStatus.SC_OK)
             .body(`is`(JSON_OUTCOME))
+    }
+
+    private fun toArray(values: Array<String>): Array<Double> {
+        val doubles = Arrays.stream(values)
+            .mapToDouble {
+                    item: String -> item.toDouble()
+            }.toArray()
+        return doubles.toTypedArray()
     }
 
     private fun toSplit(values: String): Array<String> {
