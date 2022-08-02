@@ -43,6 +43,36 @@ class Eoq() {
         this.costOfStock = abs(costOfStock)
     }
 
+    constructor(
+        id: String,
+        demand: Double,
+        standardDeviationPerDay: Double,
+        procurementLeadTime: Double,
+        serviceLevelKey: Double,
+        costOfIssuing: Double,
+        price: Double,
+        interestRate: Double,
+        costOfStock: Double,
+        quantity: Long,
+        ordersToProcess: Long,
+        safetyStock: Long,
+        reorderLevel: Long
+    ): this() {
+        this.id = id
+        this.demand = demand
+        this.standardDeviationPerDay = standardDeviationPerDay
+        this.procurementLeadTime = procurementLeadTime
+        this.serviceLevelKey = serviceLevelKey
+        this.costOfIssuing = costOfIssuing
+        this.price = price
+        this.interestRate = interestRate
+        this.costOfStock = costOfStock
+        this.quantity = quantity
+        this.ordersToProcess = ordersToProcess
+        this.safetyStock = safetyStock
+        this.reorderLevel = reorderLevel
+    }
+
     fun setEoq() {
         this.id = this.generateID()
         val averageDemandExpressedInPiecesPerDay: Double = this.demand / 365
