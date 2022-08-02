@@ -20,7 +20,9 @@ class OutcomeResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     fun read(): Response? {
-        return if (eoqs.isEmpty()) Response.ok().build() else Response.ok(eoqs).build()
+        return if (
+            eoqs.isEmpty()
+        ) Response.ok().build() else Response.ok(eoqs).build()
     }
 
     @POST
