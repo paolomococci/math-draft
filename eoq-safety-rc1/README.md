@@ -33,7 +33,7 @@ That is, if you want to avoid falling into a stock-out in nine hundred ninety-ni
 ## now I try to post a first Eoq object in json format:
 
 ```shell
-
+curl -i -X POST -H "Content-Type: application/json" -d '{"demand":43800,"standardDeviationPerDay":100.6,"procurementLeadTime":9,"serviceLevelKey":2.06,"costOfIssuing":14,"price":73,"interestRate":0.12,"costOfStock":1}' http://127.0.0.1:8080/outcome
 ```
 
 getting:
