@@ -1,7 +1,6 @@
 package local.example.outcome.model
 
 import java.util.concurrent.atomic.AtomicLong
-import kotlin.math.abs
 import kotlin.math.roundToLong
 import kotlin.math.sqrt
 
@@ -22,26 +21,6 @@ class Eoq() {
     var ordersToProcess: Long = 0L
     var safetyStock: Long = 0L
     var reorderLevel: Long = 0L
-
-    constructor(
-        demand: Double,
-        standardDeviationPerDay: Double,
-        leadTimeOfSupplyInDays: Double,
-        serviceLevelKey: Double,
-        costOfIssuing: Double,
-        price: Double,
-        interestRate: Double,
-        costOfStock: Double
-    ) : this() {
-        this.demand = abs(demand)
-        this.standardDeviationPerDay = abs(standardDeviationPerDay)
-        this.procurementLeadTime = abs(leadTimeOfSupplyInDays)
-        this.serviceLevelKey = abs(serviceLevelKey)
-        this.costOfIssuing = abs(costOfIssuing)
-        this.price = abs(price)
-        this.interestRate = abs(interestRate)
-        this.costOfStock = abs(costOfStock)
-    }
 
     constructor(
         id: String,
