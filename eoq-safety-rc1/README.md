@@ -20,7 +20,12 @@ Defined as a percentage of service level, the value for the "service level key" 
 
 For example, if you want a service level around 95%. 
 That is, if you want to avoid falling into a stock-out in ninety-five percent of cases, serviceLevelKey will have a value of 1.65.
+
 If you want a service level around 98%.
 That is, if you want to avoid falling into a stock-out in ninety-eight percent of cases, serviceLevelKey will have a value of 2.06.
+
 If you want a service level around 99%.
 That is, if you want to avoid falling into a stock-out in ninety-nine percent of cases, serviceLevelKey will have a value of 2.33.
+
+If you want a service level around 99,9%.
+That is, if you want to avoid falling into a stock-out in nine hundred ninety-nine per thousand of cases, serviceLevelKey will have a value of 3.09.
