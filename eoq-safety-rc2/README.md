@@ -1,4 +1,4 @@
-# eoq-safety-rc2 
+# eoq-safety-rc2  (Economic Order Quantity with Safety Stock)
 
 ## scaffolding
 
