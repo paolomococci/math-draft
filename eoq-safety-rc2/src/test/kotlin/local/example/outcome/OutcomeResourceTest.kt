@@ -45,6 +45,7 @@ class OutcomeResourceTest {
                 jsonObject["demand"].toString().toDouble(),
                 jsonObject["sigmaDemand"].toString().toDouble(),
                 jsonObject["procurementLeadTime"].toString().toDouble(),
+                jsonObject["sigmaProcurementLeadTime"].toString().toDouble(),
                 jsonObject["serviceLevelKey"].toString().toDouble(),
                 jsonObject["costOfIssuing"].toString().toDouble(),
                 jsonObject["price"].toString().toDouble(),
