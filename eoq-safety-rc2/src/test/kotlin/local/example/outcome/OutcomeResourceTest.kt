@@ -43,7 +43,7 @@ class OutcomeResourceTest {
             val eoq = Eoq(
                 jsonObject["id"].toString(),
                 jsonObject["demand"].toString().toDouble(),
-                jsonObject["standardDeviationPerDay"].toString().toDouble(),
+                jsonObject["sigmaDemand"].toString().toDouble(),
                 jsonObject["procurementLeadTime"].toString().toDouble(),
                 jsonObject["serviceLevelKey"].toString().toDouble(),
                 jsonObject["costOfIssuing"].toString().toDouble(),
@@ -82,9 +82,9 @@ class OutcomeResourceTest {
         private const val BASE_PATH = "/outcome"
         private const val JSON_DATA =
             """
-                {"demand":43800,"standardDeviationPerDay":100.6,"procurementLeadTime":9,"serviceLevelKey":2.06,"costOfIssuing":14,"price":73,"interestRate":0.12,"costOfStock":1}
+                {"demand":43800,"sigmaDemand":100.6,"procurementLeadTime":9,"serviceLevelKey":2.06,"costOfIssuing":14,"price":73,"interestRate":0.12,"costOfStock":1}
             """
         private const val JSON_OUTCOME =
-            "[{\"id\":\"0\",\"demand\":43800.0,\"standardDeviationPerDay\":100.6,\"procurementLeadTime\":9.0,\"serviceLevelKey\":2.06,\"costOfIssuing\":14.0,\"price\":73.0,\"interestRate\":0.12,\"costOfStock\":1.0,\"quantity\":338,\"ordersToProcess\":130,\"safetyStock\":622,\"reorderLevel\":1702}]"
+            "[{\"id\":\"0\",\"demand\":43800.0,\"sigmaDemand\":100.6,\"procurementLeadTime\":9.0,\"serviceLevelKey\":2.06,\"costOfIssuing\":14.0,\"price\":73.0,\"interestRate\":0.12,\"costOfStock\":1.0,\"quantity\":338,\"ordersToProcess\":130,\"safetyStock\":622,\"reorderLevel\":1702}]"
     }
 }
