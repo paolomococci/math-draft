@@ -54,6 +54,7 @@ class OutcomeResourceTest {
                 jsonObject["quantity"].toString().toLong(),
                 jsonObject["ordersToProcess"].toString().toLong(),
                 jsonObject["safetyStock"].toString().toLong(),
+                jsonObject["cycleStock"].toString().toLong(),
                 jsonObject["reorderLevel"].toString().toLong(),
             )
             Assertions.assertEquals(
