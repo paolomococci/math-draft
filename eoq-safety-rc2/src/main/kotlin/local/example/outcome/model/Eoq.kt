@@ -10,8 +10,9 @@ class Eoq() {
 
     var id: String? = null
     var demand = 0.0
-    var standardDeviationPerDay = 0.0
+    var sigmaDemand = 0.0
     var procurementLeadTime = 0.0
+    var sigmaProcurementLeadTime = 0.0
     var serviceLevelKey = 0.0
     var costOfIssuing = 0.0
     var price = 0.0
@@ -25,8 +26,9 @@ class Eoq() {
     constructor(
         id: String,
         demand: Double,
-        standardDeviationPerDay: Double,
+        sigmaDemand: Double,
         procurementLeadTime: Double,
+        sigmaProcurementLeadTime: Double,
         serviceLevelKey: Double,
         costOfIssuing: Double,
         price: Double,
@@ -39,8 +41,9 @@ class Eoq() {
     ): this() {
         this.id = id
         this.demand = demand
-        this.standardDeviationPerDay = standardDeviationPerDay
+        this.sigmaDemand = sigmaDemand
         this.procurementLeadTime = procurementLeadTime
+        this.sigmaProcurementLeadTime = sigmaProcurementLeadTime
         this.serviceLevelKey = serviceLevelKey
         this.costOfIssuing = costOfIssuing
         this.price = price
@@ -68,7 +71,7 @@ class Eoq() {
         )
         this.safetyStock = this.computeSafetyStock(
             this.serviceLevelKey,
-            this.standardDeviationPerDay,
+            this.sigmaDemand,
             this.procurementLeadTime
         )
         this.reorderLevel = this.computeReorderLevel(
@@ -101,10 +104,10 @@ class Eoq() {
 
     private fun computeSafetyStock(
         serviceLevelKey: Double,
-        standardDeviationPerDay: Double,
+        sigmaDemand: Double,
         procurementLeadTime: Double
     ): Long {
-        return (serviceLevelKey * standardDeviationPerDay * sqrt(procurementLeadTime))
+        return (serviceLevelKey * sigmaDemand * sqrt(procurementLeadTime))
             .roundToLong()
     }
 
