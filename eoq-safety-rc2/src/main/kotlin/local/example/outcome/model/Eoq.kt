@@ -21,6 +21,7 @@ class Eoq() {
     var quantity: Long = 0L
     var ordersToProcess: Long = 0L
     var safetyStock: Long = 0L
+    var cycleStock: Long = 0L
     var reorderLevel: Long = 0L
 
     constructor(
@@ -37,6 +38,7 @@ class Eoq() {
         quantity: Long,
         ordersToProcess: Long,
         safetyStock: Long,
+        cycleStock: Long,
         reorderLevel: Long
     ): this() {
         this.id = id
@@ -52,6 +54,7 @@ class Eoq() {
         this.quantity = quantity
         this.ordersToProcess = ordersToProcess
         this.safetyStock = safetyStock
+        this.cycleStock = cycleStock
         this.reorderLevel = reorderLevel
     }
 
@@ -100,6 +103,10 @@ class Eoq() {
         quantity: Long
     ): Long {
         return if (this.quantity <= 0L) 0 else (demand / quantity).roundToLong()
+    }
+
+    private fun computeCycleStock(): Long {
+        return TODO("Provide the return value")
     }
 
     private fun computeSafetyStock(
