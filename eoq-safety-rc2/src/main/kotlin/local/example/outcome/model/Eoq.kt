@@ -105,8 +105,11 @@ class Eoq() {
         return if (this.quantity <= 0L) 0 else (demand / quantity).roundToLong()
     }
 
-    private fun computeCycleStock(): Long {
-        return TODO("Provide the return value")
+    private fun computeCycleStock(
+        averageDemandExpressedInPiecesPerDay: Double,
+        procurementLeadTime: Double,
+    ): Long {
+        return ((averageDemandExpressedInPiecesPerDay * procurementLeadTime) / 2).toLong()
     }
 
     private fun computeSafetyStock(
