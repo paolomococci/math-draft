@@ -17,7 +17,7 @@ class Eoq() {
     var costOfIssuing = 0.0
     var price = 0.0
     var interestRate = 0.0
-    var costOfStock = 0.0
+    var stockRate = 0.0
     var quantity: Long = 0L
     var ordersToProcess: Long = 0L
     var cycleStock: Long = 0L
@@ -34,7 +34,7 @@ class Eoq() {
         costOfIssuing: Double,
         price: Double,
         interestRate: Double,
-        costOfStock: Double,
+        stockRate: Double,
         quantity: Long,
         ordersToProcess: Long,
         cycleStock: Long,
@@ -50,7 +50,7 @@ class Eoq() {
         this.costOfIssuing = costOfIssuing
         this.price = price
         this.interestRate = interestRate
-        this.costOfStock = costOfStock
+        this.stockRate = stockRate
         this.quantity = quantity
         this.ordersToProcess = ordersToProcess
         this.cycleStock = cycleStock
@@ -66,7 +66,7 @@ class Eoq() {
             costOfIssuing,
             price,
             interestRate,
-            costOfStock
+            stockRate
         )
         this.ordersToProcess = this.numberOfOrdersToProcess(
             demand,
@@ -94,12 +94,12 @@ class Eoq() {
         costOfIssuing: Double,
         price: Double,
         interestRate: Double,
-        costOfStock: Double
+        stockRate: Double
     ): Long {
         val epsilon = 0.000001
         return if (price.compareTo(0.0) < epsilon || interestRate.compareTo(0.0) < epsilon
         ) 0L else sqrt(
-            2 * costOfIssuing * demand / (price * interestRate + 2 * costOfStock)
+            2 * costOfIssuing * demand / (price * interestRate + 2 * stockRate)
         ).roundToLong()
     }
 
