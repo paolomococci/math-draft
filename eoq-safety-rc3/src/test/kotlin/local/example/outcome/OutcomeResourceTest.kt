@@ -50,7 +50,7 @@ class OutcomeResourceTest {
                 jsonObject["costOfIssuing"].toString().toDouble(),
                 jsonObject["price"].toString().toDouble(),
                 jsonObject["interestRate"].toString().toDouble(),
-                jsonObject["costOfStock"].toString().toDouble(),
+                jsonObject["stockRate"].toString().toDouble(),
                 jsonObject["quantity"].toString().toLong(),
                 jsonObject["ordersToProcess"].toString().toLong(),
                 jsonObject["cycleStock"].toString().toLong(),
@@ -88,9 +88,9 @@ class OutcomeResourceTest {
         private const val BASE_PATH = "/outcome"
         private const val JSON_DATA =
             """
-                {"demand":54750,"sigmaDemand":15,"procurementLeadTime":10,"sigmaProcurementLeadTime":2.0,"serviceLevelKey":1.65,"costOfIssuing":14,"price":73,"interestRate":0.12,"costOfStock":1}
+                {"demand":54750,"sigmaDemand":15,"procurementLeadTime":10,"sigmaProcurementLeadTime":2.0,"serviceLevelKey":1.65,"costOfIssuing":14,"price":73,"interestRate":0.12,"stockRate":1}
             """
         private const val JSON_OUTCOME =
-            "[{\"id\":\"0\",\"demand\":54750.0,\"sigmaDemand\":15.0,\"procurementLeadTime\":10.0,\"sigmaProcurementLeadTime\":2.0,\"serviceLevelKey\":1.65,\"costOfIssuing\":14.0,\"price\":73.0,\"interestRate\":0.12,\"costOfStock\":1.0,\"quantity\":377,\"ordersToProcess\":145,\"cycleStock\":750,\"safetyStock\":501,\"reorderLevel\":1251}]"
+            "[{\"id\":\"0\",\"demand\":54750.0,\"sigmaDemand\":15.0,\"procurementLeadTime\":10.0,\"sigmaProcurementLeadTime\":2.0,\"serviceLevelKey\":1.65,\"costOfIssuing\":14.0,\"price\":73.0,\"interestRate\":0.12,\"stockRate\":1.0,\"quantity\":377,\"ordersToProcess\":145,\"cycleStock\":750,\"safetyStock\":501,\"reorderLevel\":1251}]"
     }
 }
