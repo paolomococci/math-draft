@@ -53,8 +53,8 @@ class OutcomeResourceTest {
                 jsonObject["costOfStock"].toString().toDouble(),
                 jsonObject["quantity"].toString().toLong(),
                 jsonObject["ordersToProcess"].toString().toLong(),
-                jsonObject["safetyStock"].toString().toLong(),
                 jsonObject["cycleStock"].toString().toLong(),
+                jsonObject["safetyStock"].toString().toLong(),
                 jsonObject["reorderLevel"].toString().toLong(),
             )
             Assertions.assertEquals(
@@ -62,19 +62,23 @@ class OutcomeResourceTest {
                 eoq.id
             )
             Assertions.assertEquals(
-                (338).toString(),
+                (377).toString(),
                 eoq.quantity.toString()
             )
             Assertions.assertEquals(
-                (130).toString(),
+                (145).toString(),
                 eoq.ordersToProcess.toString()
             )
             Assertions.assertEquals(
-                (622).toString(),
+                (750).toString(),
+                eoq.cycleStock.toString()
+            )
+            Assertions.assertEquals(
+                (501).toString(),
                 eoq.safetyStock.toString()
             )
             Assertions.assertEquals(
-                (1702).toString(),
+                (1251).toString(),
                 eoq.reorderLevel.toString()
             )
         }
@@ -84,9 +88,9 @@ class OutcomeResourceTest {
         private const val BASE_PATH = "/outcome"
         private const val JSON_DATA =
             """
-                {"demand":43800,"sigmaDemand":100.6,"procurementLeadTime":9,"serviceLevelKey":2.06,"costOfIssuing":14,"price":73,"interestRate":0.12,"costOfStock":1}
+                {"demand":54750,"sigmaDemand":15,"procurementLeadTime":10,"sigmaProcurementLeadTime":2.0,"serviceLevelKey":1.65,"costOfIssuing":14,"price":73,"interestRate":0.12,"costOfStock":1}
             """
         private const val JSON_OUTCOME =
-            "[{\"id\":\"0\",\"demand\":43800.0,\"sigmaDemand\":100.6,\"procurementLeadTime\":9.0,\"serviceLevelKey\":2.06,\"costOfIssuing\":14.0,\"price\":73.0,\"interestRate\":0.12,\"costOfStock\":1.0,\"quantity\":338,\"ordersToProcess\":130,\"safetyStock\":622,\"reorderLevel\":1702}]"
+            "[{\"id\":\"0\",\"demand\":54750.0,\"sigmaDemand\":15.0,\"procurementLeadTime\":10.0,\"sigmaProcurementLeadTime\":2.0,\"serviceLevelKey\":1.65,\"costOfIssuing\":14.0,\"price\":73.0,\"interestRate\":0.12,\"costOfStock\":1.0,\"quantity\":377,\"ordersToProcess\":145,\"cycleStock\":750,\"safetyStock\":501,\"reorderLevel\":1251}]"
     }
 }
