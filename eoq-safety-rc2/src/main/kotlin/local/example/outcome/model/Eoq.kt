@@ -20,8 +20,8 @@ class Eoq() {
     var costOfStock = 0.0
     var quantity: Long = 0L
     var ordersToProcess: Long = 0L
-    var safetyStock: Long = 0L
     var cycleStock: Long = 0L
+    var safetyStock: Long = 0L
     var reorderLevel: Long = 0L
 
     constructor(
@@ -37,8 +37,8 @@ class Eoq() {
         costOfStock: Double,
         quantity: Long,
         ordersToProcess: Long,
-        safetyStock: Long,
         cycleStock: Long,
+        safetyStock: Long,
         reorderLevel: Long
     ): this() {
         this.id = id
@@ -53,8 +53,8 @@ class Eoq() {
         this.costOfStock = costOfStock
         this.quantity = quantity
         this.ordersToProcess = ordersToProcess
-        this.safetyStock = safetyStock
         this.cycleStock = cycleStock
+        this.safetyStock = safetyStock
         this.reorderLevel = reorderLevel
     }
 
@@ -74,13 +74,18 @@ class Eoq() {
         )
         this.safetyStock = this.computeSafetyStock(
             this.serviceLevelKey,
+            this.procurementLeadTime,
             this.sigmaDemand,
+            this.sigmaProcurementLeadTime,
+            averageDemandExpressedInPiecesPerDay
+        )
+        this.cycleStock = this.computeCycleStock(
+            averageDemandExpressedInPiecesPerDay,
             this.procurementLeadTime
         )
         this.reorderLevel = this.computeReorderLevel(
-            averageDemandExpressedInPiecesPerDay,
-            this.procurementLeadTime,
-            this.safetyStock
+            this.safetyStock,
+            this.cycleStock
         )
     }
 
@@ -109,25 +114,29 @@ class Eoq() {
         averageDemandExpressedInPiecesPerDay: Double,
         procurementLeadTime: Double,
     ): Long {
-        return ((averageDemandExpressedInPiecesPerDay * procurementLeadTime) / 2).toLong()
+        return ((averageDemandExpressedInPiecesPerDay * procurementLeadTime) / 2)
+            .roundToLong()
     }
 
     private fun computeSafetyStock(
         serviceLevelKey: Double,
+        procurementLeadTime: Double,
         sigmaDemand: Double,
-        procurementLeadTime: Double
+        sigmaProcurementLeadTime: Double,
+        averageDemandExpressedInPiecesPerDay: Double
     ): Long {
-        return (serviceLevelKey * sigmaDemand * sqrt(procurementLeadTime))
+        return (serviceLevelKey *
+                sqrt(
+                    (procurementLeadTime * sigmaDemand * sigmaDemand) + (sigmaProcurementLeadTime * sigmaProcurementLeadTime * averageDemandExpressedInPiecesPerDay * averageDemandExpressedInPiecesPerDay)
+                ))
             .roundToLong()
     }
 
     private fun computeReorderLevel(
-        averageDemandExpressedInPiecesPerDay: Double,
-        procurementLeadTime: Double,
-        safetyStock: Long
+        safetyStock: Long,
+        cycleStock: Long
     ): Long {
-        return ((averageDemandExpressedInPiecesPerDay * procurementLeadTime) + safetyStock)
-            .roundToLong()
+        return safetyStock + cycleStock
     }
 
     private fun generateID(): String {
