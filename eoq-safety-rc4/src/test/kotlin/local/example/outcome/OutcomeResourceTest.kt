@@ -54,8 +54,9 @@ class OutcomeResourceTest {
                 jsonObject["spaceRate"].toString().toDouble(),
                 jsonObject["quantity"].toString().toLong(),
                 jsonObject["ordersToProcess"].toString().toLong(),
-                jsonObject["cycleStock"].toString().toLong(),
                 jsonObject["safetyStock"].toString().toLong(),
+                jsonObject["cycleStock"].toString().toLong(),
+                jsonObject["averageStock"].toString().toLong(),
                 jsonObject["reorderLevel"].toString().toLong(),
                 jsonObject["stockMaintenanceCost"].toString().toDouble(),
                 jsonObject["totalCostOfIssuingOrders"].toString().toDouble(),
@@ -74,12 +75,16 @@ class OutcomeResourceTest {
                 eoq.ordersToProcess.toString()
             )
             Assertions.assertEquals(
+                (66).toString(),
+                eoq.safetyStock.toString()
+            )
+            Assertions.assertEquals(
                 (154).toString(),
                 eoq.cycleStock.toString()
             )
             Assertions.assertEquals(
-                (66).toString(),
-                eoq.safetyStock.toString()
+                (220).toString(),
+                eoq.averageStock.toString()
             )
             Assertions.assertEquals(
                 (166).toString(),
