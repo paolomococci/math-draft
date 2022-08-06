@@ -25,8 +25,8 @@ class Eoq() {
     var safetyStock: Long = 0L
     var reorderLevel: Long = 0L
 
-    var totalCostOfIssuingOrders: Double? = null
     var stockMaintenanceCost: Double? = null
+    var totalCostOfIssuingOrders: Double? = null
     var totalCostOfStock: Double? = null
 
     constructor(
@@ -152,6 +152,18 @@ class Eoq() {
         safetyStock: Long
     ): Long {
         return ((dailyDemand * procurementLeadTime) + safetyStock).roundToLong()
+    }
+
+    private fun computeStockMaintenanceCost(): Double {
+        return TODO("Provide the return value")
+    }
+
+    private fun computeTotalCostOfIssuingOrders(): Double {
+        return TODO("Provide the return value")
+    }
+
+    private fun computeTotalCostOfStock(): Double {
+        return TODO("Provide the return value")
     }
 
     private fun generateID(): String {
