@@ -112,6 +112,6 @@ class OutcomeResourceTest {
                 {"demand":4400.0,"sigmaDemand":11.18,"procurementLeadTime":5.0,"sigmaProcurementLeadTime":1.0,"serviceLevelKey":2.06,"costOfIssuing":20.5,"price":10.0,"interestRate":0.12,"stockRate":0.01,"spaceRate":0.06}
             """
         private const val JSON_OUTCOME =
-            "[{\"id\":\"0\",\"demand\":4400.0,\"sigmaDemand\":11.18,\"procurementLeadTime\":5.0,\"sigmaProcurementLeadTime\":1.0,\"serviceLevelKey\":2.06,\"costOfIssuing\":20.5,\"price\":10.0,\"interestRate\":0.12,\"stockRate\":0.01,\"spaceRate\":0.06,\"quantity\":308,\"ordersToProcess\":14,\"cycleStock\":154,\"safetyStock\":66,\"reorderLevel\":166,\"stockMaintenanceCost\":418.0,\"totalCostOfIssuingOrders\":287.0,\"totalCostOfStock\":705.0}]"
+            "[{\"id\":\"0\",\"demand\":4400.0,\"sigmaDemand\":11.18,\"procurementLeadTime\":5.0,\"sigmaProcurementLeadTime\":1.0,\"serviceLevelKey\":2.06,\"costOfIssuing\":20.5,\"price\":10.0,\"interestRate\":0.12,\"stockRate\":0.01,\"spaceRate\":0.06,\"quantity\":308,\"ordersToProcess\":14,\"safetyStock\":66,\"averageStock\":220,\"cycleStock\":154,\"reorderLevel\":166,\"stockMaintenanceCost\":418.0,\"totalCostOfIssuingOrders\":287.0,\"totalCostOfStock\":705.0}]"
     }
 }
