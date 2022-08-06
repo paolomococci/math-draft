@@ -101,6 +101,10 @@ class Eoq() {
             this.stockRate,
             this.spaceRate
         )
+        this.totalCostOfIssuingOrders = this.computeTotalCostOfIssuingOrders(
+            this.costOfIssuing,
+            this.ordersToProcess
+        )
     }
 
     private fun economicOrderQuantity(
@@ -177,7 +181,7 @@ class Eoq() {
         costOfIssuing: Double,
         ordersToProcess: Long
     ): Double {
-        return TODO("Provide the return value")
+        return costOfIssuing * ordersToProcess
     }
 
     private fun computeTotalCostOfStock(
