@@ -75,7 +75,7 @@ class Eoq() {
     fun setEoq() {
         this.id = this.generateID()
         val dailyDemand: Double = this.demand / 220
-        this.quantity = this.economicOrderQuantity(
+        this.quantity = this.computeEconomicOrderQuantity(
             this.demand,
             this.costOfIssuing,
             this.price,
@@ -83,7 +83,7 @@ class Eoq() {
             this.stockRate,
             this.spaceRate
         )
-        this.ordersToProcess = this.numberOfOrdersToProcess(
+        this.ordersToProcess = this.computeOrdersToProcess(
             demand,
             quantity
         )
@@ -118,7 +118,7 @@ class Eoq() {
         )
     }
 
-    private fun economicOrderQuantity(
+    private fun computeEconomicOrderQuantity(
         demand: Double,
         costOfIssuing: Double,
         price: Double,
@@ -133,7 +133,7 @@ class Eoq() {
         ).roundToLong()
     }
 
-    private fun numberOfOrdersToProcess(
+    private fun computeOrdersToProcess(
         demand: Double,
         quantity: Long
     ): Long {
