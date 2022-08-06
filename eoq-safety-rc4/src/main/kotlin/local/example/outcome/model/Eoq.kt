@@ -165,7 +165,10 @@ class Eoq() {
         return TODO("Provide the return value")
     }
 
-    private fun computeTotalCostOfIssuingOrders(): Double {
+    private fun computeTotalCostOfIssuingOrders(
+        costOfIssuing: Double,
+        ordersToProcess: Long
+    ): Double {
         return TODO("Provide the return value")
     }
 
