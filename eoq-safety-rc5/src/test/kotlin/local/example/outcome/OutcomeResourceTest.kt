@@ -75,7 +75,7 @@ class OutcomeResourceTest {
                 eoq.ordersToProcess.toString()
             )
             Assertions.assertEquals(
-                (66).toString(),
+                (60).toString(),
                 eoq.safetyStock.toString()
             )
             Assertions.assertEquals(
@@ -83,15 +83,15 @@ class OutcomeResourceTest {
                 eoq.cycleStock.toString()
             )
             Assertions.assertEquals(
-                (220).toString(),
+                (214).toString(),
                 eoq.averageStock.toString()
             )
             Assertions.assertEquals(
-                (166).toString(),
+                (131).toString(),
                 eoq.reorderLevel.toString()
             )
             Assertions.assertEquals(
-                (418.0).toString(),
+                (406.6).toString(),
                 eoq.stockMaintenanceCost.toString()
             )
             Assertions.assertEquals(
@@ -99,7 +99,7 @@ class OutcomeResourceTest {
                 eoq.totalCostOfIssuingOrders.toString()
             )
             Assertions.assertEquals(
-                (725.5).toString(),
+                (714.1).toString(),
                 eoq.totalCostOfStock.toString()
             )
         }
@@ -112,6 +112,6 @@ class OutcomeResourceTest {
                 {"demand":4400.0,"sigmaDemand":11.18,"procurementLeadTime":5.0,"sigmaProcurementLeadTime":1.0,"serviceLevelKey":2.06,"costOfIssuing":20.5,"price":10.0,"interestRate":0.12,"stockRate":0.01,"spaceRate":0.06}
             """
         private const val JSON_OUTCOME =
-            "[{\"id\":\"0\",\"demand\":4400.0,\"sigmaDemand\":11.18,\"procurementLeadTime\":5.0,\"sigmaProcurementLeadTime\":1.0,\"serviceLevelKey\":2.06,\"costOfIssuing\":20.5,\"price\":10.0,\"interestRate\":0.12,\"stockRate\":0.01,\"spaceRate\":0.06,\"quantity\":308,\"ordersToProcess\":15,\"safetyStock\":66,\"averageStock\":220,\"cycleStock\":154,\"reorderLevel\":166,\"stockMaintenanceCost\":418.0,\"totalCostOfIssuingOrders\":307.5,\"totalCostOfStock\":725.5}]"
+            "[{\"id\":\"0\",\"demand\":4400.0,\"sigmaDemand\":11.18,\"procurementLeadTime\":5.0,\"sigmaProcurementLeadTime\":1.0,\"serviceLevelKey\":2.06,\"costOfIssuing\":20.5,\"price\":10.0,\"interestRate\":0.12,\"stockRate\":0.01,\"spaceRate\":0.06,\"quantity\":308,\"ordersToProcess\":15,\"safetyStock\":60,\"averageStock\":214,\"cycleStock\":154,\"reorderLevel\":131,\"stockMaintenanceCost\":406.6,\"totalCostOfIssuingOrders\":307.5,\"totalCostOfStock\":714.1}]"
     }
 }
