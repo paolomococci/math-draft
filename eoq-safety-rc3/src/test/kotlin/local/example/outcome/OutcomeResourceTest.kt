@@ -51,6 +51,7 @@ class OutcomeResourceTest {
                 jsonObject["price"].toString().toDouble(),
                 jsonObject["interestRate"].toString().toDouble(),
                 jsonObject["stockRate"].toString().toDouble(),
+                jsonObject["spaceRate"].toString().toDouble(),
                 jsonObject["quantity"].toString().toLong(),
                 jsonObject["ordersToProcess"].toString().toLong(),
                 jsonObject["cycleStock"].toString().toLong(),
@@ -62,23 +63,23 @@ class OutcomeResourceTest {
                 eoq.id
             )
             Assertions.assertEquals(
-                (377).toString(),
+                (308).toString(),
                 eoq.quantity.toString()
             )
             Assertions.assertEquals(
-                (145).toString(),
+                (14).toString(),
                 eoq.ordersToProcess.toString()
             )
             Assertions.assertEquals(
-                (750).toString(),
+                (154).toString(),
                 eoq.cycleStock.toString()
             )
             Assertions.assertEquals(
-                (501).toString(),
+                (66).toString(),
                 eoq.safetyStock.toString()
             )
             Assertions.assertEquals(
-                (1251).toString(),
+                (166).toString(),
                 eoq.reorderLevel.toString()
             )
         }
@@ -88,9 +89,9 @@ class OutcomeResourceTest {
         private const val BASE_PATH = "/outcome"
         private const val JSON_DATA =
             """
-                {"demand":54750,"sigmaDemand":15,"procurementLeadTime":10,"sigmaProcurementLeadTime":2.0,"serviceLevelKey":1.65,"costOfIssuing":14,"price":73,"interestRate":0.12,"stockRate":1}
+                {"demand":4400.0,"sigmaDemand":11.18,"procurementLeadTime":5.0,"sigmaProcurementLeadTime":1.0,"serviceLevelKey":2.06,"costOfIssuing":20.5,"price":10.0,"interestRate":0.12,"stockRate":0.01,"spaceRate":0.06}
             """
         private const val JSON_OUTCOME =
-            "[{\"id\":\"0\",\"demand\":54750.0,\"sigmaDemand\":15.0,\"procurementLeadTime\":10.0,\"sigmaProcurementLeadTime\":2.0,\"serviceLevelKey\":1.65,\"costOfIssuing\":14.0,\"price\":73.0,\"interestRate\":0.12,\"stockRate\":1.0,\"quantity\":377,\"ordersToProcess\":145,\"cycleStock\":750,\"safetyStock\":501,\"reorderLevel\":1251}]"
+            "[{\"id\":\"0\",\"demand\":4400.0,\"sigmaDemand\":11.18,\"procurementLeadTime\":5.0,\"sigmaProcurementLeadTime\":1.0,\"serviceLevelKey\":2.06,\"costOfIssuing\":20.5,\"price\":10.0,\"interestRate\":0.12,\"stockRate\":0.01,\"spaceRate\":0.06,\"quantity\":308,\"ordersToProcess\":14,\"cycleStock\":154,\"safetyStock\":66,\"reorderLevel\":166}]"
     }
 }
