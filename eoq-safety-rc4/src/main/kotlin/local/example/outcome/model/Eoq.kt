@@ -108,8 +108,7 @@ class Eoq() {
             this.safetyStock
         )
         this.stockMaintenanceCost = this.computeStockMaintenanceCost(
-            this.quantity,
-            this.safetyStock,
+            this.averageStock,
             this.price,
             this.interestRate,
             this.stockRate,
@@ -185,14 +184,13 @@ class Eoq() {
     }
 
     private fun computeStockMaintenanceCost(
-        quantity: Long,
-        safetyStock: Long,
+        averageStock: Long,
         price: Double,
         interestRate: Double,
         stockRate: Double,
         spaceRate: Double
     ): Double {
-        return ((quantity / 2.0) + safetyStock) * price * (interestRate + stockRate + spaceRate)
+        return averageStock * price * (interestRate + stockRate + spaceRate)
     }
 
     private fun computeTotalCostOfIssuingOrders(
