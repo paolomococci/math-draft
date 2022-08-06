@@ -154,7 +154,14 @@ class Eoq() {
         return ((dailyDemand * procurementLeadTime) + safetyStock).roundToLong()
     }
 
-    private fun computeStockMaintenanceCost(): Double {
+    private fun computeStockMaintenanceCost(
+        quantity: Long,
+        safetyStock: Long,
+        price: Double,
+        interestRate: Double,
+        stockRate: Double,
+        spaceRate: Double
+    ): Double {
         return TODO("Provide the return value")
     }
 
