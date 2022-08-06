@@ -1,5 +1,7 @@
 # eoq-safety-rc5 
 
+In this version I will consider only 310 working days in a year.
+
 ## scaffolding
 
 ```shell
