@@ -9,6 +9,8 @@ class Eoq() {
     private val atomicLong = AtomicLong()
 
     var id: String? = null
+
+    // values provided in input
     var demand = 0.0
     var sigmaDemand = 0.0
     var procurementLeadTime = 0.0
@@ -19,12 +21,14 @@ class Eoq() {
     var interestRate = 0.0
     var stockRate = 0.0
     var spaceRate = 0.0
+
+    // computed values
     var quantity: Long = 0L
     var ordersToProcess: Long = 0L
-    var cycleStock: Long = 0L
     var safetyStock: Long = 0L
+    var averageStock: Long = 0
+    var cycleStock: Long = 0L
     var reorderLevel: Long = 0L
-
     var stockMaintenanceCost: Double = 0.0
     var totalCostOfIssuingOrders: Double = 0.0
     var totalCostOfStock: Double = 0.0
@@ -43,8 +47,9 @@ class Eoq() {
         spaceRate: Double,
         quantity: Long,
         ordersToProcess: Long,
-        cycleStock: Long,
         safetyStock: Long,
+        cycleStock: Long,
+        averageStock: Long,
         reorderLevel: Long,
         stockMaintenanceCost: Double,
         totalCostOfIssuingOrders: Double,
@@ -64,8 +69,9 @@ class Eoq() {
         this.spaceRate = spaceRate
         this.quantity = quantity
         this.ordersToProcess = ordersToProcess
-        this.cycleStock = cycleStock
         this.safetyStock = safetyStock
+        this.cycleStock = cycleStock
+        this.averageStock = averageStock
         this.reorderLevel = reorderLevel
         this.stockMaintenanceCost = stockMaintenanceCost
         this.totalCostOfIssuingOrders = totalCostOfIssuingOrders
@@ -95,6 +101,7 @@ class Eoq() {
             serviceLevelKey
         )
         this.cycleStock = (this.quantity / 2.0).roundToLong()
+        this.averageStock = (this.cycleStock + this.safetyStock)
         this.reorderLevel = this.computeReorderLevel(
             dailyDemand,
             this.procurementLeadTime,
