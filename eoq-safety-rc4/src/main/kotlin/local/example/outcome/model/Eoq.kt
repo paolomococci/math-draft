@@ -1,6 +1,7 @@
 package local.example.outcome.model
 
 import java.util.concurrent.atomic.AtomicLong
+import kotlin.math.ceil
 import kotlin.math.roundToLong
 import kotlin.math.sqrt
 
@@ -143,7 +144,7 @@ class Eoq() {
         demand: Double,
         quantity: Long
     ): Long {
-        return if (this.quantity <= 0L) 0 else (demand / quantity).roundToLong()
+        return if (this.quantity <= 0L) 0 else (ceil(demand / quantity)).roundToLong()
     }
 
     private fun computeSigma(
