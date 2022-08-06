@@ -8,6 +8,10 @@ class Eoq() {
 
     private val atomicLong = AtomicLong()
 
+    // todo:    total cost of issuing orders
+    //          stock maintenance cost
+    //          total cost of stock
+
     var id: String? = null
     var demand = 0.0
     var sigmaDemand = 0.0
@@ -18,6 +22,7 @@ class Eoq() {
     var price = 0.0
     var interestRate = 0.0
     var stockRate = 0.0
+    var spaceRate = 0.0
     var quantity: Long = 0L
     var ordersToProcess: Long = 0L
     var cycleStock: Long = 0L
@@ -35,6 +40,7 @@ class Eoq() {
         price: Double,
         interestRate: Double,
         stockRate: Double,
+        spaceRate: Double,
         quantity: Long,
         ordersToProcess: Long,
         cycleStock: Long,
@@ -51,6 +57,7 @@ class Eoq() {
         this.price = price
         this.interestRate = interestRate
         this.stockRate = stockRate
+        this.spaceRate = spaceRate
         this.quantity = quantity
         this.ordersToProcess = ordersToProcess
         this.cycleStock = cycleStock
@@ -60,32 +67,31 @@ class Eoq() {
 
     fun setEoq() {
         this.id = this.generateID()
-        val averageDemandExpressedInPiecesPerDay: Double = this.demand / 365
+        val dailyDemand: Double = this.demand / 220
         this.quantity = this.economicOrderQuantity(
-            demand,
-            costOfIssuing,
-            price,
-            interestRate,
-            stockRate
+            this.demand,
+            this.costOfIssuing,
+            this.price,
+            this.interestRate,
+            this.stockRate,
+            this.spaceRate
         )
         this.ordersToProcess = this.numberOfOrdersToProcess(
             demand,
             quantity
         )
         this.safetyStock = this.computeSafetyStock(
-            this.serviceLevelKey,
             this.procurementLeadTime,
             this.sigmaDemand,
             this.sigmaProcurementLeadTime,
-            averageDemandExpressedInPiecesPerDay
+            dailyDemand,
+            serviceLevelKey
         )
-        this.cycleStock = this.computeCycleStock(
-            averageDemandExpressedInPiecesPerDay,
-            this.procurementLeadTime
-        )
+        this.cycleStock = (this.quantity / 2.0).roundToLong()
         this.reorderLevel = this.computeReorderLevel(
-            this.safetyStock,
-            this.cycleStock
+            dailyDemand,
+            this.procurementLeadTime,
+            this.safetyStock
         )
     }
 
@@ -94,12 +100,13 @@ class Eoq() {
         costOfIssuing: Double,
         price: Double,
         interestRate: Double,
-        stockRate: Double
+        stockRate: Double,
+        spaceRate: Double
     ): Long {
         val epsilon = 0.000001
         return if (price.compareTo(0.0) < epsilon || interestRate.compareTo(0.0) < epsilon
         ) 0L else sqrt(
-            2 * costOfIssuing * demand / (price * interestRate + 2 * stockRate)
+            2 * costOfIssuing * demand / (price * (interestRate + stockRate + spaceRate))
         ).roundToLong()
     }
 
@@ -110,33 +117,41 @@ class Eoq() {
         return if (this.quantity <= 0L) 0 else (demand / quantity).roundToLong()
     }
 
-    private fun computeCycleStock(
-        averageDemandExpressedInPiecesPerDay: Double,
-        procurementLeadTime: Double,
-    ): Long {
-        return ((averageDemandExpressedInPiecesPerDay * procurementLeadTime) / 2)
-            .roundToLong()
-    }
-
-    private fun computeSafetyStock(
-        serviceLevelKey: Double,
+    private fun computeSigma(
         procurementLeadTime: Double,
         sigmaDemand: Double,
         sigmaProcurementLeadTime: Double,
-        averageDemandExpressedInPiecesPerDay: Double
+        dailyDemand: Double
     ): Long {
-        return (serviceLevelKey *
-                sqrt(
-                    (procurementLeadTime * sigmaDemand * sigmaDemand) + (sigmaProcurementLeadTime * sigmaProcurementLeadTime * averageDemandExpressedInPiecesPerDay * averageDemandExpressedInPiecesPerDay)
-                ))
+        return sqrt(
+            (procurementLeadTime * sigmaDemand * sigmaDemand) +
+                    (sigmaProcurementLeadTime * dailyDemand * dailyDemand)
+        ).roundToLong()
+    }
+
+    private fun computeSafetyStock(
+        procurementLeadTime: Double,
+        sigmaDemand: Double,
+        sigmaProcurementLeadTime: Double,
+        dailyDemand: Double,
+        serviceLevelKey: Double
+    ): Long {
+        return (
+                this.computeSigma(
+                    procurementLeadTime,
+                    sigmaDemand,
+                    sigmaProcurementLeadTime,
+                    dailyDemand
+                ) * serviceLevelKey)
             .roundToLong()
     }
 
     private fun computeReorderLevel(
-        safetyStock: Long,
-        cycleStock: Long
+        dailyDemand: Double,
+        procurementLeadTime: Double,
+        safetyStock: Long
     ): Long {
-        return safetyStock + cycleStock
+        return ((dailyDemand * procurementLeadTime) + safetyStock).roundToLong()
     }
 
     private fun generateID(): String {
