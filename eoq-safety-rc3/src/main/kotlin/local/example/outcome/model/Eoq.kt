@@ -8,10 +8,6 @@ class Eoq() {
 
     private val atomicLong = AtomicLong()
 
-    // todo:    total cost of issuing orders
-    //          stock maintenance cost
-    //          total cost of stock
-
     var id: String? = null
     var demand = 0.0
     var sigmaDemand = 0.0
