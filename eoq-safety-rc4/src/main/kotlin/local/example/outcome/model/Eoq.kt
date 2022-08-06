@@ -172,7 +172,10 @@ class Eoq() {
         return TODO("Provide the return value")
     }
 
-    private fun computeTotalCostOfStock(): Double {
+    private fun computeTotalCostOfStock(
+        stockMaintenanceCost: Double,
+        totalCostOfIssuingOrders: Double
+    ): Double {
         return TODO("Provide the return value")
     }
 
