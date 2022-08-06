@@ -25,9 +25,9 @@ class Eoq() {
     var safetyStock: Long = 0L
     var reorderLevel: Long = 0L
 
-    var stockMaintenanceCost: Double? = null
-    var totalCostOfIssuingOrders: Double? = null
-    var totalCostOfStock: Double? = null
+    var stockMaintenanceCost: Double = 0.0
+    var totalCostOfIssuingOrders: Double = 0.0
+    var totalCostOfStock: Double = 0.0
 
     constructor(
         id: String,
@@ -104,6 +104,10 @@ class Eoq() {
         this.totalCostOfIssuingOrders = this.computeTotalCostOfIssuingOrders(
             this.costOfIssuing,
             this.ordersToProcess
+        )
+        this.totalCostOfStock = this.computeTotalCostOfStock(
+            this.stockMaintenanceCost,
+            this.totalCostOfIssuingOrders
         )
     }
 
@@ -188,7 +192,7 @@ class Eoq() {
         stockMaintenanceCost: Double,
         totalCostOfIssuingOrders: Double
     ): Double {
-        return TODO("Provide the return value")
+        return stockMaintenanceCost + totalCostOfIssuingOrders
     }
 
     private fun generateID(): String {
