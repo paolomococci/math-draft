@@ -45,7 +45,11 @@ class Eoq() {
         ordersToProcess: Long,
         cycleStock: Long,
         safetyStock: Long,
-        reorderLevel: Long
+        reorderLevel: Long,
+        stockMaintenanceCost: Double,
+        totalCostOfIssuingOrders: Double,
+        totalCostOfStock: Double
+
     ): this() {
         this.id = id
         this.demand = demand
@@ -63,6 +67,9 @@ class Eoq() {
         this.cycleStock = cycleStock
         this.safetyStock = safetyStock
         this.reorderLevel = reorderLevel
+        this.stockMaintenanceCost = stockMaintenanceCost
+        this.totalCostOfIssuingOrders = totalCostOfIssuingOrders
+        this.totalCostOfStock = totalCostOfStock
     }
 
     fun setEoq() {
