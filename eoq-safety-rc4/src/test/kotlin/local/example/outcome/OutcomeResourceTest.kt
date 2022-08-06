@@ -3,12 +3,11 @@ package local.example.outcome
 import io.quarkus.test.junit.QuarkusTest
 import io.restassured.RestAssured.given
 import io.restassured.http.ContentType
+import local.example.outcome.model.Eoq
 import org.apache.http.HttpStatus
 import org.hamcrest.CoreMatchers.`is`
-import org.junit.jupiter.api.MethodOrderer
-import org.junit.jupiter.api.Order
-import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.TestMethodOrder
+import org.json.JSONArray
+import org.junit.jupiter.api.*
 
 @QuarkusTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation::class)
@@ -30,6 +29,60 @@ class OutcomeResourceTest {
             .body(JSON_DATA).`when`().post(BASE_PATH)
             .then().statusCode(HttpStatus.SC_OK)
             .body(`is`(JSON_OUTCOME))
+    }
+
+    @Test
+    @Order(3)
+    fun testReadObjectStoredSoFar() {
+        val response = given()
+            .`when`().get(BASE_PATH)
+            .then().statusCode(HttpStatus.SC_OK).extract().body()
+        val jsonArray = JSONArray(response.asString())
+        if (!jsonArray.isEmpty) {
+            val jsonObject = jsonArray.getJSONObject(0)
+            val eoq = Eoq(
+                jsonObject["id"].toString(),
+                jsonObject["demand"].toString().toDouble(),
+                jsonObject["sigmaDemand"].toString().toDouble(),
+                jsonObject["procurementLeadTime"].toString().toDouble(),
+                jsonObject["sigmaProcurementLeadTime"].toString().toDouble(),
+                jsonObject["serviceLevelKey"].toString().toDouble(),
+                jsonObject["costOfIssuing"].toString().toDouble(),
+                jsonObject["price"].toString().toDouble(),
+                jsonObject["interestRate"].toString().toDouble(),
+                jsonObject["stockRate"].toString().toDouble(),
+                jsonObject["spaceRate"].toString().toDouble(),
+                jsonObject["quantity"].toString().toLong(),
+                jsonObject["ordersToProcess"].toString().toLong(),
+                jsonObject["cycleStock"].toString().toLong(),
+                jsonObject["safetyStock"].toString().toLong(),
+                jsonObject["reorderLevel"].toString().toLong(),
+            )
+            Assertions.assertEquals(
+                (0).toString(),
+                eoq.id
+            )
+            Assertions.assertEquals(
+                (308).toString(),
+                eoq.quantity.toString()
+            )
+            Assertions.assertEquals(
+                (14).toString(),
+                eoq.ordersToProcess.toString()
+            )
+            Assertions.assertEquals(
+                (154).toString(),
+                eoq.cycleStock.toString()
+            )
+            Assertions.assertEquals(
+                (66).toString(),
+                eoq.safetyStock.toString()
+            )
+            Assertions.assertEquals(
+                (166).toString(),
+                eoq.reorderLevel.toString()
+            )
+        }
     }
 
     companion object {
