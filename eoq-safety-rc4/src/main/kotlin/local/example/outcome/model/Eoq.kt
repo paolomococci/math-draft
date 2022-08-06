@@ -93,6 +93,14 @@ class Eoq() {
             this.procurementLeadTime,
             this.safetyStock
         )
+        this.stockMaintenanceCost = this.computeStockMaintenanceCost(
+            this.quantity,
+            this.safetyStock,
+            this.price,
+            this.interestRate,
+            this.stockRate,
+            this.spaceRate
+        )
     }
 
     private fun economicOrderQuantity(
@@ -162,7 +170,7 @@ class Eoq() {
         stockRate: Double,
         spaceRate: Double
     ): Double {
-        return TODO("Provide the return value")
+        return ((quantity / 2.0) + safetyStock) * price * (interestRate + stockRate + spaceRate)
     }
 
     private fun computeTotalCostOfIssuingOrders(
