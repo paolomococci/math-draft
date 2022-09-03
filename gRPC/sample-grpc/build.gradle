@@ -2,6 +2,7 @@ plugins {
     id 'org.jetbrains.kotlin.jvm' version "1.7.10"
     id "org.jetbrains.kotlin.plugin.allopen" version "1.7.10"
     id 'io.quarkus'
+    id "org.kordamp.gradle.jandex" version "1.0.0"
 }
 
 repositories {
