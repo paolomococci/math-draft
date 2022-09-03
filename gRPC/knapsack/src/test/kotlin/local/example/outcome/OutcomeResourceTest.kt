@@ -16,5 +16,4 @@ class OutcomeResourceTest {
              .statusCode(200)
              .body(`is`("Hello from RESTEasy Reactive"))
     }
-
 }
