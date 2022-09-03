@@ -17,4 +17,13 @@ class OutcomeResourceTest {
              .statusCode(200)
              .body(`is`("Hello"))
     }
+
+    @Test
+    fun testHelloEndpointWithName() {
+        given()
+            .`when`().get("/outcome/John")
+            .then()
+            .statusCode(200)
+            .body(`is`("Hello John"))
+    }
 }
