@@ -1,4 +1,3 @@
 package local.example.outcome.model
 
-class Distance {
-}
+class Distance
