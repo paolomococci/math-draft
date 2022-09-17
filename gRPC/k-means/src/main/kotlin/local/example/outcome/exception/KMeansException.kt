@@ -1,4 +1,3 @@
 package local.example.outcome.exception
 
-class KMeansException {
-}
+class KMeansException
