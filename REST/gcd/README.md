@@ -5,7 +5,7 @@ REST application template developed thanks to Quarkus.
 ## scaffolding
 
 ```shell
-mvn io.quarkus.platform:quarkus-maven-plugin:2.12.2.Final:create -DprojectGroupId=local.example -DprojectArtifactId=gcd -DclassName="local.example.outcome.OutcomeResource" -Dpath="/outcome" -Dextensions="resteasy-jackson" -DbuildTool=gradle
+mvn io.quarkus.platform:quarkus-maven-plugin:2.12.3.Final:create -DprojectGroupId=local.example -DprojectArtifactId=gcd -DclassName="local.example.outcome.OutcomeResource" -Dpath="/outcome" -Dextensions="resteasy-jackson" -DbuildTool=gradle
 ```
 
 ## run application in development mode
