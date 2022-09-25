@@ -25,7 +25,7 @@ public class OutcomeResourceTest {
         given()
           .when().get(BASE_PATH)
           .then()
-             .statusCode(200)
+             .statusCode(HttpStatus.SC_OK)
              .body(is("---> outcome feedback <---"));
     }
 }
