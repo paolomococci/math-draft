@@ -11,10 +11,12 @@ import static org.hamcrest.CoreMatchers.is;
 @QuarkusTest
 public class OutcomeResourceTest {
 
+    private static final String BASE_PATH = "/outcome";
+
     @Test
     public void feedbackOutcomeTest() {
         given()
-          .when().get("/outcome")
+          .when().get(BASE_PATH)
           .then()
              .statusCode(200)
              .body(is("---> outcome feedback <---"));
