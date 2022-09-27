@@ -13,4 +13,9 @@ public class Record {
     public Record(String description) {
         this.description = description;
     }
+
+    public Record(String description, Map<String, Double> features) {
+        this.description = description;
+        this.features = features;
+    }
 }
