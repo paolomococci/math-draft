@@ -23,6 +23,7 @@ public interface ClusteringMeans {
                 distance,
                 limitNumberOfIterations
         );
+        List<Centroid> centroids = randomCentroids(records, numberOfClusters);
         return null;
     }
 
