@@ -25,4 +25,8 @@ public interface ClusteringMeans {
     private static Centroid nearestCentroid() {
         return null;
     }
+
+    private static Centroid average() {
+        return null;
+    }
 }
