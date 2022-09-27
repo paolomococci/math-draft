@@ -18,7 +18,12 @@ public interface ClusteringMeans {
         return null;
     }
 
-    private static void applyPreconditions() {}
+    private static void applyPreconditions(
+            List<Record> records,
+            int numberOfClusters,
+            Distance distance,
+            int limitNumberOfIterations
+    ) {}
 
     private static void assignToCluster(
             Map<Centroid, List<Record>> clusters,
