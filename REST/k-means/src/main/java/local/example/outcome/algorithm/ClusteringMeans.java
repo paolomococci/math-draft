@@ -30,7 +30,9 @@ public interface ClusteringMeans {
         return null;
     }
 
-    private static List<Centroid> relocateCentroids() {
+    private static List<Centroid> relocateCentroids(
+            Map<Centroid, List<Record>> clusters
+    ) {
         return null;
     }
 }
