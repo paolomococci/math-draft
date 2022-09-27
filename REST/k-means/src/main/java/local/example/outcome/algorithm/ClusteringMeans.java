@@ -4,6 +4,7 @@ import local.example.outcome.model.Centroid;
 import local.example.outcome.model.Distance;
 import local.example.outcome.model.Record;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -71,7 +72,7 @@ public interface ClusteringMeans {
             List<Record> records,
             int numberOfClusters
     ) {
-        // TODO: 27/09/22
+        List<Centroid> centroids = new ArrayList<>();
         return null;
     }
 }
