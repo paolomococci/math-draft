@@ -89,6 +89,9 @@ public interface ClusteringMeans {
         Set<String> attributes = records.stream().flatMap(
                 record -> record.features.keySet().stream()
         ).collect(Collectors.toSet());
+        for (int i = 0; i < numberOfClusters; i++) {
+            Map<String, Double> coordinates = new HashMap<>();
+        }
         return null;
     }
 }
