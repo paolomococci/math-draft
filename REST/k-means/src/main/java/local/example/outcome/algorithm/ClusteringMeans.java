@@ -91,6 +91,10 @@ public interface ClusteringMeans {
         ).collect(Collectors.toSet());
         for (int i = 0; i < numberOfClusters; i++) {
             Map<String, Double> coordinates = new HashMap<>();
+            for (String attribute : attributes) {
+                double max = maxValues.get(attribute);
+                double min = minValues.get(attribute);
+            }
         }
         return null;
     }
