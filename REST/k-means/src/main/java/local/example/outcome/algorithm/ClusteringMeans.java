@@ -80,6 +80,11 @@ public interface ClusteringMeans {
         if (records == null || records.isEmpty())
             return centroid;
         Map<String, Double> average = centroid.coordinates;
+        records.stream().flatMap(
+                record -> record.features.keySet().stream()
+        ).forEach(
+                s -> average.put(s, 0.0)
+        );
         return null;
     }
 
