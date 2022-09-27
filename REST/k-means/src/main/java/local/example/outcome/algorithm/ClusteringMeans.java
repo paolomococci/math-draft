@@ -93,7 +93,7 @@ public interface ClusteringMeans {
         average.forEach(
                 (s, temp) -> average.put(s, temp / records.size())
         );
-        return null;
+        return new Centroid(average);
     }
 
     private static List<Centroid> relocateCentroids(
