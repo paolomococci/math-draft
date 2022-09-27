@@ -26,4 +26,12 @@ public class Record {
         this.description = "";
         this.features = features;
     }
+
+    @Override
+    public String toString() {
+        return "Record{" +
+                "description='" + description + '\'' +
+                ", features=" + features +
+                '}';
+    }
 }
