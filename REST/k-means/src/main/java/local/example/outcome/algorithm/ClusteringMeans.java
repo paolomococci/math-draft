@@ -19,7 +19,7 @@ public interface ClusteringMeans {
         return null;
     }
 
-    private static void applyPreconditions(
+    private static void checkPreconditions(
             List<Record> records,
             int numberOfClusters,
             Distance distance,
