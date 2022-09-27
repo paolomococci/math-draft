@@ -76,6 +76,18 @@ public interface ClusteringMeans {
         List<Centroid> centroids = new ArrayList<>();
         Map<String, Double> maxValues = new HashMap<>();
         Map<String, Double> minValues = new HashMap<>();
+        for (Record record : records) {
+            record.features.forEach(
+                    (key, value) -> {
+                        maxValues.compute(
+                                key, (k1, max) -> max == null || value > max ? value : max
+                        );
+                        minValues.compute(
+                                key, (k1, min) -> min == null || value < min ? value : min
+                        );
+                    }
+            );
+        }
         return null;
     }
 }
