@@ -42,7 +42,15 @@ public interface ClusteringMeans {
             Record record,
             Centroid centroid
     ) {
-        // TODO: 27/09/22
+        clusters.compute(
+                centroid,
+                (key, list) -> {
+                    if (list == null)
+                        list = new ArrayList<>();
+                    list.add(record);
+                    return list;
+                }
+        );
     }
 
     private static Centroid nearestCentroid(
