@@ -101,6 +101,7 @@ public interface ClusteringMeans {
                         random.nextDouble() * (max - min) + min
                 );
             }
+            centroids.add(new Centroid(coordinates));
         }
         return null;
     }
