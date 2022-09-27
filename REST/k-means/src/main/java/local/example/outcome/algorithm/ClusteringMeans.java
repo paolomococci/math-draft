@@ -103,6 +103,6 @@ public interface ClusteringMeans {
             }
             centroids.add(new Centroid(coordinates));
         }
-        return null;
+        return centroids;
     }
 }
