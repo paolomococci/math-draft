@@ -19,4 +19,6 @@ public interface ClusteringMeans {
     }
 
     private static void applyPreconditions() {}
+
+    private static void assignToCluster() {}
 }
