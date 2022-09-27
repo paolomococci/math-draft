@@ -5,6 +5,7 @@ import local.example.outcome.model.Distance;
 import local.example.outcome.model.Record;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -73,6 +74,8 @@ public interface ClusteringMeans {
             int numberOfClusters
     ) {
         List<Centroid> centroids = new ArrayList<>();
+        Map<String, Double> maxValues = new HashMap<>();
+        Map<String, Double> minValues = new HashMap<>();
         return null;
     }
 }
