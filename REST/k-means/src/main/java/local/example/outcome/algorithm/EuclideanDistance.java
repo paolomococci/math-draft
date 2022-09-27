@@ -20,6 +20,6 @@ public class EuclideanDistance implements Distance {
             if (f1 != null && f2 != null)
                 amount += Math.pow(f1 - f2, 2);
         }
-        return 0;
+        return Math.sqrt(amount);
     }
 }
