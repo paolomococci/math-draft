@@ -79,6 +79,7 @@ public interface ClusteringMeans {
     ) {
         if (records == null || records.isEmpty())
             return centroid;
+        Map<String, Double> average = centroid.coordinates;
         return null;
     }
 
