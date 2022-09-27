@@ -14,7 +14,7 @@ public class KMeans {
 
     public static Map<Centroid, List<Record>> tieDown(
             List<Record> records,
-            int k,
+            int numberOfClusters,
             Distance distance,
             int limitNumberOfIterations
     ) {
