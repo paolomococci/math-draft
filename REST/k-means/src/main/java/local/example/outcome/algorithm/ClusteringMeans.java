@@ -77,7 +77,8 @@ public interface ClusteringMeans {
             Centroid centroid,
             List<Record> records
     ) {
-        // TODO: 27/09/22
+        if (records == null || records.isEmpty())
+            return centroid;
         return null;
     }
 
