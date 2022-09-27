@@ -46,4 +46,11 @@ public interface ClusteringMeans {
     ) {
         return null;
     }
+
+    private static List<Centroid> randomCentroids(
+            List<Record> records,
+            int numberOfClusters
+    ) {
+        return null;
+    }
 }
