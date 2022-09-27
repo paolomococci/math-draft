@@ -25,7 +25,8 @@ public interface ClusteringMeans {
             Distance distance,
             int limitNumberOfIterations
     ) {
-        // TODO: 27/09/22
+        if (records == null || records.isEmpty())
+            throw new IllegalArgumentException("the record list can't be empty");
     }
 
     private static void assignToCluster(
