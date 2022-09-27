@@ -26,7 +26,11 @@ public interface ClusteringMeans {
             Centroid centroid
     ) {}
 
-    private static Centroid nearestCentroid() {
+    private static Centroid nearestCentroid(
+            Record record,
+            List<Centroid> centroids,
+            Distance distance
+    ) {
         return null;
     }
 
