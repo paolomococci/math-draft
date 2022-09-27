@@ -30,7 +30,7 @@ public interface ClusteringMeans {
         if (numberOfClusters <= 1)
             throw new IllegalArgumentException("clusters must be at least more than one");
         if (distance == null)
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("the distance list can't be null");
     }
 
     private static void assignToCluster(
