@@ -15,6 +15,7 @@ public interface ClusteringMeans {
             Distance distance,
             int limitNumberOfIterations
     ) {
+        // TODO: 27/09/22
         return null;
     }
 
@@ -23,19 +24,24 @@ public interface ClusteringMeans {
             int numberOfClusters,
             Distance distance,
             int limitNumberOfIterations
-    ) {}
+    ) {
+        // TODO: 27/09/22
+    }
 
     private static void assignToCluster(
             Map<Centroid, List<Record>> clusters,
             Record record,
             Centroid centroid
-    ) {}
+    ) {
+        // TODO: 27/09/22
+    }
 
     private static Centroid nearestCentroid(
             Record record,
             List<Centroid> centroids,
             Distance distance
     ) {
+        // TODO: 27/09/22
         return null;
     }
 
@@ -43,12 +49,14 @@ public interface ClusteringMeans {
             Centroid centroid,
             List<Record> records
     ) {
+        // TODO: 27/09/22
         return null;
     }
 
     private static List<Centroid> relocateCentroids(
             Map<Centroid, List<Record>> clusters
     ) {
+        // TODO: 27/09/22
         return null;
     }
 
@@ -56,6 +64,7 @@ public interface ClusteringMeans {
             List<Record> records,
             int numberOfClusters
     ) {
+        // TODO: 27/09/22
         return null;
     }
 }
