@@ -20,7 +20,11 @@ public interface ClusteringMeans {
 
     private static void applyPreconditions() {}
 
-    private static void assignToCluster() {}
+    private static void assignToCluster(
+            Map<Centroid, List<Record>> clusters,
+            Record record,
+            Centroid centroid
+    ) {}
 
     private static Centroid nearestCentroid() {
         return null;
