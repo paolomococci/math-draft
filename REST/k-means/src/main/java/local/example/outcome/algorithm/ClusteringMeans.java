@@ -50,7 +50,18 @@ public interface ClusteringMeans {
             List<Centroid> centroids,
             Distance distance
     ) {
-        // TODO: 27/09/22
+        double minDistance = Double.MAX_VALUE;
+        Centroid nearestCentroid = null;
+        for (Centroid centroid : centroids) {
+            double currentDistance = distance.compute(
+                    record.features,
+                    centroid.coordinates
+            );
+            if (currentDistance < minDistance) {
+                minDistance = currentDistance;
+                nearestCentroid = centroid;
+            }
+        }
         return null;
     }
 
