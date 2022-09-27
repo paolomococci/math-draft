@@ -24,6 +24,23 @@ public interface ClusteringMeans {
                 limitNumberOfIterations
         );
         List<Centroid> centroids = randomCentroids(records, numberOfClusters);
+        Map<Centroid, List<Record>> clusters = new HashMap<>();
+        Map<Centroid, List<Record>> results = new HashMap<>();
+        for (int i = 0; i < limitNumberOfIterations; i++) {
+            boolean isLastIter = (i == limitNumberOfIterations-1);
+            for (Record record : records) {
+                Centroid centroid = nearestCentroid(
+                        record,
+                        centroids,
+                        distance
+                );
+                assignToCluster(
+                        clusters,
+                        record,
+                        centroid
+                );
+            }
+        }
         return null;
     }
 
