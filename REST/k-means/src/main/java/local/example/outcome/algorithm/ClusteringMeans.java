@@ -26,7 +26,10 @@ public interface ClusteringMeans {
         return null;
     }
 
-    private static Centroid average() {
+    private static Centroid average(
+            Centroid centroid,
+            List<Record> records
+    ) {
         return null;
     }
 
