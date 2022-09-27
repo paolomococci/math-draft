@@ -2,9 +2,7 @@ package local.example.outcome;
 
 import local.example.outcome.model.ClusterView;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.Collections;
@@ -27,5 +25,14 @@ public class OutcomeResource {
             return Response.ok().build();
         }
         return Response.ok(clusterViews).build();
+    }
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Set<ClusterView> compute(ClusterView clusterView) {
+        clusterView.setView();
+        clusterViews.add(clusterView);
+        return clusterViews;
     }
 }
