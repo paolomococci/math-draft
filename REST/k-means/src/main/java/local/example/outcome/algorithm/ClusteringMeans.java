@@ -90,6 +90,9 @@ public interface ClusteringMeans {
                     (s, temp) -> average.compute(s, (s1, currentValue) -> temp + currentValue)
             );
         }
+        average.forEach(
+                (s, temp) -> average.put(s, temp / records.size())
+        );
         return null;
     }
 
