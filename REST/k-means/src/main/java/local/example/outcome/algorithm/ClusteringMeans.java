@@ -4,10 +4,8 @@ import local.example.outcome.model.Centroid;
 import local.example.outcome.model.Distance;
 import local.example.outcome.model.Record;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public interface ClusteringMeans {
 
@@ -88,6 +86,9 @@ public interface ClusteringMeans {
                     }
             );
         }
+        Set<String> attributes = records.stream().flatMap(
+                record -> record.features.keySet().stream()
+        ).collect(Collectors.toSet());
         return null;
     }
 }
