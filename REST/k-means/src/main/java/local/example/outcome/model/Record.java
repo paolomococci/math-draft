@@ -6,4 +6,7 @@ public class Record {
 
     public String description;
     public Map<String, Double> features;
+
+    public Record() {
+    }
 }
