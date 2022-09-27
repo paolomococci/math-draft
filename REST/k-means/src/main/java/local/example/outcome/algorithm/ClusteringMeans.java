@@ -99,8 +99,12 @@ public interface ClusteringMeans {
     private static List<Centroid> relocateCentroids(
             Map<Centroid, List<Record>> clusters
     ) {
-        // TODO: 27/09/22
-        return null;
+        return clusters.entrySet().stream().map(
+                temp -> average(
+                        temp.getKey(),
+                        temp.getValue()
+                )
+        ).collect(Collectors.toList());
     }
 
     private static List<Centroid> randomCentroids(
