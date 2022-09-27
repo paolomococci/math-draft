@@ -47,7 +47,7 @@ public interface ClusteringMeans {
             centroids = relocateCentroids(clusters);
             clusters = new HashMap<>();
         }
-        return null;
+        return results;
     }
 
     private static void checkPreconditions(
