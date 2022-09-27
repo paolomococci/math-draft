@@ -17,7 +17,12 @@ public interface ClusteringMeans {
             Distance distance,
             int limitNumberOfIterations
     ) {
-        // TODO: 27/09/22
+        checkPreconditions(
+                records,
+                numberOfClusters,
+                distance,
+                limitNumberOfIterations
+        );
         return null;
     }
 
