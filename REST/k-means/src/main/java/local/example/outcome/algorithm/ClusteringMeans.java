@@ -40,6 +40,12 @@ public interface ClusteringMeans {
                         centroid
                 );
             }
+            boolean itShouldEnd = (isLastIter || clusters.equals(results));
+            results = clusters;
+            if (itShouldEnd)
+                break;
+            centroids = relocateCentroids(clusters);
+            clusters = new HashMap<>();
         }
         return null;
     }
