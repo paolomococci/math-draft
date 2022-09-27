@@ -20,4 +20,6 @@ public class KMeans {
     ) {
         return null;
     }
+
+    private static void applyPreconditions() {}
 }
