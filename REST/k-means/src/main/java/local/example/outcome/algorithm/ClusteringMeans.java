@@ -62,7 +62,7 @@ public interface ClusteringMeans {
                 nearestCentroid = centroid;
             }
         }
-        return null;
+        return nearestCentroid;
     }
 
     private static Centroid average(
