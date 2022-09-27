@@ -23,6 +23,8 @@ public class KMeans {
 
     private static void applyPreconditions() {}
 
+    private static void assignToCluster() {}
+
     private static Centroid nearestCentroid() {
         return null;
     }
