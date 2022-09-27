@@ -9,6 +9,8 @@ import java.util.stream.Collectors;
 
 public interface ClusteringMeans {
 
+    static final Random random = new Random();
+
     static Map<Centroid, List<Record>> tieDown(
             List<Record> records,
             int numberOfClusters,
@@ -94,6 +96,10 @@ public interface ClusteringMeans {
             for (String attribute : attributes) {
                 double max = maxValues.get(attribute);
                 double min = minValues.get(attribute);
+                coordinates.put(
+                        attribute,
+                        random.nextDouble() * (max - min) + min
+                );
             }
         }
         return null;
