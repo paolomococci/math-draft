@@ -9,4 +9,8 @@ public class Record {
 
     public Record() {
     }
+
+    public Record(String description) {
+        this.description = description;
+    }
 }
