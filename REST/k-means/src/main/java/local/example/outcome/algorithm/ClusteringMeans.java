@@ -29,6 +29,8 @@ public interface ClusteringMeans {
             throw new IllegalArgumentException("the record list can't be empty");
         if (numberOfClusters <= 1)
             throw new IllegalArgumentException("clusters must be at least more than one");
+        if (distance == null)
+            throw new IllegalArgumentException();
     }
 
     private static void assignToCluster(
