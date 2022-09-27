@@ -14,7 +14,10 @@ public class Record {
         this.description = description;
     }
 
-    public Record(String description, Map<String, Double> features) {
+    public Record(
+            String description,
+            Map<String, Double> features
+    ) {
         this.description = description;
         this.features = features;
     }
