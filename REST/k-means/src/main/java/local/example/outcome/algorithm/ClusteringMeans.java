@@ -29,4 +29,8 @@ public interface ClusteringMeans {
     private static Centroid average() {
         return null;
     }
+
+    private static List<Centroid> relocateCentroids() {
+        return null;
+    }
 }
