@@ -1,39 +1,8 @@
 package local.example.outcome.algorithm;
 
-import local.example.outcome.model.Centroid;
-import local.example.outcome.model.Distance;
-import local.example.outcome.model.Record;
-
-import java.util.List;
-import java.util.Map;
 import java.util.Random;
 
 public class KMeans {
 
     private static final Random random = new Random();
-
-    public static Map<Centroid, List<Record>> tieDown(
-            List<Record> records,
-            int numberOfClusters,
-            Distance distance,
-            int limitNumberOfIterations
-    ) {
-        return null;
-    }
-
-    private static void applyPreconditions() {}
-
-    private static void assignToCluster() {}
-
-    private static Centroid nearestCentroid() {
-        return null;
-    }
-
-    private static Centroid average() {
-        return null;
-    }
-
-    private static List<Centroid> relocateCentroids() {
-        return null;
-    }
 }
