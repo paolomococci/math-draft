@@ -85,6 +85,11 @@ public interface ClusteringMeans {
         ).forEach(
                 s -> average.put(s, 0.0)
         );
+        for (Record record : records) {
+            record.features.forEach(
+                    (s, temp) -> average.compute(s, (s1, currentValue) -> temp + currentValue)
+            );
+        }
         return null;
     }
 
