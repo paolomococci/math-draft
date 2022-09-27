@@ -27,6 +27,8 @@ public interface ClusteringMeans {
     ) {
         if (records == null || records.isEmpty())
             throw new IllegalArgumentException("the record list can't be empty");
+        if (numberOfClusters <= 1)
+            throw new IllegalArgumentException("clusters must be at least more than one");
     }
 
     private static void assignToCluster(
