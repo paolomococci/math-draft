@@ -17,4 +17,6 @@ public interface ClusteringMeans {
     ) {
         return null;
     }
+
+    private static void applyPreconditions() {}
 }
