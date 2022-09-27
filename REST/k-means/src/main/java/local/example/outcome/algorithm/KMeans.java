@@ -28,4 +28,12 @@ public class KMeans {
     private static Centroid nearestCentroid() {
         return null;
     }
+
+    private static Centroid average() {
+        return null;
+    }
+
+    private static List<Centroid> relocateCentroids() {
+        return null;
+    }
 }
