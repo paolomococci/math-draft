@@ -8,4 +8,8 @@ public class Centroid {
 
     public Centroid() {
     }
+
+    public Centroid(Map<String, Double> coordinates) {
+        this.coordinates = coordinates;
+    }
 }
