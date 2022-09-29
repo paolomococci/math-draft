@@ -13,7 +13,16 @@ public class SumOfSquareErrors {
             Map<Centroid, List<Record>> clusters,
             Distance distance
     ) {
-        // TODO: 29/09/22
+        double sum = 0.0;
+        for (Map.Entry<Centroid, List<Record>> entry : clusters.entrySet()) {
+            Centroid centroid = entry.getKey();
+            for (Record record : entry.getValue()) {
+                double value = distance.compute(
+                        centroid.coordinates,
+                        record.features
+                );
+            }
+        }
         return 0;
     }
 }
