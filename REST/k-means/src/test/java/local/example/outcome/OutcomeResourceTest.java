@@ -19,13 +19,4 @@ public class OutcomeResourceTest {
         given().when().get(BASE_PATH)
                 .then().statusCode(HttpStatus.SC_OK);
     }
-
-    @Test
-    public void feedbackOutcomeTest() {
-        given()
-          .when().get(BASE_PATH)
-          .then()
-             .statusCode(HttpStatus.SC_OK)
-             .body(is("---> outcome feedback <---"));
-    }
 }
