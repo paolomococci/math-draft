@@ -21,6 +21,7 @@ public class SumOfSquareErrors {
                         centroid.coordinates,
                         record.features
                 );
+                sum += Math.pow(value, 2);
             }
         }
         return 0;
