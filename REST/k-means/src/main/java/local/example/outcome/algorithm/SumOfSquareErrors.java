@@ -24,6 +24,6 @@ public class SumOfSquareErrors {
                 sum += Math.pow(value, 2);
             }
         }
-        return 0;
+        return sum;
     }
 }
