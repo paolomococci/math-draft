@@ -13,8 +13,24 @@ public class ChartConverter {
         List<Map<String, Object>> children = new ArrayList<>();
         Map<String, Object> json = new HashMap<>();
         clusters.forEach(
-                (key, value) -> {}
+                (key, value) -> {
+                    Map<String, Object> child = new HashMap<>();
+                    child.put(
+                            "name",
+                            dominantFeature(
+                                    sortedCentroid(key)
+                            )
+                    );
+                }
         );
         return null;
+    }
+
+    private static String dominantFeature(Centroid centroid) {
+        return null;
+    }
+
+    private static Centroid sortedCentroid(Centroid centroid) {
+        return centroid;
     }
 }
