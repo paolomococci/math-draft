@@ -7,7 +7,7 @@ import java.util.*;
 
 public class ChartConverter {
 
-    private static Map<String, Object> chartConverter(
+    private static Map<String, Object> dataToChartConverter(
             Map<Centroid, List<Record>> clusters
     ) {
         List<Map<String, Object>> children = new ArrayList<>();
