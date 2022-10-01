@@ -21,6 +21,12 @@ public class ChartConverter {
                                     sortedCentroid(key)
                             )
                     );
+                    List<Map<String, String>> nested = new ArrayList<>();
+                    for (Record record : value)
+                        nested.add(Collections.singletonMap(
+                                "name",
+                                record.description
+                        ));
                 }
         );
         return null;
