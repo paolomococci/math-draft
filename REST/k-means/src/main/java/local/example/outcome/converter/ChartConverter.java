@@ -52,6 +52,9 @@ public class ChartConverter {
                         o1.getValue()
                 ))
         );
-        return null;
+        Map<String, Double> sorted = new LinkedHashMap<>();
+        for (Map.Entry<String, Double> entry : entries)
+            sorted.put(entry.getKey(), entry.getValue());
+        return new Centroid(sorted);
     }
 }
