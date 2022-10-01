@@ -4,6 +4,7 @@ import local.example.outcome.model.Centroid;
 import local.example.outcome.model.Record;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class ChartConverter {
 
@@ -36,8 +37,10 @@ public class ChartConverter {
     }
 
     private static String dominantFeature(Centroid centroid) {
-        // TODO: 01/10/22  
-        return null;
+        return centroid.coordinates.keySet()
+                .stream().limit(2).collect(
+                        Collectors.joining(", ")
+                );
     }
 
     private static Centroid sortedCentroid(Centroid centroid) {
