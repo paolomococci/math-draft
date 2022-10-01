@@ -12,6 +12,9 @@ public class ChartConverter {
     ) {
         List<Map<String, Object>> children = new ArrayList<>();
         Map<String, Object> json = new HashMap<>();
+        clusters.forEach(
+                (key, value) -> {}
+        );
         return null;
     }
 }
