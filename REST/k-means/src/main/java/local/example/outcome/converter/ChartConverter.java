@@ -44,7 +44,14 @@ public class ChartConverter {
     }
 
     private static Centroid sortedCentroid(Centroid centroid) {
-        // TODO: 01/10/22  
-        return centroid;
+        List<Map.Entry<String, Double>> entries = new ArrayList<>(
+                centroid.coordinates.entrySet()
+        );
+        entries.sort(
+                ((o1, o2) -> o2.getValue().compareTo(
+                        o1.getValue()
+                ))
+        );
+        return null;
     }
 }
