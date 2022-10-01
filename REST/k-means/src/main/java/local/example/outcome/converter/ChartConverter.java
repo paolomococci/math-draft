@@ -7,7 +7,7 @@ import java.util.*;
 
 public class ChartConverter {
 
-    private static Map<String, Objects> chartConverter(
+    private static Map<String, Object> chartConverter(
             Map<Centroid, List<Record>> clusters
     ) {
         List<Map<String, Object>> children = new ArrayList<>();
@@ -32,14 +32,16 @@ public class ChartConverter {
                 }
         );
         json.put("children", children);
-        return null;
+        return json;
     }
 
     private static String dominantFeature(Centroid centroid) {
+        // TODO: 01/10/22  
         return null;
     }
 
     private static Centroid sortedCentroid(Centroid centroid) {
+        // TODO: 01/10/22  
         return centroid;
     }
 }
