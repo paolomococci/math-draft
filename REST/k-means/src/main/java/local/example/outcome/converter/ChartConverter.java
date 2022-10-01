@@ -27,8 +27,11 @@ public class ChartConverter {
                                 "name",
                                 record.description
                         ));
+                    child.put("children", nested);
+                    children.add(child);
                 }
         );
+        json.put("children", children);
         return null;
     }
 
