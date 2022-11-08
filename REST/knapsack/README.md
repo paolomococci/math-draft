@@ -5,7 +5,7 @@ In this REST application example, I look at 0-1 knapsack problem, which consists
 ## scaffolding
 
 ```shell
-mvn io.quarkus.platform:quarkus-maven-plugin:2.13.3.Final:create -DprojectGroupId=local.example -DprojectArtifactId=knapsack -DclassName="local.example.outcome.OutcomeResource" -Dpath="/outcome" -Dextensions="resteasy-jackson"
+mvn io.quarkus.platform:quarkus-maven-plugin:2.13.4.Final:create -DprojectGroupId=local.example -DprojectArtifactId=knapsack -DclassName="local.example.outcome.OutcomeResource" -Dpath="/outcome" -Dextensions="resteasy-jackson"
 ```
 
 ## run application in development mode
