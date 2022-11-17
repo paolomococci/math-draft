@@ -3,7 +3,7 @@
 ## scaffolding
 
 ```shell
-mvn io.quarkus.platform:quarkus-maven-plugin:2.13.4.Final:create -DprojectGroupId=local.example -DprojectArtifactId=sample-grpc -DclassName="local.example.outcome.OutcomeResource" -Dpath="/outcome" -Dextensions="kotlin,quarkus-resteasy-reactive" -DbuildTool=gradle
+mvn io.quarkus.platform:quarkus-maven-plugin:2.14.1.Final:create -DprojectGroupId=local.example -DprojectArtifactId=sample-grpc -DclassName="local.example.outcome.OutcomeResource" -Dpath="/outcome" -Dextensions="kotlin,quarkus-resteasy-reactive" -DbuildTool=gradle
 ```
 
 ## compile
