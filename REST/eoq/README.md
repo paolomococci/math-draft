@@ -3,7 +3,7 @@
 ## scaffolding
 
 ```shell
-mvn io.quarkus.platform:quarkus-maven-plugin:2.14.3.Final:create -DprojectGroupId=local.example -DprojectArtifactId=eoq -DclassName="local.example.outcome.OutcomeResource" -Dpath="/outcome" -Dextensions="resteasy-jackson" -DbuildTool=gradle
+mvn io.quarkus.platform:quarkus-maven-plugin:2.15.1.Final:create -DprojectGroupId=local.example -DprojectArtifactId=eoq -DclassName="local.example.outcome.OutcomeResource" -Dpath="/outcome" -Dextensions="resteasy-jackson" -DbuildTool=gradle
 ```
 
 ## to run in development mode
