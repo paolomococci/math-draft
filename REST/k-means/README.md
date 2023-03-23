@@ -3,7 +3,7 @@
 ## scaffolding
 
 ```shell
-mvn io.quarkus.platform:quarkus-maven-plugin:2.16.4.Final:create -DprojectGroupId=local.example -DprojectArtifactId=k-means -DclassName="local.example.outcome.OutcomeResource" -Dpath="/outcome" -Dextensions="resteasy-jackson"
+mvn io.quarkus.platform:quarkus-maven-plugin:2.16.5.Final:create -DprojectGroupId=local.example -DprojectArtifactId=k-means -DclassName="local.example.outcome.OutcomeResource" -Dpath="/outcome" -Dextensions="resteasy-jackson"
 ```
 
 ## run application in development mode
